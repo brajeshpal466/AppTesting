@@ -19,6 +19,7 @@ import 'sanitize.css/sanitize.css';
 import { App } from 'app';
 
 import { HelmetProvider } from 'react-helmet-async';
+import { ChakraProvider } from '@chakra-ui/react';
 
 import { configureAppStore } from 'store/configureStore';
 
@@ -33,9 +34,11 @@ const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 ReactDOM.render(
   <Provider store={store}>
     <HelmetProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <ChakraProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </ChakraProvider>
     </HelmetProvider>
   </Provider>,
   MOUNT_NODE,
