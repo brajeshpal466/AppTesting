@@ -7,22 +7,22 @@ import { TestAnalyticsState } from './types';
 export const initialState: TestAnalyticsState = {
   loading: false,
   error: null,
-  testData: [],
+  testAnalyticsData: [],
 };
 
 const slice = createSlice({
   name: 'testAnalytics',
   initialState,
   reducers: {
-    getTestData: state => {
+    loadTestAnalyticsData: state => {
       state.loading = true;
     },
-    getTestDataSuccess: (state, action: PayloadAction<any>) => {
+    testAnalyticsDataLoaded: (state, action: PayloadAction<any>) => {
       state.loading = false;
       state.error = null;
-      state.testData = action.payload;
+      state.testAnalyticsData = action.payload;
     },
-    getTestDataFailure: (state, action: PayloadAction<any>) => {
+    testAnalyticsDataError: (state, action: PayloadAction<any>) => {
       state.loading = false;
       state.error = action.payload;
     },

@@ -1,4 +1,4 @@
-export interface TestAnalytics {
+export interface TestAnalyticsData {
   status: string;
   timestamp: string;
   testId: number;

@@ -1,10 +1,10 @@
-import { TestAnalytics } from 'types/TestAnalytics';
+import { TestAnalyticsData } from 'types/TestAnalytics';
 
 /* --- STATE --- */
 export interface TestAnalyticsState {
   loading: boolean;
   error?: TestAnalyticsErrorType | null;
-  testData: TestAnalytics[];
+  testAnalyticsData: TestAnalyticsData[];
 }
 
 export enum TestAnalyticsErrorType {
