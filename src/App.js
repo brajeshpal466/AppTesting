@@ -1,5 +1,6 @@
 
 import { Container, Flex } from '@chakra-ui/react';
+import SearchBar from './GlobalComponents/SearchBar';
 import './App.css';
 
 function App() {
