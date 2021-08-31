@@ -31,7 +31,7 @@ const notificationHandler =() =>{
    <Box  margin-right="10px" position="" >
    <Icon as={MdNotificationsNone} buttonHandler={notificationHandler} w={25} h={25} color="grey"/>
   {/* notification popup */}
-   <PopUpNotificationComp width="300px"  height="100vh" ></PopUpNotificationComp>
+   {/* <PopUpNotificationComp width="300px"  height="100vh" ></PopUpNotificationComp> */}
    </Box>
    <Box  margin="10px"><Icon as={MdPersonOutline}  w={25} h={25} color="grey"/></Box>    
     </Flex>
