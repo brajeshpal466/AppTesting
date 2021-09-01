@@ -34,20 +34,25 @@ const data =
     id : 45,
     date :"15 july 2021",
      text : "High memory uses for test run"    
+},
+{
+    id : 45,
+    date :"15 july 2021",
+     text : "High memory uses for test run"    
 }
 
 ];
 
 function NotificationComp() {
     return (
-        <Flex color="green" h="100%" padding="5px 10px" width="100%" flexDirection="column">
+        <Flex color="black"  overflowY="auto" padding="5px 10px" height="600px" overflowY="scroll"  flexDirection="column" height="600px" >
 {
     data.map((item)=>
     <>
-  <Stat size="sm" flexDirection="column"   height="70px" id={item.id} boxShadow=".5px .5px 3px grey" borderLeft="3px solid blue" marginBottom="5px" border=" " borderRadius="3px" padding="5px" boxSizing="border-box">
-    <p>{item.date}</p>
-    <Text>{item.text}#{item.id}</Text>
-</Stat>
+  <Flex size="sm" justifyContent="flex-end" id={item.id} boxShadow=".5px .5px 2px 0px grey"   flexDirection="column" marginBottom="10px"  borderRadius="3px" padding="5px" boxSizing="border-box">
+    <Text as="span"  >{item.date}</Text>
+    <Text as="h5"  >{item.text}#{item.id}</Text>
+</Flex>
     </>
     )
 }
