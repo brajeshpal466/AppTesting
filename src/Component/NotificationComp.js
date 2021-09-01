@@ -51,8 +51,6 @@ function NotificationComp() {
     </>
     )
 }
-      
-
         </Flex>
     )
 }

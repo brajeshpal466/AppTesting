@@ -10,7 +10,7 @@ function Notifiacation() {
     return (
         <>
           <Flex  boxShadow="1px 1px 5px grey" padding="10px" height="100vh" flexDirection="column" width="400px" position="fixed" right="0" top="0">
-      	<Text as="span" justifySelf="flexEnd" fontSize="xs" color="black" >&#x2715; </Text>
+      	<Flex justifyContent="flex-end" >&#x2715; </Flex>
        <Flex justifyContent="space-evenly" borderBottom="2px solid grey ">
        <Text as="span" >
        <NavLink  to="/"  >Notification</NavLink>
