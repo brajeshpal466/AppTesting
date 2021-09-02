@@ -24,6 +24,8 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { configureAppStore } from 'store/configureStore';
 
 import reportWebVitals from 'reportWebVitals';
+import { extendTheme } from '@chakra-ui/react';
+import { customTheme } from 'app/components/Table';
 
 // Initialize languages
 import './locales/i18n';
@@ -34,7 +36,7 @@ const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 ReactDOM.render(
   <Provider store={store}>
     <HelmetProvider>
-      <ChakraProvider>
+      <ChakraProvider theme={extendTheme(customTheme)}>
         <React.StrictMode>
           <App />
         </React.StrictMode>
