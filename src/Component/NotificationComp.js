@@ -45,13 +45,13 @@ const data =
 
 function NotificationComp() {
     return (
-        <Flex color="black"  overflowY="auto" padding="5px 10px" height="600px" overflowY="scroll"  flexDirection="column" height="600px" >
+        <Flex color="black"   padding="5px 10px" height="600px" overflowY="auto"  flexDirection="column" height="600px" >
 {
     data.map((item)=>
     <>
-  <Flex size="sm" justifyContent="flex-end" id={item.id} boxShadow=".5px .5px 2px 0px grey"   flexDirection="column" marginBottom="10px"  borderRadius="3px" padding="5px" boxSizing="border-box">
-    <Text as="span"  >{item.date}</Text>
-    <Text as="h5"  >{item.text}#{item.id}</Text>
+  <Flex size="sm"  justifyContent="center" id={item.id} boxShadow=".5px .5px 2px 0px grey" borderLeft="3px solid blue"  flexDirection="column" marginBottom="10px"  borderRadius="3px" padding="5px" boxSizing="border-box">
+    <Text as="span" fontSize="14px" >{item.date}</Text>
+    <Text as="b" fontSize="16px" >{item.text}#{item.id}</Text>
 </Flex>
     </>
     )
