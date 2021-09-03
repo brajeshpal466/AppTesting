@@ -7,7 +7,7 @@ import { initialState } from '.';
 const selectSlice = (state: RootState) => state.testAnalytics || initialState;
 
 export const selectTestAnalyticsData = createSelector(
-  [selectSlice],
+  [selectSlice], // state.testAnalytics
   state => state.testAnalyticsData,
 );
 

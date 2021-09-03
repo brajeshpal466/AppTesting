@@ -10,55 +10,17 @@ import { TestAnalyticsErrorType } from './slice/types';
 import { useTestAnalyticsSlice } from './slice';
 
 export function TestAnalytics() {
-  const { actions } = useTestAnalyticsSlice();
-
-  const testAnalyticsData = useSelector(selectTestAnalyticsData);
-  const isLoading = useSelector(selectLoading);
-  const error = useSelector(selectError);
-
-  const dispatch = useDispatch();
-
-  const onChangeUsername = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(actions.loadTestAnalyticsData());
-  };
-
-  const useEffectOnMount = (effect: React.EffectCallback) => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(effect, []);
-  };
-
-  useEffectOnMount(() => {
-    // When initial state username is not null, submit the form to load repos
-    dispatch(actions.loadTestAnalyticsData());
-  });
-
-  const onSubmitForm = (evt?: React.FormEvent<HTMLFormElement>) => {
-    /* istanbul ignore next  */
-    if (evt !== undefined && evt.preventDefault) {
-      evt.preventDefault();
-    }
-  };
-
   return (
-    <>
-      {testAnalyticsData?.length > 0 ? (
-        <ul>
-          {testAnalyticsData.map(repo => (
-            <li key={repo.testId}>{repo.project}</li>
-          ))}
-        </ul>
-      ) : error ? (
-        <p>{repoErrorText(error)}</p>
-      ) : null}
-    </>
+    <h1>
+      This is the root TestAnalytics page. All components will be displayed here
+    </h1>
   );
 }
 
-export const repoErrorText = (error: TestAnalyticsErrorType) => {
-  switch (error) {
-    case TestAnalyticsErrorType.RESPONSE_ERROR:
-      return 'There is no such user 😞';
-    default:
-      return 'An error has occurred!';
-  }
-};
+/*
+   <Table />
+   <Tab>
+      <Not />
+      <Alert />
+    </Tab>
+ */
