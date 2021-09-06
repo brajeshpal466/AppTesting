@@ -1,3 +1,4 @@
+import { summaryTableState } from '../app/pages/SummaryTable/slice/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -5,5 +6,6 @@
   You have to declare them here manually
 */
 export interface RootState {
+  summaryTable?: summaryTableState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }
