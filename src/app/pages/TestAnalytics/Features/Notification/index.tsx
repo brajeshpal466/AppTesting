@@ -14,7 +14,7 @@ import { NavLink } from 'react-router-dom';
 import { CardComponent as Card } from '../../components/Card';
 import SearchBar from '../../components/SearchBar';
 import SelectComp from '../../components/SelectComp';
-function Notification() {
+function Notification({ items }) {
   return (
     <>
       <Flex
@@ -88,10 +88,12 @@ function Notification() {
           </Container>
         </Flex>
         <Container padding="10px">
-          <Card>
-            <Text>this is heading </Text>
-            <Text as="span">this is text </Text>
-          </Card>
+          {items.map(item => (
+            <Card>
+              <Text as="span">{item.date}</Text>
+              <Text>High memory uses for test run #{item.id}</Text>
+            </Card>
+          ))}
         </Container>
       </Flex>
     </>

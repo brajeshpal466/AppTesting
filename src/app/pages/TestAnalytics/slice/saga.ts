@@ -10,7 +10,8 @@ const BASE_URL = process.env.REACT_APP_API_BASE_URL;
  */
 export function* gettestNotificationData() {
   yield delay(500);
-  const requestURL = `${BASE_URL}/books`;
+  const requestURL =
+    'https://6125d0b42d4e0d0017b6c499.mockapi.io/api/data/devices/Notification';
 
   try {
     // Call our request helper (see 'utils/request')
