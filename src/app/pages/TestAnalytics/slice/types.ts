@@ -1,13 +1,13 @@
-import { TestAnalyticsData } from 'types/TestAnalytics';
+import { testNotificationData } from 'types/testNotification';
 
 /* --- STATE --- */
-export interface TestAnalyticsState {
+export interface testNotificationState {
   loading: boolean;
-  error?: TestAnalyticsErrorType | null;
-  testAnalyticsData: TestAnalyticsData[];
+  error?: testNotificationErrorType | null;
+  testNotificationData: testNotificationData[];
 }
 
-export enum TestAnalyticsErrorType {
+export enum testNotificationErrorType {
   RESPONSE_ERROR = 1,
   TEST_NOT_FOUND = 2,
 }

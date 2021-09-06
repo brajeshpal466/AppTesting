@@ -2,18 +2,20 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  selectTestAnalyticsData,
+  selecttestNotificationData,
   selectLoading,
   selectError,
 } from './slice/selectors';
-import { TestAnalyticsErrorType } from './slice/types';
-import { useTestAnalyticsSlice } from './slice';
+import { testNotificationErrorType } from './slice/types';
+import { useTestNotificationSlice } from './slice';
+import Notification from './Features/Notification/index';
+export function TestNotification() {
+  const action = useTestNotificationSlice();
 
-export function TestAnalytics() {
   return (
-    <h1>
-      This is the root TestAnalytics page. All components will be displayed here
-    </h1>
+    <>
+      <Notification></Notification>
+    </>
   );
 }
 

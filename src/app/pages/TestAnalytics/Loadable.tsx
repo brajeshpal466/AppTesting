@@ -4,7 +4,7 @@
 
 import { lazyLoad } from 'utils/loadable';
 
-export const TestAnalytics = lazyLoad(
+export const testNotification = lazyLoad(
   () => import('./index'),
-  module => module.TestAnalytics,
+  module => module.TestNotification,
 );

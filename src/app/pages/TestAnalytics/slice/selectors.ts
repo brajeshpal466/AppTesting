@@ -4,11 +4,12 @@ import { RootState } from 'types';
 import { initialState } from '.';
 
 // First select the relevant part from the state
-const selectSlice = (state: RootState) => state.testAnalytics || initialState;
+const selectSlice = (state: RootState) =>
+  state.testNotification || initialState;
 
-export const selectTestAnalyticsData = createSelector(
-  [selectSlice], // state.testAnalytics
-  state => state.testAnalyticsData,
+export const selecttestNotificationData = createSelector(
+  [selectSlice], // state.testNotification
+  state => state.testNotificationData,
 );
 
 export const selectLoading = createSelector(
@@ -24,9 +25,9 @@ import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from 'types';
 import { initialState } from '.';
 
-const selectSlice = (state: RootState) => state.testAnalytics || initialState;
+const selectSlice = (state: RootState) => state.testNotification || initialState;
 
-export const selectTestAnalytics = createSelector(
+export const selecttestNotification = createSelector(
   [selectSlice],
   state => state,
 );

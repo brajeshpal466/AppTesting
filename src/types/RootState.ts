@@ -1,4 +1,4 @@
-import { TestAnalyticsState } from 'app/pages/TestAnalytics/slice/types';
+import { testNotificationState } from '../app/pages/TestAnalytics/slice/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -6,6 +6,6 @@ import { TestAnalyticsState } from 'app/pages/TestAnalytics/slice/types';
   You have to declare them here manually
 */
 export interface RootState {
-  testAnalytics?: TestAnalyticsState;
+  testNotification?: testNotificationState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

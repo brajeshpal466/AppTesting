@@ -1,39 +1,39 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
-import { testAnalyticsSaga } from './saga';
-import { TestAnalyticsState } from './types';
+import { testNotificationSaga } from './saga';
+import { testNotificationState } from './types';
 
-export const initialState: TestAnalyticsState = {
+export const initialState: testNotificationState = {
   loading: false,
   error: null,
-  testAnalyticsData: [],
+  testNotificationData: [],
 };
 
 const slice = createSlice({
-  name: 'testAnalytics',
+  name: 'testNotification',
   initialState,
   reducers: {
-    loadTestAnalyticsData: state => {
+    loadtestNotificationData: state => {
       state.loading = true;
     },
-    testAnalyticsDataLoaded: (state, action: PayloadAction<any>) => {
+    testNotificationDataLoaded: (state, action: PayloadAction<any>) => {
       state.loading = false;
       state.error = null;
-      state.testAnalyticsData = action.payload;
+      state.testNotificationData = action.payload;
     },
-    testAnalyticsDataError: (state, action: PayloadAction<any>) => {
+    testNotificationDataError: (state, action: PayloadAction<any>) => {
       state.loading = false;
       state.error = action.payload;
     },
   },
 });
 
-export const { actions: testAnalyticsActions } = slice;
+export const { actions: testNotificationActions } = slice;
 
-export const useTestAnalyticsSlice = () => {
+export const useTestNotificationSlice = () => {
   useInjectReducer({ key: slice.name, reducer: slice.reducer });
-  useInjectSaga({ key: slice.name, saga: testAnalyticsSaga });
+  useInjectSaga({ key: slice.name, saga: testNotificationSaga });
   return { actions: slice.actions };
 };
 
@@ -41,7 +41,7 @@ export const useTestAnalyticsSlice = () => {
  * Example Usage:
  *
  * export function MyComponentNeedingThisSlice() {
- *  const { actions } = useTestAnalyticsSlice();
+ *  const { actions } = useTestNotificationSlice();
  *
  *  const onButtonClick = (evt) => {
  *    dispatch(actions.someAction());
