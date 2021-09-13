@@ -16,6 +16,7 @@ import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
 import { SummaryTable } from './pages/SummaryTable';
+import Charts from './components/Charts';
 
 export function App() {
   const { i18n } = useTranslation();
@@ -30,7 +31,7 @@ export function App() {
       </Helmet>
 
       <Switch>
-        <Route exact path="/" component={SummaryTable} />
+        <Route exact path="/" component={Charts} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
