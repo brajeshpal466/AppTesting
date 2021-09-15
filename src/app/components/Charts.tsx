@@ -1,239 +1,183 @@
-import { Text, Container, Flex, Center } from '@chakra-ui/layout';
-import polygone from '../../styles/assets/Polygon 1.svg';
-import ReactApexChart from 'react-apexcharts';
-import TooltipData from './TooltipData';
-import { Tooltip } from '@chakra-ui/tooltip';
+//$no-check
+// // import { Flex } from '@chakra-ui/layout'
+// // import React from 'react'
+// // import Chart from "react-google-charts";
+// // function Charts() {
+// //   return (
+// //     <Flex>
+// //       <Chart
+// //   width={'100%'}
+// //   height={'300px'}
+// //   chartType="AreaChart"
+// //   loader={<div>Loading Chart</div>}
+// //   data={[
+// //     ['Year', 'Sales'],
+// //     ['1s', 100 ],
+// //     ['2s', 78],
+// //     ['3s', 66],
+// //     ['4s', 17],
+// //      ['5s', 35 ],
+// //     ['6s', 46],
+// //     ['7s', 66],
+// //     ['8s', 58],
+// //      ['9s', 78 ],
+// //     ['10s', 19],
+// //     ['11s', 66],
+// //     ['12s', 30],
+// //     ['13s', 80 ],
+// //     ['14s', 70],
+// //     ['15s', 0],
+// //     ['16s', 0],
+// //      ['17s', 90 ],
+// //     ['18s', 70],
+// //     ['19s', 66],
+// //     ['20s', 77],
+// //      ['21s', 70 ],
+// //     ['22s', 50],
+// //     ['23s', 60],
+// //     ['24s', 89],
+// //     ['25s', 40],
+// //   ]}
+// //   options={{
+// //     isStacked: true,
+// //     height: 300,
+// //     legend: { position: 'top', maxLines: 2 },
+// //     vAxis: { minValue: 0 },
+// //     hAxis: {
+// //       title: 'time',
+// //       minValue: 100,
+// //       gridlines: {
+// //           count: 3
+// //       },
+// //       position : 'top'
+// //   },
+// //   }}
+// //   rootProps={{ 'data-testid': '2' }}
+// // />
+// //     </Flex>
+// //   )
+// // }
 
-const state = {
-  series: [
+// // export default Charts
+
+// import React from 'react'
+
+// // Import Highcharts
+// import Highcharts from "highcharts/highstock";
+// import HighchartsReact from "highcharts-react-official";
+
+// //Highcharts.seriesTypes.column.prototype.negStacks = false;
+// const series = [
+//   {
+//     name: "John",
+//     data: [5, 3, 4, 7, 2 ,7,8,9,2,6,7]
+//   },
+
+// ];
+// const options = {
+//   chart: {
+//     type: "area"
+//   },
+//   title: {
+//     text: "Column chart with negative values"
+//   },
+//   xAxis: {
+//     categories: [""]
+//   },
+//   credits: {
+//     enabled: false
+//   },
+//   tooltip: {
+//     shared: true
+//   },
+//   plotOptions: {
+//     column: {
+//       stacking: "normal"
+//     }
+//   },
+//   series: series
+// };
+
+// function Charts() {
+//   return (
+//     <>
+//      <HighchartsReact highcharts={Highcharts} options={options} />
+//     </>
+//   )
+// }
+
+// export default Charts
+import { Line } from 'react-chartjs-2';
+import React from 'react';
+import { Container, Flex } from '@chakra-ui/layout';
+const labels = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+  '16',
+  '17',
+  '18',
+  '19',
+  '20',
+  '21',
+  '22',
+  '23',
+  '24',
+  '25',
+];
+const dataValue = [
+  40, 30, 59, 55, 75, 80, 20, 89, 13, 66, 34, 70, 90, 40, 30, 55, 75, 80, 20,
+  89, 13, 66, 34, 70, 90,
+];
+const data = {
+  labels: labels,
+  datasets: [
     {
-      name: 'Network',
-      anotation: [
-        {
-          time: 2,
-          eventname: 'home page load',
-        },
-        {
-          time: 4,
-          eventname: 'home display',
-        },
-      ],
-      data: [
-        {
-          x: 'Dec 23 2017',
-          y: 20,
-        },
-        {
-          x: 'Dec 24 2017',
-          y: 44,
-        },
-        {
-          x: 'Dec 25 2017',
-          y: 31,
-        },
-        {
-          x: 'Dec 26 2017',
-          y: 38,
-        },
-        {
-          x: 'Dec 27 2017',
-          y: 49,
-        },
-        {
-          x: 'Dec 28 2017',
-          y: 32,
-        },
-        {
-          x: 'Dec 29 2017',
-          y: 55,
-        },
-        {
-          x: 'Dec 30 2017',
-          y: 51,
-        },
-        {
-          x: 'Dec 31 2017',
-          y: 67,
-        },
-        {
-          x: 'Jan 01 2018',
-          y: 22,
-        },
-        {
-          x: 'Jan 02 2018',
-          y: 34,
-        },
-        {
-          x: 'Jan 03 2018',
-          y: 30,
-        },
-        {
-          x: 'Jan 04 2018',
-          y: 40,
-        },
-        {
-          x: 'Jan 05 2018',
-          y: 11,
-        },
-        {
-          x: 'Jan 06 2018',
-          y: 4,
-        },
-        {
-          x: 'Jan 07 2018',
-          y: 15,
-        },
-        {
-          x: 'Jan 08 2018',
-          y: 20,
-        },
-        {
-          x: 'Jan 09 2018',
-          y: 9,
-        },
-        {
-          x: 'Jan 10 2018',
-          y: 34,
-        },
-        {
-          x: 'Jan 11 2018',
-          y: 37,
-        },
-        {
-          x: 'Jan 12 2018',
-          y: 39,
-        },
-        {
-          x: 'Jan 13 2018',
-          y: 45,
-        },
-        {
-          x: 'Jan 14 2018',
-          y: 55,
-        },
-      ],
+      label: 'cpu',
+      data: dataValue,
+      fill: true,
+      backgroundColor: 'rgb(141, 176, 252)',
+      borderColor: 'rgba(68, 66, 233, 0.2)',
+      pointBorderColor: 'rgb(115, 214, 245)',
     },
   ],
-  options: {
-    chart: {
-      type: 'area',
-      height: 350,
-      animations: {
-        enabled: false,
+};
+
+const options = {
+  scales: {
+    x: {
+      position: 'none',
+      backgroundColor: 'rgb(241, 245, 255)',
+      padding: '20px',
+    },
+    y: {
+      position: 'left',
+      tick: {
+        beingAtZero: true,
       },
-      zoom: {
-        enabled: false,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      curve: 'straight',
-    },
-    fill: {
-      opacity: 0.8,
-      type: 'pattern',
-      pattern: {
-        style: ['verticalLines', 'horizontalLines'],
-        width: 5,
-        height: 6,
-      },
-    },
-    markers: {
-      size: 5,
-      hover: {
-        size: 9,
-      },
-    },
-    title: {
-      text: 'Network Monitoring',
-    },
-    tooltip: {
-      intersect: true,
-      shared: false,
-    },
-    theme: {
-      palette: 'palette',
-    },
-    xaxis: {
-      type: 'datetime',
-    },
-    yaxis: {
-      title: {
-        text: 'Bytes Received',
-      },
+      padding: '20px',
     },
   },
 };
 
-const linePosition = [
-  {
-    position: '30%',
-    time: '2s',
-    eventname: 'event 1',
-  },
-  {
-    position: '30%',
-    time: '2s',
-    eventname: 'event 1',
-  },
-  {
-    position: '40%',
-    time: '5s',
-    eventname: 'event 2',
-  },
-  {
-    position: '60%',
-    time: '8s',
-    eventname: 'event 3',
-  },
-  {
-    position: '80%',
-    time: '9s',
-    eventname: 'event 4',
-  },
-];
-
 function Charts() {
   return (
-    <Flex position="relative" backgroundColor="#fffff0">
-      <Flex
-        backgroundColor="#fffff0"
-        width="100%"
-        height="250px"
-        borderTop="3px solid grey"
-      ></Flex>
-      {linePosition.map(item => (
-        <Flex
-          width="15px"
-          flexDirection="column"
-          position="absolute"
-          height="100%"
-          top="25px"
-          left={item.position}
-        >
-          <Tooltip
-            hasArrow
-            label={
-              <TooltipData
-                time={item.eventname}
-                eventname={item.time}
-              ></TooltipData>
-            }
-            top="0"
-            placement="top"
-            padding=" 0px 5px"
-            borderLeftRadius="3px"
-          >
-            <img src={polygone}></img>
-          </Tooltip>
-          <Center height="75%">
-            <Flex width="2px" backgroundColor="black" height="100%"></Flex>
-          </Center>
-        </Flex>
-      ))}
+    <Flex width="800px" height="300px">
+      <Line data={data} options={options}></Line>
     </Flex>
   );
 }
+
 export default Charts;
