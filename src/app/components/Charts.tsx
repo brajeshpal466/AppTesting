@@ -110,7 +110,13 @@
 import { Line } from 'react-chartjs-2';
 import React from 'react';
 import { Container, Flex } from '@chakra-ui/layout';
-const labels = [
+
+const dataValue = [
+  40, 30, 59, 55, 75, 80, 20, 89, 13, 66, 0, 0, 90, 40, 0, 2, 75, 80, 20, 89,
+  13, 66, 34, 70, 90,
+];
+
+export const labels = [
   '1',
   '2',
   '3',
@@ -137,44 +143,75 @@ const labels = [
   '24',
   '25',
 ];
-const dataValue = [
-  40, 30, 59, 55, 75, 80, 20, 89, 13, 66, 34, 70, 90, 40, 30, 55, 75, 80, 20,
-  89, 13, 66, 34, 70, 90,
-];
+
+//let label = labels ;
+//console.log(labels);
 const data = {
   labels: labels,
+
   datasets: [
     {
-      label: 'cpu',
+      label: 'CPU',
       data: dataValue,
       fill: true,
-      backgroundColor: 'rgb(141, 176, 252)',
-      borderColor: 'rgba(68, 66, 233, 0.2)',
-      pointBorderColor: 'rgb(115, 214, 245)',
+      pointBorder: false,
+      backgroundColor: '#479fd1',
+      borderColor: 'white',
+      pointBorderColor: '#c0a6a6',
     },
   ],
 };
 
 const options = {
+  responsive: true,
+  maintainAspectRatio: false,
+  elements: {
+    point: {
+      radius: 0.1,
+      pointStyle: 'line',
+    },
+    line: {},
+  },
+  plugins: {
+    title: {
+      text: 'CPU',
+      display: true,
+      align: 'start',
+    },
+    tooltip: {
+      enabled: true,
+    },
+    legend: {
+      display: false,
+      position: 'top',
+      align: 'start',
+    },
+  },
+
   scales: {
     x: {
-      position: 'none',
-      backgroundColor: 'rgb(241, 245, 255)',
+      position: '',
+      backgroundColor: '#ffffff',
       padding: '20px',
+      grid: {
+        display: false,
+      },
     },
     y: {
       position: 'left',
-      tick: {
-        beingAtZero: true,
+
+      grid: {
+        display: false,
       },
-      padding: '20px',
+      borderColor: 'rgb(111, 184, 233)',
+      backgroundColor: ' rgb(227, 234, 238)',
     },
   },
 };
 
 function Charts() {
   return (
-    <Flex width="800px" height="300px">
+    <Flex width="1000px" height="300px">
       <Line data={data} options={options}></Line>
     </Flex>
   );
