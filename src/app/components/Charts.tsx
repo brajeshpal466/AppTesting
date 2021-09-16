@@ -112,8 +112,8 @@ import React from 'react';
 import { Container, Flex } from '@chakra-ui/layout';
 
 const dataValue = [
-  40, 30, 59, 55, 75, 80, 20, 89, 13, 66, 0, 0, 90, 40, 0, 2, 75, 80, 20, 89,
-  13, 66, 34, 70, 90,
+  0, 70, 59, 5, 75, 10, 20, 89, 13, 66, 0, 0, 90, 40, 0, 2, 75, 80, 20, 89, 13,
+  66, 34, 0, 0,
 ];
 
 export const labels = [
@@ -151,12 +151,13 @@ const data = {
 
   datasets: [
     {
-      label: 'CPU',
+      label: '',
       data: dataValue,
       fill: true,
       pointBorder: false,
-      backgroundColor: '#479fd1',
-      borderColor: 'white',
+      backgroundColor: '#a2abb1',
+      borderColor: '#6567c4',
+      borderWidth: 0.6,
       pointBorderColor: '#c0a6a6',
     },
   ],
@@ -177,6 +178,11 @@ const options = {
       text: 'CPU',
       display: true,
       align: 'start',
+      legend: {
+        title: {
+          dispaly: false,
+        },
+      },
     },
     tooltip: {
       enabled: true,
@@ -191,7 +197,7 @@ const options = {
   scales: {
     x: {
       position: '',
-      backgroundColor: '#ffffff',
+      backgroundColor: 'rgb(255, 255, 255)',
       padding: '20px',
       grid: {
         display: false,
@@ -203,8 +209,8 @@ const options = {
       grid: {
         display: false,
       },
-      borderColor: 'rgb(111, 184, 233)',
-      backgroundColor: ' rgb(227, 234, 238)',
+      borderColor: '#fffff',
+      backgroundColor: ' #ffffff',
     },
   },
 };
