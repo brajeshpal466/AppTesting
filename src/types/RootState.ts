@@ -1,4 +1,5 @@
 import { summaryTableState } from '../app/pages/SummaryTable/slice/types';
+import { testNotificationState } from '../app/pages/TestAnalytics/slice/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -7,5 +8,6 @@ import { summaryTableState } from '../app/pages/SummaryTable/slice/types';
 */
 export interface RootState {
   summaryTable?: summaryTableState;
+  testNotification?: testNotificationState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

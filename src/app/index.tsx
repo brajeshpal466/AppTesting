@@ -12,6 +12,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
+import { testNotification } from './pages/TestAnalytics/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
 import { SummaryTable } from './pages/SummaryTable';
@@ -30,6 +31,7 @@ export function App() {
 
       <Switch>
         <Route exact path="/" component={SummaryTable} />
+        <Route exact path="/testnotification" component={testNotification} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
