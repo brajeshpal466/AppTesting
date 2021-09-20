@@ -1,7 +1,13 @@
-import { Flex, Text } from '@chakra-ui/layout';
+import {
+  Flex,
+  Text,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+} from '@chakra-ui/react';
 import React from 'react';
 import Charts from './Charts';
-
 export const labels = [
   '0',
   '1',
@@ -30,37 +36,67 @@ export const labels = [
   '24',
   '25',
 ];
-
 function ChartLayout() {
   return (
     <Flex
       flexDirection="column"
-      alignItems="center"
-      overflowY="auto"
-      height="350px"
-      marginTop="20px"
-      outlineTop="3px solid grey"
+      justifyContent="center"
+      width="1031px"
+      marginLeft="5px"
     >
       <Flex
-        width="1000px"
-        position="sticky"
-        top="0px"
-        height="40px"
-        paddingBottom="20px "
-        alignItems="flex-start"
-        backgroundColor="#b3aaaa"
-        justifyContent="space-between"
+        flexDirection="column"
+        alignItems="center"
+        marginTop="20px"
+        width="100%"
       >
-        {labels.map(item => (
-          <Flex fontSize="12px" alignItems="flex-start">
-            |{item}
-          </Flex>
-        ))}
+        <Slider aria-label="slider-ex-1" defaultValue={30} colorScheme="red">
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+          <SliderThumb
+            backgroundColor="red"
+            _focus={{
+              boxShadow: ' 0 0 0 red',
+            }}
+          />
+        </Slider>
+        <Flex
+          width="1031px"
+          position="sticky"
+          top="0px"
+          height="34px"
+          paddingBottom="20px "
+          alignItems="flex-start"
+          backgroundColor="#b3aaaa"
+          justifyContent="space-between"
+        >
+          {labels.map(item => (
+            <Flex fontSize="12px" alignItems="flex-start">
+              |{item}
+            </Flex>
+          ))}
+        </Flex>
+        <Flex
+          flexDirection="column"
+          pos="static"
+          h="430px"
+          overflow="scroll"
+          boxSizing="border-box"
+          overflowX="hidden"
+          css={{
+            '&::-webkit-scrollbar': {
+              width: '0px',
+              display: 'none',
+            },
+          }}
+        >
+          <Charts></Charts>
+          <Charts></Charts>
+          <Charts></Charts>
+          <Charts></Charts>
+        </Flex>
       </Flex>
-      <Charts></Charts>
-      <Charts></Charts>
-      <Charts></Charts>
-      <Charts></Charts>
     </Flex>
   );
 }
