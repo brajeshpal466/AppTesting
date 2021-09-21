@@ -4,16 +4,17 @@ import React from 'react';
 function InfoComp({ type, value }) {
   return (
     <Flex
+      height="44px"
       alignItems="center"
-      flexDirection="column"
+      flexDirection="row"
       justifyContent="center"
       padding="5px"
     >
-      {value !== 0 && (
+      {
         <Text as="b" paddingRight="5px">
           {value}
         </Text>
-      )}
+      }
       {type && <Text color="grey">{type}</Text>}
     </Flex>
   );

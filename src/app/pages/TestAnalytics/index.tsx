@@ -12,6 +12,11 @@ import { useTestNotificationSlice } from './slice';
 import Notification from './Features/Notification/index';
 import testNotificationData from '../../../types/testNotification';
 import ts from 'typescript';
+import { TestAnalytics } from './components/Table';
+import DisplaytableData from './Features/DisplayTestData';
+import { testNotification } from './Loadable';
+import Subheader from 'app/components/Subheader';
+import SubContainer from 'app/components/SubContainer';
 export function TestNotification() {
   const { actions } = useTestNotificationSlice();
   const testNotificationData = useSelector(selecttestNotificationData);
@@ -35,10 +40,26 @@ export function TestNotification() {
       evt.preventDefault();
     }
   };
+  const tabroute = ['Test Analytics'];
+  let running: number = 0;
+  let sheduled: number = 0;
+  let queued: number = 0;
+  const infoStatusData = {
+    running,
+    queued,
+    sheduled,
+  };
 
   return (
     <>
-      <Notification items={testNotificationData}></Notification>
+      <Subheader
+        tabroute={tabroute}
+        infoStatusData={infoStatusData}
+      ></Subheader>
+      <SubContainer>
+        <DisplaytableData></DisplaytableData>
+        <Notification items={testNotificationData}></Notification>
+      </SubContainer>
     </>
   );
 }

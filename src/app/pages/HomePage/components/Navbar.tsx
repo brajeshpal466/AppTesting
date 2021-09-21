@@ -11,11 +11,11 @@ import {
   Icon,
   Container,
 } from '@chakra-ui/react';
-import ButtonComp from './ButtonComp';
-import starticon from '../../styles/Assets/file-cog-outline.svg';
-import starticon2 from '../../styles/Assets/Group 1776.svg';
-import notification from '../../styles/Assets/notifications.svg';
-import userIcon from '../../styles/Assets/user profile.svg';
+import ButtonComp from '../../../components/ButtonComp';
+import starticon from '../../../../styles/Assets/file-cog-outline.svg';
+import starticon2 from '../../../../styles/Assets/Group 1776.svg';
+import notification from '../../../../styles/Assets/notifications.svg';
+import userIcon from '../../../../styles/Assets/user profile.svg';
 
 const StartIcon = () => {
   return (
@@ -49,10 +49,10 @@ function Navbar() {
             alt="Brand"
           />
         </Box>
-        <Text as="h2" fontSize="30px " paddingLeft="10px">
+        <Text as="h2" fontSize="30px " paddingLeft="20px">
           Mozark
         </Text>
-        <Text paddingLeft="10px">App Testing</Text>
+        <Text paddingLeft="50px">App Testing</Text>
       </Flex>
       <Flex alignItems="center" justifyContent="flex-end">
         <ButtonComp logo={<StartIcon></StartIcon>} color="#008EF0">

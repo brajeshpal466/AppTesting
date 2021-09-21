@@ -24,7 +24,7 @@ import {
 } from './slice/selectors';
 import { summaryTableErrorType } from './slice/types';
 import { useSummaryTableSlice } from './slice';
-import StatusInfoComp from 'app/components/StatusInfoComp';
+import StatusInfoComp from 'app/components/Subheader';
 const tableHeader = ['Status', 'Time', 'Test Case', 'Details'];
 const summaryTableData = [
   {
@@ -136,12 +136,12 @@ export function SummaryTable() {
 
   return (
     <>
-      {tabroute && (
+      {/* {tabroute && (
         <StatusInfoComp
           infoStatusData={infoStatusData}
           tabroute={tabroute}
         ></StatusInfoComp>
-      )}
+      )} */}
 
       <Table variant="simple" size="sm" width="100%">
         {/* <TableCaption >Test CaseSummary</TableCaption> */}

@@ -8,6 +8,7 @@ export const Card = {
     background: 'white',
     alignItems: '',
     gap: 6,
+
     marginBottom: '5px',
   },
   // Two variants: rounded and smooth

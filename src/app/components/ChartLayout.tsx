@@ -38,12 +38,7 @@ export const labels = [
 ];
 function ChartLayout() {
   return (
-    <Flex
-      flexDirection="column"
-      justifyContent="center"
-      width="1031px"
-      marginLeft="5px"
-    >
+    <Flex flexDirection="column" justifyContent="center" marginLeft="5px">
       <Flex
         flexDirection="column"
         alignItems="center"

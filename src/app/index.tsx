@@ -9,7 +9,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-
+import './App.css';
 import { GlobalStyle } from 'styles/global-styles';
 
 import { testNotification } from './pages/TestAnalytics/Loadable';
@@ -35,10 +35,10 @@ export function App() {
 
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/testnotification" component={testNotification} />
+        {/* <Route exact path="/testnotification" component={testNotification} />
         <Route exact path="/testsession"></Route>
-        <Route exact path="/chartlayout" component={ChartLayout} />
-        <Route component={NotFoundPage} />
+        <Route exact path="/chartlayout" component={ChartLayout} /> */}
+        {/* <Route component={NotFoundPage} /> */}
       </Switch>
       <GlobalStyle />
     </BrowserRouter>

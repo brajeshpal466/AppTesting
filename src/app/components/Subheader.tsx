@@ -11,15 +11,20 @@ import {
 import React from 'react';
 import InfoComp from './InfoComp';
 
-function StatusInfoComp({ infoStatusData, tabroute }) {
+function Subheader({ infoStatusData, tabroute }) {
   return (
-    <Flex justifyContent="space-between" alignItems="center">
+    <Flex
+      justifyContent="space-between"
+      width="100%"
+      alignItems="center"
+      paddingLeft="20px"
+    >
       <Flex>
         <Breadcrumb textDecoration="none">
           {tabroute &&
             tabroute.map(route => (
               <BreadcrumbItem>
-                <BreadcrumbLink>{route}</BreadcrumbLink>
+                <BreadcrumbLink>{route} </BreadcrumbLink>
               </BreadcrumbItem>
             ))}
         </Breadcrumb>
@@ -39,4 +44,4 @@ function StatusInfoComp({ infoStatusData, tabroute }) {
   );
 }
 
-export default StatusInfoComp;
+export default Subheader;

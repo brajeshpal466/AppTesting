@@ -15,9 +15,11 @@ import { CardComponent as Card } from '../../components/Card';
 import SearchBar from '../../components/SearchBar';
 import SelectComp from '../../components/SelectComp';
 function Notification({ items }) {
+  console.log(items);
   return (
     <>
       <Flex
+        background="white"
         boxShadow="1px 1px 5px grey"
         padding="10px"
         height="100vh"
@@ -88,12 +90,13 @@ function Notification({ items }) {
           </Container>
         </Flex>
         <Container padding="10px">
-          {items.map(item => (
-            <Card>
-              <Text as="span">{item.date}</Text>
-              <Text>High memory uses for test run #{item.id}</Text>
-            </Card>
-          ))}
+          {items &&
+            items.map(item => (
+              <Card>
+                <Text as="span"> {item.date}</Text>
+                <Text>High memory uses for test run #{item.id}</Text>
+              </Card>
+            ))}
         </Container>
       </Flex>
     </>

@@ -142,7 +142,7 @@ function Charts() {
       border="1px solid #f0e7e7"
       borderTop="1px solid #c7b3b3"
       marginTop="9px"
-      width="1031px"
+      //  width="1031px"
       borderRadius="3px"
       height="207px"
       position="relative"

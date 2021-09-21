@@ -6,13 +6,13 @@ import { NavLink } from 'react-router-dom';
 
 import { useState } from 'react';
 import SidebarTabComp from './SidebarTabComp';
-import testAnalyticsIcon from '../../styles/Assets/Group 1447.svg';
-import AutomationIcon from '../../styles/Assets/Automation.svg';
-import debugReportIcon from '../../styles/Assets/debug report.svg';
-import interactIcon from '../../styles/Assets/Interact.svg';
-import deviceCloudIcon from '../../styles/Assets/device cloud.svg';
-import settingsIcon from '../../styles/Assets/settings.svg';
-import rightArrow from '../../styles/Assets/expand btn.png';
+import testAnalyticsIcon from '../../../../styles/Assets/Group 1447.svg';
+import AutomationIcon from '../../../../styles/Assets/Automation.svg';
+import debugReportIcon from '../../../../styles/Assets/debug report.svg';
+import interactIcon from '../../../../styles/Assets/Interact.svg';
+import deviceCloudIcon from '../../../../styles/Assets/device cloud.svg';
+import settingsIcon from '../../../../styles/Assets/settings.svg';
+import rightArrow from '../../../../styles/Assets/expand btn.png';
 function Sidebar() {
   const [sidebarToggle, setsidebarToggle] = useState(false);
   const handleSidebar = () => {
@@ -23,7 +23,7 @@ function Sidebar() {
 
   return (
     <Flex
-      height="120vh"
+      height="100vh"
       background="#404040"
       id="sidebarNav"
       className="sidebarShow "
@@ -33,8 +33,7 @@ function Sidebar() {
       left="0px"
       top="50px"
     >
-      <Flex height="50px" alignItems="center" justifyContent="flex-end">
-        {/* <Icon as={<img src={rightArrow} alt="test"/>} position="relative" right="0px" cursor="pointer"  backgroundColor="white" size="10px" borderRadius="50%" padding="5px" boxSizing="content-box" ></Icon> */}
+      <Flex height="44px" alignItems="center" justifyContent="flex-end">
         <Box
           position="relative"
           right="-17px"

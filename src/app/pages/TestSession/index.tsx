@@ -1,5 +1,6 @@
+//@ts-nocheck
 import React, { useEffect } from 'react';
-import { Grid, Flex, Box, Text, GridItem } from '@chakra-ui/react';
+
 import styled from 'styled-components/macro';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -9,6 +10,16 @@ import {
 } from './slice/selectors';
 import { TestSessionErrorType } from './slice/types';
 import { useTestSessionSlice } from './slice';
+import SessionidTable from './components/SessionidTable';
+import DisplayTable from './Features/DisplayTable';
+import Subheader from 'app/components/Subheader';
+import SubContainer from 'app/components/SubContainer';
+import SubTabContainar from './Features/SubTabContainer';
+import SubNavbar from './components/SubNavbar';
+import SubTabWrapper from './Features/SubTabWrapper';
+import { Route, Switch } from 'react-router';
+import TestCases from '../TestCases';
+import VideoAnalysis from '../VideoAnalysis';
 
 export function TestSession() {
   const { actions } = useTestSessionSlice();
@@ -35,97 +46,36 @@ export function TestSession() {
       evt.preventDefault();
     }
   };
+  const tabroute = ['Test Analytics', 'Test Session Id -148'];
+  let Passed: number = 0;
+  let Failed: number = 0;
+  let Completed: number = 0;
+  const infoStatusData = {
+    Passed,
+    Failed,
+    Completed,
+  };
 
-  console.log(testSessionData);
   return (
     <>
-      {testSessionData[0] && (
-        <Grid
-          boxShadow=".5px .5px 2px "
-          padding="10px"
-          alignContent="flex-start"
-          templateColumns="repeat(6, 1fr)"
-          gridRowGap="1"
-          gap={3}
-        >
-          <GridItem w="100%">
-            <Text as="span" display="block">
-              Session Id
-            </Text>
-            <Text as="b" display="block">
-              {testSessionData[0].testSessionId}
-            </Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Text as="span" display="block">
-              Date & Time
-            </Text>
-            <Text as="b" display="block">
-              {testSessionData[0].timeStamp}
-            </Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Text as="span" display="block">
-              Project
-            </Text>
-            <Text as="b" display="block">
-              {testSessionData[0].project}
-            </Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Text as="span" display="block">
-              Build
-            </Text>
-            <Text as="b" display="block">
-              {testSessionData[0].build}
-            </Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Text as="span" display="block">
-              Script
-            </Text>
-            <Text as="b" display="block">
-              {testSessionData[0].script}
-            </Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Text as="span" display="block"></Text>
-            <Text as="b" display="block"></Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Text as="span" display="block">
-              Script
-            </Text>
-            <Text as="b" display="block">
-              {testSessionData[0].script}
-            </Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Text as="span" display="block">
-              OS
-            </Text>
-            <Text as="b" display="block">
-              {testSessionData[0].os}
-            </Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Text as="span" display="block">
-              Location
-            </Text>
-            <Text as="b" display="block">
-              {testSessionData[0].location}
-            </Text>
-          </GridItem>
-          <GridItem w="100%">
-            <Text as="span" display="block">
-              Network
-            </Text>
-            <Text as="b" display="block">
-              {testSessionData[0].network}
-            </Text>
-          </GridItem>
-        </Grid>
-      )}
+      <Subheader
+        tabroute={tabroute}
+        infoStatusData={infoStatusData}
+      ></Subheader>
+      <SubContainer>
+        <DisplayTable testSessionData={testSessionData[0]}></DisplayTable>
+        <SubNavbar></SubNavbar>
+        <SubTabWrapper>
+          <Switch>
+            <Route to="/">
+              <VideoAnalysis></VideoAnalysis>
+            </Route>
+            <Route to="/testcases">
+              <TestCases></TestCases>
+            </Route>
+          </Switch>
+        </SubTabWrapper>
+      </SubContainer>
     </>
   );
 }
