@@ -13,7 +13,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from 'styles/global-styles';
 
 import { testNotification } from './pages/TestAnalytics/Loadable';
-//import { HomePage } from './pages/HomePage/Loadable';
+import { HomePage } from './pages/HomePage/Loadable';
 import { TestSession } from './pages/TestSession/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
@@ -34,11 +34,9 @@ export function App() {
       </Helmet>
 
       <Switch>
-        <Route exact path="/" component={SummaryTable} />
+        <Route exact path="/" component={HomePage} />
         <Route exact path="/testnotification" component={testNotification} />
-        <Route exact path="/testsession">
-          <TestSession></TestSession>
-        </Route>
+        <Route exact path="/testsession"></Route>
         <Route exact path="/chartlayout" component={ChartLayout} />
         <Route component={NotFoundPage} />
       </Switch>
