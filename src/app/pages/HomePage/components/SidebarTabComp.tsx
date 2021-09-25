@@ -10,7 +10,7 @@ function SidebarTabComp({ link, icon, children, sidebarToggle }) {
         <NavLink
           exact
           to={link}
-          color="grey"
+          color="black2"
           style={{ textDecoration: 'none', color: 'grey', width: '100%' }}
           activeClassName="activeLink"
         >
@@ -19,7 +19,11 @@ function SidebarTabComp({ link, icon, children, sidebarToggle }) {
               {/* <Icon as={icon}  w={30} h={30} margin=" 0px 13px" ></Icon> */}
               {icon}
             </Box>
-            {sidebarToggle && <Text className="text">{children}</Text>}
+            {sidebarToggle && (
+              <Text color="grey5" className="text">
+                {children}
+              </Text>
+            )}
           </Flex>
         </NavLink>
       </Flex>

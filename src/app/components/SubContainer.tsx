@@ -4,8 +4,9 @@ import React from 'react';
 function SubContainer({ children }) {
   return (
     <Flex
-      background=""
-      border="20px solid #e9d6d6"
+      background="grey3"
+      border="15px solid "
+      borderColor="white2"
       flexDirection="column"
       flexWrap="nowrap"
       padding="px 0px"

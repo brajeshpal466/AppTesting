@@ -52,7 +52,7 @@ const data = {
       fill: true,
       pointBorder: false,
       backgroundColor: '#CEF2FE',
-      borderColor: '#2b2edf',
+      borderColor: '#008EE0',
       borderWidth: 0.6,
       pointBorderColor: '#c0a6a6',
     },
@@ -62,6 +62,7 @@ const data = {
 const options = {
   responsive: true,
   maintainAspectRatio: false,
+
   drawBorder: true,
   elements: {
     point: {
@@ -141,22 +142,23 @@ function Charts() {
       flexWrap="nowrap"
       border="1px solid #f0e7e7"
       borderTop="1px solid #c7b3b3"
-      marginTop="9px"
-      //  width="1031px"
       borderRadius="3px"
       height="207px"
       position="relative"
-      backgroundColor="rgb(248,248,248)"
+      backgroundColor="white5"
     >
-      <Line data={data} options={options}></Line>
+      <Flex width="99.9% ! important" justifyItems="flex-end">
+        <Line data={data} options={options}></Line>
+      </Flex>
+
       <CheckBoxComp></CheckBoxComp>
       <DropdownComp></DropdownComp>
       <ListComp></ListComp>
       <Flex
         position="absolute"
         width="100%"
-        bottom="9px"
-        borderTop="1px solid #2b2edf"
+        bottom="10px"
+        borderTop="1px solid #008EE0"
       ></Flex>
     </Flex>
   );

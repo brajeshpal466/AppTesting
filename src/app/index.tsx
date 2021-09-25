@@ -12,14 +12,9 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { GlobalStyle } from 'styles/global-styles';
 
-import { testNotification } from './pages/TestAnalytics/Loadable';
 import { HomePage } from './pages/HomePage/Loadable';
-import { TestSession } from './pages/TestSession/Loadable';
-import { NotFoundPage } from './components/NotFoundPage/Loadable';
+
 import { useTranslation } from 'react-i18next';
-import { SummaryTable } from './pages/SummaryTable';
-import Charts from './components/Charts';
-import ChartLayout from './components/ChartLayout';
 
 export function App() {
   const { i18n } = useTranslation();

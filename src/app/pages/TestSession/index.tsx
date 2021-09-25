@@ -1,6 +1,5 @@
-//@ts-nocheck
-import React, { useEffect } from 'react';
-
+// @ts-nocheck
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -20,6 +19,10 @@ import SubTabWrapper from './Features/SubTabWrapper';
 import { Route, Switch } from 'react-router';
 import TestCases from '../TestCases';
 import VideoAnalysis from '../VideoAnalysis';
+import AppProfiling from '../AppProfiling';
+import { Flex, Text } from '@chakra-ui/layout';
+import ExperienceKpi from '../ExperienceKpi';
+import HarAnalysis from '../HarAnalysis';
 
 export function TestSession() {
   const { actions } = useTestSessionSlice();
@@ -56,6 +59,15 @@ export function TestSession() {
     Completed,
   };
 
+  const [currentTabId, setCurrentTabId] = useState(
+    localStorage.getItem('tabid') || 1,
+  );
+
+  const tabHandler = e => {
+    localStorage.setItem('tabid', e.target.id);
+    setCurrentTabId(localStorage.getItem('tabid'));
+  };
+
   return (
     <>
       <Subheader
@@ -64,16 +76,16 @@ export function TestSession() {
       ></Subheader>
       <SubContainer>
         <DisplayTable testSessionData={testSessionData[0]}></DisplayTable>
-        <SubNavbar></SubNavbar>
+        <SubNavbar
+          tabHandler={tabHandler}
+          currentTabId={currentTabId}
+        ></SubNavbar>
         <SubTabWrapper>
-          <Switch>
-            <Route to="/">
-              <VideoAnalysis></VideoAnalysis>
-            </Route>
-            <Route to="/testcases">
-              <TestCases></TestCases>
-            </Route>
-          </Switch>
+          {currentTabId == 1 && <TestCases></TestCases>}
+          {currentTabId == 2 && <ExperienceKpi></ExperienceKpi>}
+          {currentTabId == 3 && <VideoAnalysis></VideoAnalysis>}
+          {currentTabId == 4 && <AppProfiling></AppProfiling>}
+          {currentTabId == 5 && <HarAnalysis></HarAnalysis>}
         </SubTabWrapper>
       </SubContainer>
     </>

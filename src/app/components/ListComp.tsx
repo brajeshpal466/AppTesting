@@ -24,12 +24,13 @@ function ListComp() {
       right="8.5px"
       top="38px"
       padding="0px 2px"
-      boxShadow="1px 1px 2px #dbc3c3"
+      boxShadow="1px 1px 2px grey6"
       width="198px"
+      background="white"
       boxSizing="border-box"
     >
       <Flex justifyContent="space-between" width="100%">
-        <Accordion allowMultiple backgroundColor="#ffffff" width="100%">
+        <Accordion allowMultiple backgroundColor="white" width="100%">
           <AccordionItem boxSizing="border-box">
             <h3>
               <AccordionButton
@@ -61,9 +62,9 @@ function ListComp() {
                 <Flex
                   fontSize="13px"
                   textTransform="capitalize"
-                  borderBottom="1px solid #f3e5e5"
+                  borderBottom="1px solid #dce3eb"
                   height="18px"
-                  backgroundColor="#fffff"
+                  backgroundColor=""
                   flexDirection="row"
                   justifyContent="space-between"
                 >

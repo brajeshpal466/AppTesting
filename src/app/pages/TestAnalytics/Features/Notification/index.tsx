@@ -1,4 +1,5 @@
 // do data fetching and pass data to Card or whatever
+// @ts-nocheck
 import React from 'react';
 import {
   Text,
@@ -7,6 +8,7 @@ import {
   Container,
   CloseButton,
   Badge,
+  Box,
   Center,
 } from '@chakra-ui/react';
 
@@ -16,10 +18,15 @@ import SearchBar from '../../components/SearchBar';
 import SelectComp from '../../components/SelectComp';
 function Notification({ items }) {
   console.log(items);
+  const closeHandler = () => {
+    document.getElementById('notification').style.display = 'none';
+  };
+
   return (
     <>
       <Flex
-        background="white"
+        id="notification"
+        background="white1"
         boxShadow="1px 1px 5px grey"
         padding="10px"
         height="100vh"
@@ -27,10 +34,17 @@ function Notification({ items }) {
         width="400px"
         position="fixed"
         right="0"
+        zIndex="3"
         top="0"
       >
-        <Flex justifyContent="flex-end">
-          <CloseButton size="sm" float="right" border="none" bgColor="#ffff" />
+        <Flex justifyContent="flex-end" backgroundColor="white1">
+          <CloseButton
+            size="sm"
+            float="right"
+            onClick={closeHandler}
+            border="none"
+            bgColor="white1"
+          />
         </Flex>
 
         <Flex
@@ -39,45 +53,37 @@ function Notification({ items }) {
           paddingBottom="10px"
         >
           <Flex as="span">
-            <NavLink to="/" style={{ textDecoration: 'none' }}>
-              Notification{' '}
-            </NavLink>
-
-            <Badge
-              ml="1"
-              padding="4px"
-              backgroundColor="red"
-              fontWeight="bold"
-              borderRadius="50%"
-              colorScheme="white"
-              fontSize="11px"
-              width="8px"
-              height="10px"
-              variant="solid"
-            >
-              <Center>2</Center>
-            </Badge>
+            <Text color="grey1">Notification</Text>
+            <Box right="-3px" top="-8px" marginLeft="1">
+              <Flex
+                backgroundColor="red1"
+                justifyContent="center"
+                color="white1"
+                alignItems="center"
+                borderRadius="50%"
+                height="20px"
+                width="20px"
+              >
+                1
+              </Flex>
+            </Box>
           </Flex>
 
           <Flex as="span">
-            <NavLink to="/alert" style={{ textDecoration: 'none' }}>
-              {' '}
-              Alert
-            </NavLink>
-            <Badge
-              ml="1"
-              padding="4px"
-              backgroundColor="red"
-              fontWeight="bold"
-              colorScheme="white"
-              borderRadius="50%"
-              fontSize="11px"
-              width="8px"
-              height="10px"
-              variant="solid"
-            >
-              <Center>3</Center>
-            </Badge>
+            <Text color="grey5">Alert</Text>
+            <Box right="-3px" top="-8px" marginLeft="1">
+              <Flex
+                backgroundColor="red1"
+                justifyContent="center"
+                color="white1"
+                alignItems="center"
+                borderRadius="50%"
+                height="20px"
+                width="20px"
+              >
+                1
+              </Flex>
+            </Box>
           </Flex>
         </Flex>
         <Flex justifyContent="space-around">
@@ -93,8 +99,16 @@ function Notification({ items }) {
           {items &&
             items.map(item => (
               <Card>
-                <Text as="span"> {item.date}</Text>
-                <Text>High memory uses for test run #{item.id}</Text>
+                <Text as="span" color="grey5">
+                  {' '}
+                  {item.date}
+                </Text>
+                <Text color="black1">
+                  High memory uses for test run
+                  <Text as="span" color="blue3">
+                    #{item.id}
+                  </Text>
+                </Text>
               </Card>
             ))}
         </Container>

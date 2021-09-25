@@ -11,8 +11,8 @@ function DropdownComp() {
       boxSizing="border-box"
       right="8.5px"
       top="5px"
-      backgroundColor="#ffffff"
-      boxShadow="1px 1px 2px #dbc3c3"
+      backgroundColor="white"
+      boxShadow="1px 1px 2px #DEDEDE "
     >
       <Select
         size="xs"
@@ -21,6 +21,7 @@ function DropdownComp() {
         variant="unstyled"
         placeholder="Select KPI  "
         paddingLeft="10px"
+        background="grey6"
       >
         {KpiList.map(option => (
           <option>{option}</option>

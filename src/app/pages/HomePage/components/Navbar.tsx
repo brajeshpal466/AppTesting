@@ -8,7 +8,7 @@ import {
   Heading,
   Text,
   Button,
-  Icon,
+  Badge,
   Container,
 } from '@chakra-ui/react';
 import ButtonComp from '../../../components/ButtonComp';
@@ -35,12 +35,14 @@ function Navbar() {
   const notificationHandler = () => {};
   return (
     <Flex
+      background="white1"
       height="50px"
       alignItems="center"
       position="sticky"
       justifyContent="space-between"
       boxShadow="1px 1px 4px grey"
-      backgroundColor="#ffffff"
+      backgroundColor="white1"
+      color="black2"
     >
       <Flex alignItems="center" height="100%">
         <Box height="40px" width="40px">
@@ -52,7 +54,9 @@ function Navbar() {
         <Text as="h2" fontSize="30px " paddingLeft="20px">
           Mozark
         </Text>
-        <Text paddingLeft="50px">App Testing</Text>
+        <Text paddingLeft="50px" color="black1">
+          App Testing
+        </Text>
       </Flex>
       <Flex alignItems="center" justifyContent="flex-end">
         <ButtonComp logo={<StartIcon></StartIcon>} color="#008EF0">
@@ -68,8 +72,23 @@ function Navbar() {
           {/* notification popup */}
           {/* <PopUpNotificationComp width="300px"  height="100vh" ></PopUpNotificationComp> */}
         </Box>
-        <Box margin="10px">
-          <img src={notification} alt="notification" />
+        <Box margin="10px" pos="relative">
+          <Box pos="absolute" right="-3px" top="-8px">
+            <Flex
+              backgroundColor="red1"
+              justifyContent="center"
+              color="white1"
+              alignItems="center"
+              borderRadius="50%"
+              height="24px"
+              width="24px"
+            >
+              1
+            </Flex>
+          </Box>
+          <Text>
+            <img src={notification} alt="notification" />
+          </Text>
         </Box>
         <Box margin="10px">
           <img src={userIcon} alt="notification" />

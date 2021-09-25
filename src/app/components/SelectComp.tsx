@@ -6,11 +6,12 @@ function SelectComp({ placeHolder, optionList, padding }) {
     <>
       <Select
         placeholder={placeHolder}
-        variant="filled"
+        variant=""
         size="md"
-        border="1px solid grey"
+        border="1px solid "
         outline="none"
         height="26px"
+        bg="white"
       >
         {optionList &&
           optionList.map((option, index) => {

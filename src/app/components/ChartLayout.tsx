@@ -38,58 +38,53 @@ export const labels = [
 ];
 function ChartLayout() {
   return (
-    <Flex flexDirection="column" justifyContent="center" marginLeft="5px">
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        marginTop="20px"
-        width="100%"
-      >
-        <Slider aria-label="slider-ex-1" defaultValue={30} colorScheme="red">
-          <SliderTrack>
-            <SliderFilledTrack />
-          </SliderTrack>
-          <SliderThumb
-            backgroundColor="red"
-            _focus={{
-              boxShadow: ' 0 0 0 red',
-            }}
-          />
-        </Slider>
-        <Flex
-          width="1031px"
-          position="sticky"
-          top="0px"
-          height="34px"
-          paddingBottom="20px "
-          alignItems="flex-start"
-          backgroundColor="#b3aaaa"
-          justifyContent="space-between"
-        >
-          {labels.map(item => (
-            <Flex fontSize="12px" alignItems="flex-start">
-              |{item}
-            </Flex>
-          ))}
-        </Flex>
-        <Flex
-          flexDirection="column"
-          pos="static"
-          overflow="scroll"
-          boxSizing="border-box"
-          overflowX="hidden"
-          css={{
-            '&::-webkit-scrollbar': {
-              width: '0px',
-              display: 'none',
-            },
+    <Flex flexDirection="column" marginTop="10px">
+      <Slider aria-label="slider-ex-1" defaultValue={10} colorScheme="red">
+        <SliderTrack bgColor="grey11">
+          <SliderFilledTrack />
+        </SliderTrack>
+        <SliderThumb
+          backgroundColor="red"
+          _focus={{
+            boxShadow: ' 0 0 0 red',
           }}
-        >
-          <Charts></Charts>
-          <Charts></Charts>
-          <Charts></Charts>
-          <Charts></Charts>
-        </Flex>
+        />
+      </Slider>
+      <Flex
+        position="sticky"
+        top="0px"
+        height="34px"
+        paddingBottom="20px "
+        alignItems="flex-start"
+        backgroundColor="grey4"
+        justifyContent="space-between"
+        zIndex="2"
+        width="99.9%"
+        justifyItems="flex-end"
+      >
+        {labels.map(item => (
+          <Flex fontSize="12px" alignItems="flex-start">
+            |{item}
+          </Flex>
+        ))}
+      </Flex>
+
+      <Flex
+        bgColor="red"
+        flexDirection="column"
+        overflow="scroll"
+        boxSizing="border-box"
+        css={{
+          '&::-webkit-scrollbar': {
+            width: '0px',
+            display: 'none',
+          },
+        }}
+      >
+        <Charts></Charts>
+        <Charts></Charts>
+        <Charts></Charts>
+        <Charts></Charts>
       </Flex>
     </Flex>
   );

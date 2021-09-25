@@ -1,17 +1,17 @@
-import { Flex } from '@chakra-ui/layout';
+import { Flex } from '@chakra-ui/react';
 import ChartLayout from 'app/components/ChartLayout';
 import React from 'react';
 import MobileDisplay from '../TestCases/components/MobileDisplay';
 
-function VideoAnalysis() {
+function AppProfiling() {
   return (
     <Flex flexDirection="row">
       <MobileDisplay></MobileDisplay>
-      <Flex width="100%" flexDirection="column">
+      <Flex flexDirection="column" flexGrow={1}>
         <ChartLayout></ChartLayout>
       </Flex>
     </Flex>
   );
 }
 
-export default VideoAnalysis;
+export default AppProfiling;

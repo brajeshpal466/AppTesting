@@ -5,15 +5,17 @@ function ButtonComp({ logo, color, children, buttonHandler }) {
   return (
     <>
       <Button
+        backgroundColor="white3"
         leftIcon={logo}
         cursor="pointer"
         onClick={buttonHandler}
-        textColor={color}
-        size="30"
+        textColor="blue1"
+        size="6"
+        fontSize="11"
         border="none"
-        borderRadius="3px"
-        margin="10px"
-        padding="3px"
+        borderRadius="1"
+        margin="2.5"
+        padding="2px 8px "
       >
         {children}
       </Button>

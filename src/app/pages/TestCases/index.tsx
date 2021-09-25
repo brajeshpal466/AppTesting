@@ -7,9 +7,9 @@ import TestCasesSummaryTable from './components/TestCasesSummaryTable';
 
 function TestCases() {
   return (
-    <Flex flexDirection="row">
+    <Flex>
       <MobileDisplay></MobileDisplay>
-      <Flex flexDirection="column" width="100%">
+      <Flex flexDirection="column" flexGrow={8}>
         <TestCasesChart></TestCasesChart>
         <TestCasesSummaryTable></TestCasesSummaryTable>
       </Flex>

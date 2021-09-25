@@ -32,6 +32,7 @@ function Sidebar() {
       position="absolute"
       left="0px"
       top="50px"
+      color="black2"
     >
       <Flex height="44px" alignItems="center" justifyContent="flex-end">
         <Box

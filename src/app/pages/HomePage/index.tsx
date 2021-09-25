@@ -1,4 +1,4 @@
-//@ts-nocheck
+// @ts-nocheck
 //import Subheader from './components/Subheader';
 import { Flex } from '@chakra-ui/react';
 import * as React from 'react';
@@ -15,22 +15,21 @@ import SubContainer from 'app/components/SubContainer';
 import { TestSession } from '../TestSession';
 export function HomePage() {
   return (
-    <>
+    <div backgroundColor="white2">
       <Navbar></Navbar>
       <Sidebar></Sidebar>
       <MainContainerWrapper>
         <Switch>
           <Route to="/">
             <TestSession></TestSession>
+            {/* <TestNotification></TestNotification> */}
           </Route>
-          <Route to="/testanalytics">
-            <TestNotification></TestNotification>
-          </Route>
+          <Route to="/testanalytics"></Route>
 
           {/*            
            <Route component={NotFoundPage} /> */}
         </Switch>
       </MainContainerWrapper>
-    </>
+    </div>
   );
 }

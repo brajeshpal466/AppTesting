@@ -4,12 +4,11 @@ export const Card = {
   // The styles all Cards have in common
   baseStyle: {
     display: 'flex',
+
     flexDirection: 'column',
-    background: 'white',
+    background: 'white3',
     alignItems: '',
     gap: 6,
-
-    marginBottom: '5px',
   },
   // Two variants: rounded and smooth
   variants: {
@@ -22,6 +21,7 @@ export const Card = {
       padding: 6,
       borderRadius: 'base',
       boxShadow: 'md',
+      paddingLeft: 4,
     },
   },
   // The default variant value
@@ -38,7 +38,14 @@ export function CardComponent(props) {
   // Pass the computed styles into the `__css` prop
   return (
     <>
-      <Box __css={styles} {...rest}>
+      <Box
+        __css={styles}
+        {...rest}
+        borderLeft="3px solid"
+        borderRadius="3px"
+        borderLeftColor="blue1"
+        marginBottom="10px"
+      >
         {children}
       </Box>
     </>

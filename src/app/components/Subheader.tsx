@@ -14,13 +14,14 @@ import InfoComp from './InfoComp';
 function Subheader({ infoStatusData, tabroute }) {
   return (
     <Flex
+      backgroundColor="white1"
       justifyContent="space-between"
       width="100%"
       alignItems="center"
       paddingLeft="20px"
     >
       <Flex>
-        <Breadcrumb textDecoration="none">
+        <Breadcrumb textDecoration="none" color="black2">
           {tabroute &&
             tabroute.map(route => (
               <BreadcrumbItem>

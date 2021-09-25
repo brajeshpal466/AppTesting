@@ -9,9 +9,10 @@ function SelectComp({ placeHolder }) {
         placeholder={placeHolder}
         variant="filled"
         size="md"
+        color="grey7"
         border="1px solid grey"
         outline="none"
-        height="26px"
+        height="35px"
       >
         {optionList &&
           optionList.map((option, index) => {
