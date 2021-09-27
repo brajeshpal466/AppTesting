@@ -21,7 +21,7 @@ export function HomePage() {
       <MainContainerWrapper>
         <Switch>
           <Route to="/">
-            <TestSession></TestSession>
+            {/* <TestSession></TestSession> */}
             <TestNotification></TestNotification>
           </Route>
           <Route to="/testanalytics"></Route>

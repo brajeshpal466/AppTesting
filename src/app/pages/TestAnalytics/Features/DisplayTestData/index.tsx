@@ -1,8 +1,8 @@
 // @ts-nocheck
 
 import React from 'react';
-import { TestAnalytics } from '../../components/Table';
 
+import TestAnalytics from '../../components/Table';
 function DisplaytableData() {
   return (
     <>

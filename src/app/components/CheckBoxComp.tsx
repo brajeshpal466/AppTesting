@@ -24,7 +24,7 @@ function CheckBoxComp() {
       </Flex>
       <Input
         variant="flushed"
-        _focus={{ color: '#fffff' }}
+        _focus={{ color: 'none' }}
         borderBottom="1px solid"
         borderBottomColor="black"
         width="30px"
