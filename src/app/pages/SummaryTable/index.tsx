@@ -24,7 +24,9 @@ import {
 } from './slice/selectors';
 import { summaryTableErrorType } from './slice/types';
 import { useSummaryTableSlice } from './slice';
+
 import StatusInfoComp from 'app/components/Subheader';
+import SummaryTableComp from 'app/components/SummaryTableComp';
 const tableHeader = ['Status', 'Time', 'Test Case', 'Details'];
 const summaryTableData = [
   {
@@ -143,26 +145,10 @@ export function SummaryTable() {
         ></StatusInfoComp>
       )} */}
 
-      <Table variant="simple" size="sm" width="100%">
-        {/* <TableCaption >Test CaseSummary</TableCaption> */}
-        <Thead>
-          <Tr>
-            {tableHeader.map(heading => (
-              <Th>{heading}</Th>
-            ))}
-          </Tr>
-        </Thead>
-        <Tbody>
-          {summaryTableData.map(item => (
-            <Tr>
-              <Td>{item.status}</Td>
-              <Td>{item.time}</Td>
-              <Td>{item.testcase}</Td>
-              <Td>{item.details}</Td>
-            </Tr>
-          ))}
-        </Tbody>
-      </Table>
+      <SummaryTableComp
+        tableHeader={tableHeader}
+        summaryTableData={summaryTableData}
+      ></SummaryTableComp>
     </>
   );
 }

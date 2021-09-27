@@ -86,7 +86,7 @@ function Notification({ items }) {
             </Box>
           </Flex>
         </Flex>
-        <Flex justifyContent="space-around">
+        <Flex justifyContent="space-around" marginTop="2" marginBottom="3">
           <Container>
             {' '}
             <SearchBar></SearchBar>

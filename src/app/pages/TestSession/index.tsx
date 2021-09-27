@@ -59,13 +59,10 @@ export function TestSession() {
     Completed,
   };
 
-  const [currentTabId, setCurrentTabId] = useState(
-    localStorage.getItem('tabid') || 1,
-  );
-
+  const [currentTabId, setCurrentTabId] = useState('testcase');
+  // document.getElementById("currentTabId").style.borderBottom ="3px solid blue";
   const tabHandler = e => {
-    localStorage.setItem('tabid', e.target.id);
-    setCurrentTabId(localStorage.getItem('tabid'));
+    setCurrentTabId(e.target.id);
   };
 
   return (
@@ -81,11 +78,11 @@ export function TestSession() {
           currentTabId={currentTabId}
         ></SubNavbar>
         <SubTabWrapper>
-          {currentTabId == 1 && <TestCases></TestCases>}
-          {currentTabId == 2 && <ExperienceKpi></ExperienceKpi>}
-          {currentTabId == 3 && <VideoAnalysis></VideoAnalysis>}
-          {currentTabId == 4 && <AppProfiling></AppProfiling>}
-          {currentTabId == 5 && <HarAnalysis></HarAnalysis>}
+          {currentTabId == 'testcase' && <TestCases></TestCases>}
+          {currentTabId == 'expkpi' && <ExperienceKpi></ExperienceKpi>}
+          {currentTabId == 'vdo' && <VideoAnalysis></VideoAnalysis>}
+          {currentTabId == 'app' && <AppProfiling></AppProfiling>}
+          {currentTabId == 'har' && <HarAnalysis></HarAnalysis>}
         </SubTabWrapper>
       </SubContainer>
     </>

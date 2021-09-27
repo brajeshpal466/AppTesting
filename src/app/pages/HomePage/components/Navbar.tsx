@@ -86,12 +86,12 @@ function Navbar() {
               1
             </Flex>
           </Box>
-          <Text>
+          <Text cursor="pointer" onClick={notificationHandler}>
             <img src={notification} alt="notification" />
           </Text>
         </Box>
-        <Box margin="10px">
-          <img src={userIcon} alt="notification" />
+        <Box margin="10px" cursor="pointer">
+          <img src={userIcon} alt="usericon" />
         </Box>
       </Flex>
     </Flex>

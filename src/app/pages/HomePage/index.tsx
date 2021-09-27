@@ -22,7 +22,7 @@ export function HomePage() {
         <Switch>
           <Route to="/">
             <TestSession></TestSession>
-            {/* <TestNotification></TestNotification> */}
+            <TestNotification></TestNotification>
           </Route>
           <Route to="/testanalytics"></Route>
 

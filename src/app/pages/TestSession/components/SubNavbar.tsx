@@ -1,15 +1,24 @@
 //@ts-nocheck
 import { Flex, Link, Text } from '@chakra-ui/react';
 import React from 'react';
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 function SubNavbar({ tabHandler, currentTabId }) {
+  const activeStyle = {
+    borderBottom: '3px solid #F51C5E',
+    borderRadius: '1px',
+  };
+  const inActiveStyle = {
+    ...activeStyle,
+    borderBottom: 'none',
+  };
+
   return (
     <Flex
       background="white"
       alignItems="center"
       justifyContent="flex-start"
       textTransform="uppercase"
-      padding="2px 5px"
       borderBottom="1px solid"
       borderBottomColor="grey1"
       borderTop="1px solid"
@@ -17,24 +26,53 @@ function SubNavbar({ tabHandler, currentTabId }) {
       color="black2"
     >
       <Text
-        paddingLeft="4"
-        id="1"
+        marginLeft="4"
+        id="testcase"
+        style={currentTabId !== 'testcase' ? inActiveStyle : activeStyle}
+        padding="2px 2px"
         onClick={tabHandler}
-        borderBottom
         cursor="pointer"
       >
         Test Cases
       </Text>
-      <Text paddingLeft="4" id="2" onClick={tabHandler} cursor="pointer">
+      <Text
+        marginLeft="4"
+        id="expkpi"
+        style={currentTabId !== 'expkpi' ? inActiveStyle : activeStyle}
+        padding="2px 2px"
+        onClick={tabHandler}
+        cursor="pointer"
+      >
         Experience KPI
       </Text>
-      <Text paddingLeft="4" id="3" onClick={tabHandler} cursor="pointer">
+      <Text
+        marginLeft="4"
+        id="vdo"
+        style={currentTabId !== 'vdo' ? inActiveStyle : activeStyle}
+        padding="2px 2px"
+        onClick={tabHandler}
+        cursor="pointer"
+      >
         Vedio Analysis
       </Text>
-      <Text paddingLeft="4" id="4" onClick={tabHandler} cursor="pointer">
+      <Text
+        marginLeft="4"
+        id="app"
+        style={currentTabId !== 'app' ? inActiveStyle : activeStyle}
+        padding="2px 2px"
+        onClick={tabHandler}
+        cursor="pointer"
+      >
         App Profiling
       </Text>
-      <Text paddingLeft="4" id="5" onClick={tabHandler} cursor="pointer">
+      <Text
+        marginLeft="4"
+        id="har"
+        style={currentTabId !== 'har' ? inActiveStyle : activeStyle}
+        padding="2px 2px"
+        onClick={tabHandler}
+        cursor="pointer"
+      >
         Har Analysis
       </Text>
     </Flex>
