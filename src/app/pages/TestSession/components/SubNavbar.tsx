@@ -53,7 +53,7 @@ function SubNavbar({ tabHandler, currentTabId }) {
         onClick={tabHandler}
         cursor="pointer"
       >
-        Vedio Analysis
+        Video Analysis
       </Text>
       <Text
         marginLeft="4"

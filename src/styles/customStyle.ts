@@ -3,7 +3,7 @@ const colors = {
   white2: '#EEF0F8', // body color   , har graph background
   grey1: '#7E8299', // table heading and search placeholder font color, session id table bottom border
   grey2: '#707070', // table border bottom, vertical dotted line ,x axes tick
-  blcak2: '#3F4254', // table data and subtitle(test analytics) and status type ,notification card and sessionid table data title (test run id#45) font color nad sibebar background color
+  grey13: '#3F4254', // table data and subtitle(test analytics) and status type ,notification card and sessionid table data title (test run id#45) font color nad sibebar background color
   white1: '#FFFFFF', // header ,subheader ,notification card , table layout backgraound color
   grey3: '#EDEDED', // table background color ,sessionid table background
   black2: '#1B1B28', // active sidebar link logo background color

@@ -1,3 +1,4 @@
+import { Image } from '@chakra-ui/image';
 import { Flex } from '@chakra-ui/layout';
 import React from 'react';
 import mobile from '../../../../styles/Assets/display.png';
@@ -7,10 +8,9 @@ function MobileDisplay() {
       height="371px"
       alignItems="center"
       justifyContent="center"
-      padding="40px 20px"
-      width="185px"
+      width="210px"
     >
-      <img src={mobile}></img>
+      <Image src={mobile}></Image>
     </Flex>
   );
 }

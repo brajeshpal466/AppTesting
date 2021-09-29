@@ -7,6 +7,7 @@ function SelectComp({ placeHolder }) {
     <>
       <Select
         placeholder={placeHolder}
+        background="white3"
         variant="filled"
         size="md"
         color="grey7"

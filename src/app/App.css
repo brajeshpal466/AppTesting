@@ -17,7 +17,7 @@
   }
   .sidebarShow{
     width: 63px;
-    transition: .3s ease-in-out;
+    transition: .1s ease-in-out;
     
   }.sidebarShow.active{
     width: 240px;

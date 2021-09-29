@@ -23,6 +23,7 @@ import AppProfiling from '../AppProfiling';
 import { Flex, Text } from '@chakra-ui/layout';
 import ExperienceKpi from '../ExperienceKpi';
 import HarAnalysis from '../HarAnalysis';
+import SubheaderSessionId from 'app/components/SubheaderSessionId';
 
 export function TestSession() {
   const { actions } = useTestSessionSlice();
@@ -49,15 +50,15 @@ export function TestSession() {
       evt.preventDefault();
     }
   };
-  const tabroute = ['Test Analytics', 'Test Session Id -148'];
-  let Passed: number = 0;
-  let Failed: number = 0;
-  let Completed: number = 0;
-  const infoStatusData = {
-    Passed,
-    Failed,
-    Completed,
-  };
+
+  // let Passed: number = 0;
+  // let Failed: number = 0;
+  // let Completed: number = 0;
+  // const infoStatusData = {
+  //   Passed,
+  //   Failed,
+  //   Completed,
+  // };
 
   const [currentTabId, setCurrentTabId] = useState('testcase');
   // document.getElementById("currentTabId").style.borderBottom ="3px solid blue";
@@ -67,10 +68,7 @@ export function TestSession() {
 
   return (
     <>
-      <Subheader
-        tabroute={tabroute}
-        infoStatusData={infoStatusData}
-      ></Subheader>
+      <SubheaderSessionId></SubheaderSessionId>
       <SubContainer>
         <DisplayTable testSessionData={testSessionData[0]}></DisplayTable>
         <SubNavbar

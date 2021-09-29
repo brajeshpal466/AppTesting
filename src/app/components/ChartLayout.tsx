@@ -36,10 +36,10 @@ export const labels = [
   '24',
   '25',
 ];
-function ChartLayout() {
+function ChartLayout({ children }) {
   return (
-    <Flex flexDirection="column" marginTop="10px">
-      <Slider aria-label="slider-ex-1" defaultValue={10} colorScheme="red">
+    <Flex flexDirection="column" marginTop="5px">
+      <Slider aria-label="slider-ex-1" defaultValue={5} colorScheme="red">
         <SliderTrack bgColor="grey11">
           <SliderFilledTrack />
         </SliderTrack>
@@ -70,10 +70,8 @@ function ChartLayout() {
       </Flex>
 
       <Flex
-        bgColor="red"
+        marginTop="10px"
         flexDirection="column"
-        overflow="scroll"
-        boxSizing="border-box"
         css={{
           '&::-webkit-scrollbar': {
             width: '0px',
@@ -81,10 +79,11 @@ function ChartLayout() {
           },
         }}
       >
+        {/* <Charts></Charts>
         <Charts></Charts>
         <Charts></Charts>
-        <Charts></Charts>
-        <Charts></Charts>
+        <Charts></Charts> */}
+        {children}
       </Flex>
     </Flex>
   );

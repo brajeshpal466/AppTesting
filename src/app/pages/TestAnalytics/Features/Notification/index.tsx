@@ -26,7 +26,7 @@ function Notification({ items }) {
     <>
       <Flex
         id="notification"
-        background="white1"
+        background="white"
         boxShadow="1px 1px 5px grey"
         padding="10px"
         height="100vh"
@@ -49,11 +49,17 @@ function Notification({ items }) {
 
         <Flex
           justifyContent="flex-start"
-          borderBottom="2px solid grey "
-          paddingBottom="10px"
+          borderBottom="2px solid  "
+          borderBottomColor="grey3"
         >
           <Flex as="span">
-            <Text color="grey1">Notification</Text>
+            <Text
+              color="grey1"
+              borderBottom="2px solid"
+              borderBottomColor="red1"
+            >
+              Notification
+            </Text>
             <Box right="-3px" top="-8px" marginLeft="1">
               <Flex
                 backgroundColor="red1"
@@ -95,7 +101,24 @@ function Notification({ items }) {
             <SelectComp placeHolder="7 days"></SelectComp>
           </Container>
         </Flex>
-        <Container padding="10px">
+        <Container
+          padding="10px"
+          fontSize="13px"
+          height="80%"
+          overflow="auto"
+          css={{
+            '&::-webkit-scrollbar': {
+              width: '5px',
+            },
+            '&::-webkit-scrollbar-track': {
+              boxShadow: 'inset 0 0 6px white',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              backgroundColor: '#F3F6F9',
+              height: '116px',
+            },
+          }}
+        >
           {items &&
             items.map(item => (
               <Card>

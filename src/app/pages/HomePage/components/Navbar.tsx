@@ -32,7 +32,9 @@ const StartIcon2 = () => {
   );
 };
 function Navbar() {
-  const notificationHandler = () => {};
+  const notificationHandler = () => {
+    document.getElementById('notification').style.display = 'block';
+  };
   return (
     <Flex
       background="white1"
@@ -75,6 +77,8 @@ function Navbar() {
         <Box margin="10px" pos="relative">
           <Box pos="absolute" right="-3px" top="-8px">
             <Flex
+              onClick={notificationHandler}
+              cursor="pointer"
               backgroundColor="red1"
               justifyContent="center"
               color="white1"
@@ -90,7 +94,7 @@ function Navbar() {
             <img src={notification} alt="notification" />
           </Text>
         </Box>
-        <Box margin="10px" cursor="pointer">
+        <Box margin="10px" cursor="pointer" cursor="pointer">
           <img src={userIcon} alt="usericon" />
         </Box>
       </Flex>

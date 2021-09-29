@@ -19,7 +19,8 @@ function SearchBar() {
         <Input
           size="xs"
           outline="none"
-          border="1px solid grey"
+          border="none"
+          background="white3"
           borderRadius="3px"
           height="35px"
           paddingLeft="20px"

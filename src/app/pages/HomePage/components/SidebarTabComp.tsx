@@ -6,7 +6,7 @@ import { Icon } from '@chakra-ui/react';
 function SidebarTabComp({ link, icon, children, sidebarToggle }) {
   return (
     <>
-      <Flex height="40px">
+      <Flex height="40px" color="grey5">
         <NavLink
           exact
           to={link}

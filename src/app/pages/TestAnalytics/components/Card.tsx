@@ -41,10 +41,14 @@ export function CardComponent(props) {
       <Box
         __css={styles}
         {...rest}
-        borderLeft="3px solid"
+        background="white"
+        padding="10px"
+        marginBottom="10px"
+        border="1px solid "
+        borderColor="white3"
+        borderLeft="3px solid "
         borderRadius="3px"
         borderLeftColor="blue1"
-        marginBottom="10px"
       >
         {children}
       </Box>

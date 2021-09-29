@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { Box, Container, Flex, Text } from '@chakra-ui/react';
+import { Box, Container, Flex, Img, Text } from '@chakra-ui/react';
 import React from 'react';
 import { Icon } from '@chakra-ui/icons';
 import { NavLink } from 'react-router-dom';
@@ -13,6 +13,8 @@ import interactIcon from '../../../../styles/Assets/Interact.svg';
 import deviceCloudIcon from '../../../../styles/Assets/device cloud.svg';
 import settingsIcon from '../../../../styles/Assets/settings.svg';
 import rightArrow from '../../../../styles/Assets/expand btn.png';
+import leftArrow from '../../../../styles/Assets/expand btn.png';
+
 function Sidebar() {
   const [sidebarToggle, setsidebarToggle] = useState(false);
   const handleSidebar = () => {
@@ -24,7 +26,7 @@ function Sidebar() {
   return (
     <Flex
       height="100vh"
-      background="#404040"
+      background="grey13"
       id="sidebarNav"
       className="sidebarShow "
       zIndex="2"
@@ -32,7 +34,6 @@ function Sidebar() {
       position="absolute"
       left="0px"
       top="50px"
-      color="black2"
     >
       <Flex height="44px" alignItems="center" justifyContent="flex-end">
         <Box
@@ -42,7 +43,14 @@ function Sidebar() {
           onClick={handleSidebar}
         >
           {' '}
-          <img src={rightArrow} alt="right" />
+          {!sidebarToggle && <Img src={rightArrow} alt="right" />}
+          {sidebarToggle && (
+            <img
+              style={{ transform: 'rotate(180deg)' }}
+              src={rightArrow}
+              alt="left"
+            />
+          )}
         </Box>
       </Flex>
       <SidebarTabComp
@@ -50,7 +58,7 @@ function Sidebar() {
         link={'/'}
         sidebarToggle={sidebarToggle}
       >
-        Test Analytcs{' '}
+        Test Analytics{' '}
       </SidebarTabComp>
       <SidebarTabComp
         icon={<img src={AutomationIcon} alt="img" />}

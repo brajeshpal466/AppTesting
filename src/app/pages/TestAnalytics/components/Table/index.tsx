@@ -1,4 +1,4 @@
-//@ts-nocheck
+// @ts-nocheck
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components/macro';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,12 +6,16 @@ import {
   Table as CustomTable,
   Thead,
   Tr,
+  Text,
+  Box,
+  Container,
   Td,
   Th,
   Tbody,
   Input,
   Flex,
 } from '@chakra-ui/react';
+
 // export function TestAnalytics() {
 //   return <h1>
 
@@ -54,7 +58,7 @@ function Table({ columns, data }) {
 
   // Render the UI for your table
   return (
-    <>
+    <Flex flexDirection="column" background="white">
       <CustomTable variant="simple" {...getTableProps()}>
         <Thead>
           {headerGroups.map(headerGroup => (
@@ -84,55 +88,57 @@ function Table({ columns, data }) {
         Pagination can be built however you'd like. 
         This is just a very basic UI implementation:
       */}
-      <Flex className="pagination" justifyContent="flex-end">
-        <Flex>
+      <Flex
+        justifyContent="flex-end"
+        padding="10px 0px"
+        marginRight="10px"
+        color="grey13"
+      >
+        <Flex
+          className="pagination"
+          boxShadow="1px 1px 3px #00000029"
+          borderRadius="14"
+          marginTop="10px"
+          marginRight="5px"
+          display="inline-block"
+        >
           <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            {'<  '}
+            {'< '}
           </button>{' '}
-          <span>
-            {' '}
+          <Text as="span" width="30px">
             <Input
-              isFullWidth="false"
-              size="xs"
               variant="flushed"
+              size="xs"
               _focus={{ color: 'none' }}
-              borderBottom="1px solid"
-              borderBottomColor="black"
-              width="20px"
+              textAlign="right"
+              fontSize="14px"
+              borderBottom="1.5px solid"
+              borderBottomColor="grey13"
+              ref={inputRef}
               type="number"
               value={pageIndex + 1}
+              onFocus={e => e.target.select()}
+              onKeyUp={e => {
+                if (e.key === 'Backspace') {
+                  e.target.select();
+                }
+              }}
               onChange={e => {
                 const page = e.target.value ? Number(e.target.value) - 1 : 0;
                 gotoPage(page);
               }}
-              style={{ width: '100px' }}
+              style={{ width: '60px' }}
             />
-          </span>{' '}
+          </Text>{' '}
           <span>
-            {' '}
             <span>of {pageOptions.length}</span>{' '}
           </span>
           <button onClick={() => nextPage()} disabled={!canNextPage}>
-            {'  >'}
+            {' >'}
           </button>{' '}
-          {/* <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {'>>'}
-        </button>{' '} */}
-          {/* <select
-          value={pageSize}
-          onChange={e => {
-            setPageSize(Number(e.target.value  ))
-          }}
-        >
-          {[10, 20, 30, 40, 50].map(pageSize => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
-            </option>
-          ))}
-        </select> */}
         </Flex>
       </Flex>
-    </>
+    </Flex>
   );
 }
 
