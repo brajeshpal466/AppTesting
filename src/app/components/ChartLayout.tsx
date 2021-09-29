@@ -79,10 +79,6 @@ function ChartLayout({ children }) {
           },
         }}
       >
-        {/* <Charts></Charts>
-        <Charts></Charts>
-        <Charts></Charts>
-        <Charts></Charts> */}
         {children}
       </Flex>
     </Flex>

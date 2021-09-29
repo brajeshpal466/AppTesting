@@ -99,7 +99,7 @@ function Table({ columns, data }) {
           boxShadow="1px 1px 3px #00000029"
           borderRadius="14"
           marginTop="10px"
-          marginRight="5px"
+          marginRight="5px "
           display="inline-block"
         >
           <button onClick={() => previousPage()} disabled={!canPreviousPage}>

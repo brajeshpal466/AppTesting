@@ -10,7 +10,7 @@ import {
   Container,
 } from '@chakra-ui/react';
 import React from 'react';
-import InfoComp from './InfoComp';
+import InfoComp from './SubheaderSessionId';
 
 function Subheader({ infoStatusData, tabroute }) {
   return (

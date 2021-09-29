@@ -19,11 +19,9 @@ function SubNavbar({ tabHandler, currentTabId }) {
       alignItems="center"
       justifyContent="flex-start"
       textTransform="uppercase"
-      borderBottom="1px solid"
+      borderBottom=".5  px solid"
       borderBottomColor="grey1"
-      borderTop="1px solid"
-      borderTopColor="grey1"
-      color="black2"
+      color="grey13"
     >
       <Text
         marginLeft="4"

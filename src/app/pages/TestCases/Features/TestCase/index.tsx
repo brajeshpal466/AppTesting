@@ -7,7 +7,7 @@ import useEventListener from './useEventLisner';
 
 const constants = {
   CANVAS_WIDTH: 600,
-  CANVAS_HEIGHT: 226,
+  CANVAS_HEIGHT: 221,
 };
 //   red: [5, 8, 50, 60, 65, 70, 120, 180],
 //   green: [15, 18, 30, 70, 90],
@@ -150,7 +150,7 @@ export function TestCasesChart() {
     ctx.beginPath();
     ctx.moveTo(record.value, 0);
     ctx.lineTo(record.value, constants.CANVAS_HEIGHT);
-    ctx.strokeStyle = record.type == 'red' ? 'red' : 'green';
+    ctx.strokeStyle = record.type == 'red' ? '#FF0C03' : '#18D27A';
     ctx.stroke();
     // currentXPosition.current = x + constants.CANVAS_HEIGHT;
     linePositions.current.push({
