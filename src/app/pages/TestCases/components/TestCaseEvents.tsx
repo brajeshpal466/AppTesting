@@ -1,15 +1,29 @@
-import { Flex, Text, List, UnorderedList, ListItem } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  List,
+  UnorderedList,
+  ListItem,
+  ListIcon,
+  Box,
+} from '@chakra-ui/react';
+import LabelComp from 'app/components/LabelComp';
 import React from 'react';
 
 function TestCaseEvents() {
   return (
-    <Flex justifyContent="space-between" padding="5px">
+    <Flex
+      justifyContent="space-between"
+      padding="5px"
+      color="grey13"
+      fontSize="13px"
+    >
       <Text>Test Cases</Text>
-      <List display="flex">
-        <ListItem> Events</ListItem>
-        <ListItem> Events</ListItem>
-        <ListItem> Events</ListItem>
-      </List>
+      <Flex>
+        <LabelComp color="red">Events</LabelComp>
+        <LabelComp color="red">Failed Test Case</LabelComp>
+        <LabelComp color="green">Passed Test Case</LabelComp>
+      </Flex>
     </Flex>
   );
 }

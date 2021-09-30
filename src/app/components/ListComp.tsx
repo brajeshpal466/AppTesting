@@ -9,6 +9,7 @@ import {
   Box,
   AccordionPanel,
 } from '@chakra-ui/react';
+import copyIcon from '../../styles/Assets/Icon material-content-copy.svg';
 import React from 'react';
 
 const cpuData = [
@@ -16,6 +17,10 @@ const cpuData = [
   { name: 'max', val: '56%' },
   { name: 'min', val: '0%' },
 ];
+
+const CopyIcon = () => {
+  return <img src={copyIcon} alt="copy"></img>;
+};
 
 function ListComp() {
   return (
@@ -38,15 +43,19 @@ function ListComp() {
                 size="xs"
                 height="24px"
                 border="none"
-                BackgroundColor="#ffffff"
+                BackgroundColor="white"
                 _focus={{
                   boxShadow: ' 0 0 0 #ffffff',
                 }}
                 _hover={{ backgroundColor: '#ffffff' }}
               >
-                <Box flex="1" textAlign="left" fontSize="12px">
+                <Box flex="1" textAlign="left" fontSize="12px" display="flex">
                   CPU usage
+                  <Box paddingLeft="7px">
+                    <CopyIcon />
+                  </Box>
                 </Box>
+
                 <AccordionIcon />
               </AccordionButton>
             </h3>

@@ -9,10 +9,8 @@ function ExperienceKpi() {
   return (
     <Flex>
       <MobileDisplay></MobileDisplay>
-      <Flex flexDirection="column" flexGrow={8}>
-        <ChartLayout>
-          <TestCasesChart></TestCasesChart>
-        </ChartLayout>
+      <Flex flexDirection="column" flexGrow={1}>
+        <ChartLayout>{/* <TestCasesChart></TestCasesChart> */}</ChartLayout>
         <TestCasesSummaryTable></TestCasesSummaryTable>
       </Flex>
     </Flex>

@@ -25,6 +25,16 @@ import {
 import { useTable, usePagination } from 'react-table';
 
 import makeData from './makeData';
+import settingIcon from '../../../../../styles/Assets/file-cog-outline.svg';
+
+const SettingIcon = () => {
+  return (
+    <Box width="40px">
+      {' '}
+      <img src={settingIcon} alt="settings"></img>
+    </Box>
+  );
+};
 
 function Table({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
@@ -74,6 +84,7 @@ function Table({ columns, data }) {
             prepareRow(row);
             return (
               <Tr {...row.getRowProps()}>
+                {/*  <SettingIcon/> */}
                 {row.cells.map(cell => {
                   return (
                     <Td {...cell.getCellProps()}>{cell.render('Cell')}</Td>
@@ -96,10 +107,12 @@ function Table({ columns, data }) {
       >
         <Flex
           className="pagination"
-          boxShadow="1px 1px 3px #00000029"
+          boxShadow="1px 2px 4px #00000029"
           borderRadius="14"
           marginTop="10px"
           marginRight="5px "
+          paddingRight="10px"
+          paddingLeft="10px"
           display="inline-block"
         >
           <button onClick={() => previousPage()} disabled={!canPreviousPage}>

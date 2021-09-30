@@ -16,11 +16,12 @@ function DropdownComp() {
     >
       <Select
         size="xs"
-        width="100%"
+        width="95%"
         height="100%"
         variant="unstyled"
         placeholder="Select KPI  "
-        paddingLeft="10px"
+        paddingLeft="16px"
+        paddingRight="15px"
         background="white"
       >
         {KpiList.map(option => (

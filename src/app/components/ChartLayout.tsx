@@ -64,7 +64,7 @@ function ChartLayout({ children }) {
       >
         {labels.map(item => (
           <Flex fontSize="12px" alignItems="flex-start">
-            |{item}
+            |{item}s
           </Flex>
         ))}
       </Flex>
@@ -72,6 +72,9 @@ function ChartLayout({ children }) {
       <Flex
         marginTop="10px"
         flexDirection="column"
+        border=" 1px solid "
+        borderColor="grey4"
+        background="white5"
         css={{
           '&::-webkit-scrollbar': {
             width: '0px',
