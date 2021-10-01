@@ -1,29 +1,14 @@
-/* tabs tabs container css  */
-.mainContainer{
-    display: flex;
-    margin-left: 60px;
-    flex-direction: row;
-  
-    
-  }
-  .searchbar{
-    padding: 5px;
-    width: 300px;
-    outline: none;
-    color: grey;
-    border: .5px solid rgb(214, 211, 211);
-    border-radius: 3px;
-  
-  }
-  .sidebarShow{
-    width: 63px;
-    transition: .1s ease-in-out;
-    
-  }.sidebarShow.active{
-    width: 240px;
-  
-  }
-  
+/* @font-face {
+  font-family: 'Gotham-Book';
+  src: url('gotham-book.eot');
+  src: url('gotham-book.eot?#iefix') format('embedded-opentype'),
+       url('gotham-book.woff') format('woff'),
+       url('gotham-book.ttf') format('truetype'),
+       url('gotham-book.svg#gotham-book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+} */
+
   
    /* active class  styling */
   
@@ -36,5 +21,5 @@
      color: blue;
    }
    .activeLink .flex .text{
-    color:white;
+    color:#FAFBFC;
   }

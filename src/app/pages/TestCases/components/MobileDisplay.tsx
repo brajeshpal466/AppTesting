@@ -4,8 +4,8 @@ import React from 'react';
 import mobile from '../../../../styles/Assets/display.png';
 function MobileDisplay() {
   return (
-    <Flex width="272px" justifyContent="center">
-      <Image width="185px" height="371px" marginTop="30px" src={mobile}></Image>
+    <Flex width="270px" justifyContent="center">
+      <Image width="185px" height="371px" marginTop="4" src={mobile}></Image>
     </Flex>
   );
 }

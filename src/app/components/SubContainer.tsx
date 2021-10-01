@@ -3,15 +3,17 @@ import React from 'react';
 
 function SubContainer({ children }) {
   return (
-    <Flex
-      background="grey3"
-      border="15px solid "
-      borderColor="white2"
-      flexDirection="column"
-      flexWrap="nowrap"
-      padding="px 0px"
-    >
-      {children}
+    <Flex border="15px solid " borderColor="white2">
+      <Flex
+        border="1px solid"
+        borderColor="grey3"
+        flexDirection="column"
+        borderRadius="3"
+        flexWrap="nowrap"
+        padding="0"
+      >
+        {children}
+      </Flex>
     </Flex>
   );
 }

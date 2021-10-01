@@ -10,7 +10,14 @@ function ExperienceKpi() {
     <Flex>
       <MobileDisplay></MobileDisplay>
       <Flex flexDirection="column" flexGrow={1}>
-        <ChartLayout>{/* <TestCasesChart></TestCasesChart> */}</ChartLayout>
+        <ChartLayout>
+          {/*
+        
+        <TestCasesChart></TestCasesChart> */}
+          <Flex height="221px" alignItems="center" justifyContent="center">
+            Experience Kpi chart is not ready
+          </Flex>
+        </ChartLayout>
         <TestCasesSummaryTable></TestCasesSummaryTable>
       </Flex>
     </Flex>

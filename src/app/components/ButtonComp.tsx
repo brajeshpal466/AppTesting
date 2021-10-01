@@ -15,7 +15,7 @@ function ButtonComp({ logo, color, children, buttonHandler, padding }) {
         border="none"
         borderRadius="1"
         margin="2.5"
-        padding={padding || '4px 10px '}
+        padding={padding || '.4em .8em'}
       >
         {children}
       </Button>

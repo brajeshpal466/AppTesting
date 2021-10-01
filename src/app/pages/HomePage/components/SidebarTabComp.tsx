@@ -6,7 +6,7 @@ import { Icon } from '@chakra-ui/react';
 function SidebarTabComp({ link, icon, children, sidebarToggle }) {
   return (
     <>
-      <Flex height="40px" color="grey5">
+      <Flex height="50px" color="grey5">
         <NavLink
           exact
           to={link}
@@ -15,7 +15,7 @@ function SidebarTabComp({ link, icon, children, sidebarToggle }) {
           activeClassName="activeLink"
         >
           <Flex height="100%" alignItems="center" className="flex">
-            <Box className="box" width="30" height="30" margin=" 0px 13px">
+            <Box className="box" width="24px" height="24px" margin=" 0px 13px">
               {/* <Icon as={icon}  w={30} h={30} margin=" 0px 13px" ></Icon> */}
               {icon}
             </Box>

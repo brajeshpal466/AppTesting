@@ -8,7 +8,7 @@ function CheckBoxComp() {
     <Flex
       position="absolute"
       right="220px"
-      top="12px"
+      top="10px"
       flexDirection="row"
       justifyContent="center"
       alignItems="center"

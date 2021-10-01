@@ -20,7 +20,7 @@ import { Route, Switch } from 'react-router';
 import TestCases from '../TestCases';
 import VideoAnalysis from '../VideoAnalysis';
 import AppProfiling from '../AppProfiling';
-import { Flex, Text } from '@chakra-ui/layout';
+import { Container, Flex, Text } from '@chakra-ui/layout';
 import ExperienceKpi from '../ExperienceKpi';
 import HarAnalysis from '../HarAnalysis';
 import SubheaderSessionId from 'app/components/SubheaderSessionId';

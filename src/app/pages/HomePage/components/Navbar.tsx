@@ -38,42 +38,36 @@ function Navbar() {
   return (
     <Flex
       background="white1"
-      height="50px"
+      height="70px"
       alignItems="center"
       position="sticky"
+      zIndex="2"
       justifyContent="space-between"
       boxShadow="1px 1px 4px grey"
       backgroundColor="white1"
       color="black2"
     >
       <Flex alignItems="center" height="100%">
-        <Box height="40px" width="40px">
-          <Image
-            src="https://mozark.ai/wp-content/uploads/2020/01/cropped-mozark-logo-ws-280x280.png"
-            alt="Brand"
-          />
-        </Box>
-        <Text as="h2" fontSize="30px " paddingLeft="20px">
-          Mozark
-        </Text>
-        <Text paddingLeft="50px" color="black1">
+        <Flex width="183px" alignItems="center" height="50px">
+          <Box paddingLeft="10px" height="40px" width="50px">
+            <Image
+              src="https://mozark.ai/wp-content/uploads/2020/01/cropped-mozark-logo-ws-280x280.png"
+              alt="Brand"
+            />
+          </Box>
+          <Text as="h2" fontSize="1.8rem " paddingLeft="15px">
+            Mozark
+          </Text>
+        </Flex>
+
+        <Text marginLeft="8" color="black1">
           App Testing
         </Text>
       </Flex>
-      <Flex alignItems="center" justifyContent="flex-end">
-        <ButtonComp logo={<StartIcon></StartIcon>} color="#008EF0">
-          START
-        </ButtonComp>
-        <ButtonComp logo={<StartIcon2></StartIcon2>} color="#008EF0">
-          STOP
-        </ButtonComp>
-        <Box margin-right="10px" position="">
-          <Box buttonHandler={notificationHandler} w={25} h={25} color="grey">
-            {' '}
-          </Box>
-          {/* notification popup */}
-          {/* <PopUpNotificationComp width="300px"  height="100vh" ></PopUpNotificationComp> */}
-        </Box>
+      <Flex alignItems="center" justifyContent="flex-end" marginRight="4">
+        <ButtonComp logo={<StartIcon></StartIcon>}>START</ButtonComp>
+        <ButtonComp logo={<StartIcon2></StartIcon2>}>STOP</ButtonComp>
+
         <Box margin="10px" pos="relative">
           <Box pos="absolute" right="-3px" top="-8px">
             <Flex
@@ -90,11 +84,11 @@ function Navbar() {
               1
             </Flex>
           </Box>
-          <Text cursor="pointer" onClick={notificationHandler}>
+          <Text cursor="pointer" width="8" onClick={notificationHandler}>
             <img src={notification} alt="notification" />
           </Text>
         </Box>
-        <Box margin="10px" cursor="pointer" cursor="pointer">
+        <Box margin="10px" width="8" cursor="pointer" cursor="pointer">
           <img src={userIcon} alt="usericon" />
         </Box>
       </Flex>

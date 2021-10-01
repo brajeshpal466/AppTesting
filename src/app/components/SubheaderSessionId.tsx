@@ -23,6 +23,7 @@ function SubheaderSessionId() {
         alignItems="center"
         paddingLeft="20px"
         color="grey13"
+        height="60px"
       >
         <Flex>
           <Breadcrumb textDecoration="none" color="black2">

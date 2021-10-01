@@ -79,8 +79,8 @@ const options = {
       color: '#cababa',
       fullSize: true,
       padding: {
-        top: 24,
-        bottom: 73,
+        top: 17,
+        bottom: 80,
       },
     },
 

@@ -2,6 +2,7 @@ export const Table = {
   parts: ['th', 'td', 'tr'],
   baseStyle: {
     backgroundColor: 'grey3',
+    width: '100%',
     padding: '2',
     th: {
       color: 'grey1',

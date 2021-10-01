@@ -20,6 +20,7 @@ function Subheader({ infoStatusData, tabroute }) {
       width="100%"
       alignItems="center"
       paddingLeft="20px"
+      height="60px"
     >
       <Flex>
         <Breadcrumb textDecoration="none" color="black2">

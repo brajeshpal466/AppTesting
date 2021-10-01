@@ -13,41 +13,62 @@ import interactIcon from '../../../../styles/Assets/Interact.svg';
 import deviceCloudIcon from '../../../../styles/Assets/device cloud.svg';
 import settingsIcon from '../../../../styles/Assets/settings.svg';
 import rightArrow from '../../../../styles/Assets/expand btn.png';
-import leftArrow from '../../../../styles/Assets/expand btn.png';
+import leftArrow from '../../../../styles/Assets/expand btn@2x.png';
 
 function Sidebar() {
   const [sidebarToggle, setsidebarToggle] = useState(false);
   const handleSidebar = () => {
     setsidebarToggle(!sidebarToggle);
-    const sidebarElement = document.getElementById('sidebarNav');
-    sidebarElement.classList.toggle('active');
+    // const sidebarElement = document.getElementById('sidebarNav');
+    // sidebarElement.classList.toggle('active');
+  };
+
+  const sideShow = {
+    width: '63px',
+    transition: '.1s ease-in-out',
+  };
+  const sideShowActive = {
+    ...sideShow,
+    width: '240px',
   };
 
   return (
     <Flex
       height="100vh"
       background="grey13"
-      id="sidebarNav"
+      style={sidebarToggle ? sideShowActive : sideShow}
       className="sidebarShow "
       zIndex="2"
       flexDirection="column"
       position="absolute"
       left="0px"
-      top="50px"
+      top="70px"
     >
-      <Flex height="44px" alignItems="center" justifyContent="flex-end">
+      <Flex
+        position="fixed"
+        onClick={handleSidebar}
+        display={sidebarToggle ? 'block' : 'none'}
+        left="240px"
+        top="70px"
+        width="100%"
+        height="100vh"
+        zIndex="0"
+        background="grey14"
+      ></Flex>
+      <Flex height="60px" alignItems="center" justifyContent="flex-end">
         <Box
           position="relative"
           right="-17px"
           width="32px"
+          height="32px"
           onClick={handleSidebar}
         >
           {' '}
-          {!sidebarToggle && <Img src={rightArrow} alt="right" />}
+          {!sidebarToggle && <Img src={leftArrow} alt="right" />}
           {sidebarToggle && (
             <img
               style={{ transform: 'rotate(180deg)' }}
-              src={rightArrow}
+              src={leftArrow}
               alt="left"
             />
           )}

@@ -32,6 +32,7 @@ const colors = {
   blue7: '#008EE0',
   grey11: '#A8A8A8', //slider
   green2: '#30A74C', //
+  grey14: '#3F425429', //
 };
 
 export const theme = extendTheme({

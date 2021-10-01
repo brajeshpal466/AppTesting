@@ -7,7 +7,7 @@ import useEventListener from './useEventLisner';
 
 const constants = {
   CANVAS_WIDTH: 600,
-  CANVAS_HEIGHT: 221,
+  CANVAS_HEIGHT: 149,
 };
 //   red: [5, 8, 50, 60, 65, 70, 120, 180],
 //   green: [15, 18, 30, 70, 90],
