@@ -26,8 +26,8 @@ function Notification({ items }) {
     <>
       <Flex
         id="notification"
-        background="white"
-        boxShadow="1px 1px 5px grey"
+        background="white1"
+        boxShadow="0px 3px  #00000029"
         padding="10px"
         height="100vh"
         flexDirection="column"
@@ -37,12 +37,22 @@ function Notification({ items }) {
         zIndex="3"
         top="0"
       >
-        <Flex justifyContent="flex-end" backgroundColor="white1">
+        <Flex
+          top="0"
+          onClick={closeHandler}
+          right="400px"
+          backgroundColor="grey14"
+          width="100%"
+          height="100%"
+          position="fixed"
+        ></Flex>
+        <Flex justifyContent="flex-end" backgroundColor="white1" padding="2">
           <CloseButton
-            size="sm"
+            size="2px "
             float="right"
             onClick={closeHandler}
             border="none"
+            color="grey2"
             bgColor="white1"
           />
         </Flex>
@@ -58,7 +68,7 @@ function Notification({ items }) {
               borderBottom="2px solid"
               borderBottomColor="red1"
             >
-              Notification
+              NOTIFICATIONS
             </Text>
             <Box right="-3px" top="-8px" marginLeft="1">
               <Flex
@@ -75,8 +85,8 @@ function Notification({ items }) {
             </Box>
           </Flex>
 
-          <Flex as="span">
-            <Text color="grey5">Alert</Text>
+          <Flex as="span" marginLeft="5">
+            <Text color="grey5">ALERTS</Text>
             <Box right="-3px" top="-8px" marginLeft="1">
               <Flex
                 backgroundColor="red1"

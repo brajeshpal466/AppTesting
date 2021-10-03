@@ -6,7 +6,7 @@ import React from 'react';
 import TestAnalytics from '../../components/Table';
 function DisplaytableData() {
   return (
-    <Flex padding="1em" background="white" borderRadius="2">
+    <Flex padding="1em" background="white" borderRadius="2" width="100%">
       <TestAnalytics></TestAnalytics>
     </Flex>
   );

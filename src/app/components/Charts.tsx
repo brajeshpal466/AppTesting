@@ -96,7 +96,7 @@ const options = {
   scales: {
     x: {
       display: false,
-      backgroundColor: '#ffffff',
+      backgroundColor: 'white',
       borderBottom: '1px solid black',
       padding: '20px',
       grid: {
@@ -140,8 +140,8 @@ function Charts() {
   return (
     <Flex
       flexWrap="nowrap"
-      border="1px solid #f0e7e7"
-      borderTop="1px solid #c7b3b3"
+      border="1px solid "
+      borderColor="grey6"
       borderRadius="3px"
       height="207px"
       position="relative"

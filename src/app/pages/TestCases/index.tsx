@@ -12,7 +12,12 @@ function TestCases() {
   return (
     <Flex flexDirection="row" color="grey13">
       <MobileDisplay></MobileDisplay>
-      <Flex flexDirection="column" flexGrow={1}>
+      <Flex
+        flexDirection="column"
+        flexGrow={1}
+        border="1px solid"
+        borderColor="grey6"
+      >
         <ChartLayout>
           <TestCasesChart></TestCasesChart>
         </ChartLayout>

@@ -36,25 +36,26 @@ function Subheader({ infoStatusData, tabroute }) {
       </Flex>
       <Flex
         height="44px"
+        width="269px"
         alignItems="center"
         flexDirection="row"
-        justifyContent="center"
+        justifyContent="space-between"
         padding="5px"
-        marginRight="5"
+        marginRight="7"
       >
-        <Flex marginLeft="10px">
+        <Flex marginLeft="0px">
           <Text as="b" paddingRight="5px">
             5
           </Text>
           <Text color="grey13">Running </Text>
         </Flex>
-        <Flex marginLeft="10px">
+        <Flex marginLeft="0px">
           <Text as="b" paddingRight="5px">
             2
           </Text>
           <Text color="grey13">Queued </Text>
         </Flex>
-        <Flex marginLeft="10px">
+        <Flex marginLeft="0px">
           <Text as="b" paddingRight="5px">
             1
           </Text>

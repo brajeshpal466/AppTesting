@@ -40,15 +40,16 @@ function Navbar() {
       background="white1"
       height="70px"
       alignItems="center"
+      boxSizing="border-box"
       position="sticky"
       zIndex="2"
       justifyContent="space-between"
-      boxShadow="1px 1px 4px grey"
+      boxShadow="0px 3px 6px #00000029"
       backgroundColor="white1"
       color="black2"
     >
       <Flex alignItems="center" height="100%">
-        <Flex width="183px" alignItems="center" height="50px">
+        <Flex width="" alignItems="center" height="50px">
           <Box paddingLeft="10px" height="40px" width="50px">
             <Image
               src="https://mozark.ai/wp-content/uploads/2020/01/cropped-mozark-logo-ws-280x280.png"
@@ -56,7 +57,7 @@ function Navbar() {
             />
           </Box>
           <Text as="h2" fontSize="1.8rem " paddingLeft="15px">
-            Mozark
+            MOZARK
           </Text>
         </Flex>
 
@@ -64,11 +65,19 @@ function Navbar() {
           App Testing
         </Text>
       </Flex>
-      <Flex alignItems="center" justifyContent="flex-end" marginRight="4">
-        <ButtonComp logo={<StartIcon></StartIcon>}>START</ButtonComp>
-        <ButtonComp logo={<StartIcon2></StartIcon2>}>STOP</ButtonComp>
+      <Flex alignItems="center" justifyContent="space-evenly" marginRight="4">
+        <ButtonComp width="95px" logo={<StartIcon></StartIcon>}>
+          START
+        </ButtonComp>
+        <ButtonComp
+          width="95px"
+          padding=".4em 0em"
+          logo={<StartIcon2></StartIcon2>}
+        >
+          STOP
+        </ButtonComp>
 
-        <Box margin="10px" pos="relative">
+        <Box pos="relative">
           <Box pos="absolute" right="-3px" top="-8px">
             <Flex
               onClick={notificationHandler}

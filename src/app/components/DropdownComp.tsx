@@ -21,7 +21,7 @@ function DropdownComp() {
         variant="unstyled"
         placeholder="Select KPI  "
         paddingLeft="16px"
-        paddingRight="15px"
+        paddingRight="10px"
         background="white"
       >
         {KpiList.map(option => (

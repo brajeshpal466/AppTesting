@@ -1,7 +1,7 @@
 //@ts-nocheck
 import React from 'react';
 import { Button } from '@chakra-ui/react';
-function ButtonComp({ logo, color, children, buttonHandler, padding }) {
+function ButtonComp({ logo, color, children, buttonHandler, padding, width }) {
   return (
     <>
       <Button
@@ -12,10 +12,11 @@ function ButtonComp({ logo, color, children, buttonHandler, padding }) {
         textColor="blue1"
         size="6"
         fontSize="11"
+        width={width}
         border="none"
         borderRadius="1"
         margin="2.5"
-        padding={padding || '.4em .8em'}
+        padding={padding || '.6em 0em'}
       >
         {children}
       </Button>

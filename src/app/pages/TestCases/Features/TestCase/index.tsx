@@ -204,6 +204,8 @@ export function TestCasesChart() {
       </Helmet>
 
       <canvas
+        border=" 1px solid "
+        borderColor="grey4"
         data-testid="canvas"
         id="canvas"
         ref={canvasRef}

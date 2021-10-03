@@ -72,8 +72,6 @@ function ChartLayout({ children }) {
       <Flex
         marginTop="10px"
         flexDirection="column"
-        border=" 1px solid "
-        borderColor="grey4"
         background="white5"
         css={{
           '&::-webkit-scrollbar': {

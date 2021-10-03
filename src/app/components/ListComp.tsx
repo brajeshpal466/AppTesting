@@ -43,6 +43,7 @@ function ListComp() {
                 size="xs"
                 height="24px"
                 border="none"
+                paddingRight="14px"
                 paddingLeft="3.5"
                 BackgroundColor="white"
                 _focus={{

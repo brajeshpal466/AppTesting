@@ -3,7 +3,7 @@ import React from 'react';
 
 function SubContainer({ children }) {
   return (
-    <Flex border="15px solid " borderColor="white2">
+    <Flex border="15px solid " width="100%" borderColor="white2">
       <Flex
         border="1px solid"
         borderColor="grey3"
@@ -11,6 +11,7 @@ function SubContainer({ children }) {
         borderRadius="3"
         flexWrap="nowrap"
         padding="0"
+        width="100%"
       >
         {children}
       </Flex>

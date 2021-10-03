@@ -46,8 +46,12 @@ function SubheaderSessionId() {
           marginRight="5"
           boxSizing="border-box"
         >
-          <ButtonComp padding="8px 10px">RE-RUN</ButtonComp>
-          <ButtonComp padding="8px 10px">RAISE BUG</ButtonComp>
+          <ButtonComp padding="8px 0px" width="110px">
+            RE-RUN
+          </ButtonComp>
+          <ButtonComp padding="8px 0px " width="110px">
+            RAISE BUG
+          </ButtonComp>
           <Flex
             marginLeft="10px"
             alignItems="center"

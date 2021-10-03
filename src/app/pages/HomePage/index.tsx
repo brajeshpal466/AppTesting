@@ -2,6 +2,7 @@
 //import Subheader from './components/Subheader';
 import { Flex } from '@chakra-ui/react';
 import * as React from 'react';
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import MainContainerWrapper from 'app/components/MainContainerWrapper';
@@ -14,11 +15,24 @@ import { NotFoundPage } from 'app/components/NotFoundPage';
 import SubContainer from 'app/components/SubContainer';
 import { TestSession } from '../TestSession';
 export function HomePage() {
+  const [sidebarToggle, setsidebarToggle] = useState(false);
+  const handleSidebar = () => {
+    setsidebarToggle(!sidebarToggle);
+    // const sidebarElement = document.getElementById('sidebarNav');
+    // sidebarElement.classList.toggle('active');
+  };
+
   return (
-    <div backgroundColor="white2">
+    <div>
       <Navbar></Navbar>
-      <Sidebar></Sidebar>
-      <MainContainerWrapper>
+      <Sidebar
+        handleSidebar={handleSidebar}
+        sidebarToggle={sidebarToggle}
+      ></Sidebar>
+      <MainContainerWrapper
+        sidebarToggle={sidebarToggle}
+        handleSidebar={handleSidebar}
+      >
         <Switch>
           <Route to="/">
             <TestSession></TestSession>

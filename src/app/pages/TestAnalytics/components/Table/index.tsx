@@ -68,7 +68,7 @@ function Table({ columns, data }) {
 
   // Render the UI for your table
   return (
-    <Flex flexDirection="column" width="100%">
+    <Flex flexDirection="column" width="100%" backgroundColor="white">
       <CustomTable variant="simple" {...getTableProps()}>
         <Thead>
           {headerGroups.map(headerGroup => (
