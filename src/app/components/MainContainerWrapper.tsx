@@ -6,10 +6,12 @@ function MainContainerWrapper({ children, sidebarToggle, handleSidebar }) {
   return (
     <>
       <Flex
+        fontSize="14px"
         marginLeft="63px"
         background="white2"
         flexDirection="column"
         position="relative"
+        fontWeight="medium"
       >
         <Flex
           position="absolute"

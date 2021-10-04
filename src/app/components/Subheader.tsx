@@ -22,7 +22,7 @@ function Subheader({ infoStatusData, tabroute }) {
       paddingLeft="20px"
       height="60px"
     >
-      <Flex>
+      <Flex fontSize="16px">
         <Breadcrumb textDecoration="none" color="black2">
           {tabroute &&
             tabroute.map(route => (

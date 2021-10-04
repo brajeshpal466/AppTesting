@@ -79,8 +79,8 @@ const options = {
       color: '#cababa',
       fullSize: true,
       padding: {
-        top: 17,
-        bottom: 80,
+        top: 15,
+        bottom: 65,
       },
     },
 
@@ -143,7 +143,7 @@ function Charts() {
       border="1px solid "
       borderColor="grey6"
       borderRadius="3px"
-      height="207px"
+      height="218px"
       position="relative"
       backgroundColor="white5"
     >
@@ -158,7 +158,8 @@ function Charts() {
         position="absolute"
         width="100%"
         bottom="10px"
-        borderTop="1px solid #008EE0"
+        borderTop="1px solid "
+        borderTopColor="blue7"
       ></Flex>
     </Flex>
   );

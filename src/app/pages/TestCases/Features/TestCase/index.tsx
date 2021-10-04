@@ -6,8 +6,8 @@ import useCanvas from './useCanvas';
 import useEventListener from './useEventLisner';
 
 const constants = {
-  CANVAS_WIDTH: 600,
-  CANVAS_HEIGHT: 149,
+  CANVAS_WIDTH: 700,
+  CANVAS_HEIGHT: 221,
 };
 //   red: [5, 8, 50, 60, 65, 70, 120, 180],
 //   green: [15, 18, 30, 70, 90],
@@ -204,8 +204,6 @@ export function TestCasesChart() {
       </Helmet>
 
       <canvas
-        border=" 1px solid "
-        borderColor="grey4"
         data-testid="canvas"
         id="canvas"
         ref={canvasRef}

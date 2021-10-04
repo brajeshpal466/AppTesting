@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   Flex,
   Text,
@@ -16,13 +17,19 @@ function TestCaseEvents() {
       justifyContent="space-between"
       padding="5px"
       color="grey13"
-      fontSize="13px"
+      fontSize="12px"
     >
       <Text>Test Cases</Text>
       <Flex>
-        <LabelComp color="red">Events</LabelComp>
-        <LabelComp color="red">Failed Test Case</LabelComp>
-        <LabelComp color="green">Passed Test Case</LabelComp>
+        <LabelComp color="red1" borderColor="red1">
+          Events
+        </LabelComp>
+        <LabelComp color="red3" borderColor="red3">
+          Failed Test Case
+        </LabelComp>
+        <LabelComp color="green3" borderColor="green1">
+          Passed Test Case
+        </LabelComp>
       </Flex>
     </Flex>
   );

@@ -113,7 +113,7 @@ function Notification({ items }) {
         </Flex>
         <Container
           padding="10px"
-          fontSize="13px"
+          fontSize="14px"
           height="80%"
           overflow="auto"
           css={{

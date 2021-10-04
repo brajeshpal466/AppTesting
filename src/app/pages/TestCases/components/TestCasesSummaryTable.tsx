@@ -10,8 +10,9 @@ function TestCasesSummaryTable() {
       flexDirection="column"
       background="white1"
       padding="10px"
+      boxShadow="2px 8px 6px #00000029"
     >
-      <Text>Test Case Summary</Text>
+      <Text>Test Cases Summary</Text>
       <SummaryTable></SummaryTable>
     </Flex>
   );

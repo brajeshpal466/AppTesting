@@ -107,7 +107,7 @@ function Table({ columns, data }) {
       >
         <Flex
           className="pagination"
-          boxShadow="1px 2px 4px #00000029"
+          boxShadow="0px 3px 6px #00000029"
           borderRadius="14"
           marginTop="10px"
           marginRight="5px "

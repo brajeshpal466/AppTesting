@@ -13,7 +13,6 @@ function VideoAnalysis() {
           <Charts></Charts>
           <Charts></Charts>
           <Charts></Charts>
-          <Charts></Charts>
         </ChartLayout>
       </Flex>
     </Flex>

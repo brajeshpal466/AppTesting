@@ -61,11 +61,11 @@ function Navbar() {
           </Text>
         </Flex>
 
-        <Text marginLeft="8" color="black1">
+        <Text marginLeft="8" fontSize="16px" color="black1">
           App Testing
         </Text>
       </Flex>
-      <Flex alignItems="center" justifyContent="space-evenly" marginRight="4">
+      <Flex alignItems="center" justifyContent="space-evenlyś" marginRight="4">
         <ButtonComp width="95px" logo={<StartIcon></StartIcon>}>
           START
         </ButtonComp>

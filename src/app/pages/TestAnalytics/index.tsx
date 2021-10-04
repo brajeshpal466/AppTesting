@@ -63,11 +63,3 @@ export function TestNotification() {
     </>
   );
 }
-
-/*
-   <Table />
-   <Tab>
-      <Not />
-      <Alert />
-    </Tab>
- */

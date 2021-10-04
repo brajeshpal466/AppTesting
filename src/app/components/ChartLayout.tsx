@@ -38,7 +38,7 @@ export const labels = [
 ];
 function ChartLayout({ children }) {
   return (
-    <Flex flexDirection="column" marginTop="5px">
+    <Flex flexDirection="column" marginTop="5px" paddingRight="2">
       <Slider aria-label="slider-ex-1" defaultValue={5} colorScheme="red">
         <SliderTrack bgColor="grey11">
           <SliderFilledTrack />

@@ -25,7 +25,7 @@ function SubheaderSessionId() {
         color="grey13"
         height="60px"
       >
-        <Flex>
+        <Flex fontSize="16px">
           <Breadcrumb textDecoration="none" color="black2">
             {tabroute &&
               tabroute.map(route => (
@@ -88,7 +88,9 @@ function SubheaderSessionId() {
             padding="5px"
           >
             <Text as="b" paddingRight="5px"></Text>
-            <Text color="green2">Completed</Text>
+            <Text fontSize="16px" color="green2">
+              COMPLETED
+            </Text>
           </Flex>
         </Flex>
       </Flex>
