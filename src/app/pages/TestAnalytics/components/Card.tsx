@@ -42,8 +42,10 @@ export function CardComponent(props) {
         __css={styles}
         {...rest}
         background="white"
-        padding="10px"
+        marginTop="1px"
         marginBottom="10px"
+        padding="10px"
+        width="458px"
         border="1px solid "
         borderColor="white3"
         borderLeft="3px solid "

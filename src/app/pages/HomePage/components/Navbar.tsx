@@ -37,6 +37,7 @@ function Navbar() {
   };
   return (
     <Flex
+      fontFamily="Gotham-Book"
       background="white1"
       height="70px"
       alignItems="center"

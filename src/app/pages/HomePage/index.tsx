@@ -35,8 +35,8 @@ export function HomePage() {
       >
         <Switch>
           <Route to="/">
-            <TestSession></TestSession>
-            {/* <TestNotification></TestNotification> */}
+            {/* <TestSession></TestSession> */}
+            <TestNotification></TestNotification>
           </Route>
           <Route to="/testanalytics"></Route>
 

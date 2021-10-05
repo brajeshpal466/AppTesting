@@ -31,7 +31,7 @@ function Notification({ items }) {
         padding="2px"
         height="100vh"
         flexDirection="column"
-        width="400px"
+        width="516px"
         position="fixed"
         right="0"
         zIndex="3"
@@ -40,7 +40,7 @@ function Notification({ items }) {
         <Flex
           top="0"
           onClick={closeHandler}
-          right="400px"
+          right="516px"
           backgroundColor="grey14"
           width="100%"
           height="100%"
@@ -54,6 +54,10 @@ function Notification({ items }) {
           paddingTop="4"
         >
           <CloseButton
+            _focus={{
+              boxShadow: ' 0 0 0 #ffffff',
+            }}
+            _hover={{ backgroundColor: '#ffffff' }}
             size="2px"
             float="right"
             onClick={closeHandler}
@@ -68,13 +72,16 @@ function Notification({ items }) {
           borderBottom="3px solid  "
           borderBottomColor="grey3"
         >
-          <Flex as="span" marginLeft="4">
-            <Text
-              color="grey1"
-              borderBottom="3px solid"
-              borderBottomColor="red1"
-            >
+          <Flex as="span" marginLeft="8">
+            <Text color="grey1" position="relative">
               NOTIFICATIONS
+              <Box
+                width="100%"
+                position="absolute"
+                top="20px"
+                borderBottom="3px solid"
+                borderBottomColor="red1"
+              ></Box>
             </Text>
             <Box right="-3px" top="-8px" marginLeft="1">
               <Flex
@@ -91,7 +98,7 @@ function Notification({ items }) {
             </Box>
           </Flex>
 
-          <Flex as="span" marginLeft="5">
+          <Flex as="span" marginLeft="12">
             <Text color="grey5">ALERTS</Text>
             <Box right="-3px" top="-8px" marginLeft="1">
               <Flex
@@ -111,17 +118,19 @@ function Notification({ items }) {
         <Flex
           justifyContent="space-between"
           padding="0px"
-          padding="2px 10px"
-          paddingLeft="3"
-          marginTop="2"
-          marginBottom="3"
+          padding="2px 24px"
+          marginTop="4"
+          marginBottom="5"
         >
           <SearchBar></SearchBar>
 
           <SelectComp placeHolder="7 days"></SelectComp>
         </Flex>
-        <Container
-          padding="4"
+        <Flex
+          flexDirection="column "
+          paddingLeft="24px"
+          paddingRight="2px"
+          marginRight="23px"
           fontSize="14px"
           height="80%"
           overflow="auto"
@@ -153,7 +162,7 @@ function Notification({ items }) {
                 </Text>
               </Card>
             ))}
-        </Container>
+        </Flex>
       </Flex>
     </>
   );

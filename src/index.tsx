@@ -27,16 +27,17 @@ import reportWebVitals from 'reportWebVitals';
 import { extendTheme } from '@chakra-ui/react';
 import { customTheme } from 'app/components/Table';
 import { theme } from './styles/customStyle';
+import fontTheme from './styles/Fonts';
 // Initialize languages
 import './locales/i18n';
-
+import Fonts from 'styles/Fonts';
 const store = configureAppStore();
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 
 ReactDOM.render(
   <Provider store={store}>
     <HelmetProvider>
-      <ChakraProvider theme={extendTheme(customTheme, theme)}>
+      <ChakraProvider theme={extendTheme(customTheme, theme, fontTheme)}>
         <React.StrictMode>
           <App />
         </React.StrictMode>
