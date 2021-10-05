@@ -14,8 +14,14 @@ function MobileDisplay() {
     >
       <Image width="185px" height="371px" marginTop="8" src={mobile}></Image>
       <Flex marginTop="1" justifyContent="center" alignContent="center">
-        <Image width="6" height="6" src={play}></Image>
-        <Image width="6" marginLeft="4" height="6" src={stop}></Image>
+        <Image width="6" height="6" src={play} cursor="pointer"></Image>
+        <Image
+          width="6"
+          marginLeft="4"
+          height="6"
+          cursor="pointer"
+          src={stop}
+        ></Image>
       </Flex>
     </Flex>
   );

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Flex } from '@chakra-ui/layout';
 import ChartLayout from 'app/components/ChartLayout';
 import Charts from 'app/components/Charts';

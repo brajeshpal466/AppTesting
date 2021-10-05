@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Flex } from '@chakra-ui/react';
 import ChartLayout from 'app/components/ChartLayout';
 import Charts from 'app/components/Charts';
@@ -10,10 +11,10 @@ function AppProfiling() {
       <MobileDisplay></MobileDisplay>
       <Flex flexDirection="column" flexGrow={1}>
         <ChartLayout>
-          <Charts></Charts>
-          <Charts></Charts>
-          <Charts></Charts>
-          <Charts></Charts>
+          <Charts shadow="true"></Charts>
+          <Charts shadow="true"></Charts>
+          <Charts shadow="true"></Charts>
+          <Charts shadow="true"></Charts>
         </ChartLayout>
       </Flex>
     </Flex>

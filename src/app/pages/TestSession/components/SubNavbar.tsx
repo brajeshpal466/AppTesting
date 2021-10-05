@@ -6,15 +6,18 @@ import { NavLink } from 'react-router-dom';
 function SubNavbar({ tabHandler, currentTabId }) {
   const activeStyle = {
     borderBottom: '3px solid #F51C5E',
+    fontWeight: '600',
     borderRadius: '1px',
   };
   const inActiveStyle = {
     ...activeStyle,
-    borderBottom: 'none',
+    fontWeight: '500',
+    borderBottom: '3px solid transparent',
   };
 
   return (
     <Flex
+      fontWeight="500"
       background="white"
       alignItems="center"
       justifyContent="flex-start"
@@ -22,6 +25,7 @@ function SubNavbar({ tabHandler, currentTabId }) {
       borderBottom="1px solid"
       borderBottomColor="grey3"
       borderTop="1px solid"
+      paddingTop="3px"
       borderTopColor="grey3"
       color="grey13"
     >
@@ -36,7 +40,7 @@ function SubNavbar({ tabHandler, currentTabId }) {
         Test Cases
       </Text>
       <Text
-        marginLeft="4"
+        marginLeft="7"
         id="expkpi"
         style={currentTabId !== 'expkpi' ? inActiveStyle : activeStyle}
         padding="2px 2px"
@@ -46,7 +50,7 @@ function SubNavbar({ tabHandler, currentTabId }) {
         Experience KPI
       </Text>
       <Text
-        marginLeft="4"
+        marginLeft="7"
         id="vdo"
         style={currentTabId !== 'vdo' ? inActiveStyle : activeStyle}
         padding="2px 2px"
@@ -56,7 +60,7 @@ function SubNavbar({ tabHandler, currentTabId }) {
         Video Analysis
       </Text>
       <Text
-        marginLeft="4"
+        marginLeft="7"
         id="app"
         style={currentTabId !== 'app' ? inActiveStyle : activeStyle}
         padding="2px 2px"
@@ -66,7 +70,7 @@ function SubNavbar({ tabHandler, currentTabId }) {
         App Profiling
       </Text>
       <Text
-        marginLeft="4"
+        marginLeft="7"
         id="har"
         style={currentTabId !== 'har' ? inActiveStyle : activeStyle}
         padding="2px 2px"

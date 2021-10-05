@@ -25,33 +25,48 @@ const CopyIcon = () => {
 function ListComp() {
   return (
     <Flex
+      fontSize="12px"
       position="absolute"
-      right="8.5px"
-      top="38px"
-      padding="0px 2px"
-      boxShadow="1px 1px 2px grey6"
+      right="1.5"
+      backgroundColor="white1"
+      boxShadow="0px 3px 6px #00000029 "
       width="198px"
-      background="white"
+      top="46px"
       boxSizing="border-box"
     >
-      <Flex justifyContent="space-between" width="100%">
+      <Flex
+        justifyContent="space-between"
+        width="100%"
+        alignItems="center"
+        borderRadius="2"
+      >
         <Accordion allowMultiple backgroundColor="white" width="100%">
           <AccordionItem boxSizing="border-box">
-            <h3>
+            <Flex
+              width="100%"
+              justifyContent="center"
+              paddingTop="1"
+              alignItems="center"
+            >
               <AccordionButton
-                boxSizing="border-box"
-                size="xs"
-                height="24px"
+                padding="10px 8px"
+                paddingRight="10px"
+                display="flex"
+                justifyContent="space-between"
+                width="100%"
+                height="8"
                 border="none"
-                paddingRight="14px"
-                paddingLeft="3.5"
-                BackgroundColor="white"
                 _focus={{
-                  boxShadow: ' 0 0 0 #ffffff',
+                  boxShadow: ' 0 0 0 white',
                 }}
                 _hover={{ backgroundColor: '#ffffff' }}
               >
-                <Box flex="1" textAlign="left" fontSize="12px" display="flex">
+                <Box
+                  width="100%"
+                  textAlign="left"
+                  fontSize="12px"
+                  display="flex"
+                >
                   CPU usage
                   <Box paddingLeft="7px">
                     <CopyIcon />
@@ -60,21 +75,22 @@ function ListComp() {
 
                 <AccordionIcon />
               </AccordionButton>
-            </h3>
+            </Flex>
             <AccordionPanel
-              pb={4}
-              padding="10px 4px"
+              borderTop="1px solid #F3F6F9"
+              padding="0px"
               height="105px"
               display="flex"
               flexDirection="column"
-              justifyContent="space-evenly"
+              justifyContent="flex-start"
             >
               {cpuData.map(item => (
                 <Flex
-                  fontSize="13px"
+                  fontSize="12px"
                   textTransform="capitalize"
-                  borderBottom="1px solid #dce3eb"
-                  height="18px"
+                  borderBottom="1px solid #F3F6F9"
+                  padding="4px 8px"
+                  paddingRight="12px"
                   backgroundColor=""
                   flexDirection="row"
                   justifyContent="space-between"

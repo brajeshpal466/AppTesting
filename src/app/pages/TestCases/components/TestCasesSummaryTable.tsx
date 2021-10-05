@@ -12,7 +12,9 @@ function TestCasesSummaryTable() {
       padding="10px"
       boxShadow="2px 8px 6px #00000029"
     >
-      <Text>Test Cases Summary</Text>
+      <Text paddingBottom="1" paddingLeft="0.5">
+        Test Cases Summary
+      </Text>
       <SummaryTable></SummaryTable>
     </Flex>
   );

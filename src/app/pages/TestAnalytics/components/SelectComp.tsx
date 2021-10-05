@@ -6,6 +6,9 @@ function SelectComp({ placeHolder }) {
   return (
     <>
       <Select
+        borderRadius="2"
+        width="50%"
+        marginLeft="7px"
         placeholder={placeHolder}
         background="white3"
         variant="filled"

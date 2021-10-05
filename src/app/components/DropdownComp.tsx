@@ -5,23 +5,26 @@ function DropdownComp() {
   return (
     <Flex
       position="absolute"
-      padding="3px 0px"
+      alignItems="center"
+      justifyContent="center"
       width="198px"
       height="30px"
       boxSizing="border-box"
-      right="8.5px"
-      top="5px"
-      backgroundColor="white"
-      boxShadow="1px 1px 2px #DEDEDE "
+      borderRadius="2"
+      top="2"
+      right="1.5"
+      backgroundColor="white1"
+      boxShadow="0px 3px 6px #00000029 "
     >
       <Select
-        size="xs"
-        width="95%"
+        boxSizing="border-box"
+        fontSize="12px"
+        width="100%"
         height="100%"
         variant="unstyled"
         placeholder="Select KPI  "
-        paddingLeft="16px"
-        paddingRight="10px"
+        paddingLeft="2"
+        paddingRight="1"
         background="white"
       >
         {KpiList.map(option => (

@@ -35,7 +35,7 @@ function Sidebar({ handleSidebar, sidebarToggle }) {
 
   return (
     <Flex
-      height="100%"
+      height="120vh"
       fontSize="14px"
       background="grey13"
       style={sidebarToggle ? sideShowActive : sideShow}

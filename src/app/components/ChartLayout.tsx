@@ -54,18 +54,19 @@ function ChartLayout({ children }) {
         position="sticky"
         top="0px"
         height="34px"
-        paddingBottom="20px "
+        paddingBottom="5"
         alignItems="flex-start"
         backgroundColor="grey4"
         justifyContent="space-between"
         zIndex="2"
         width="99.9%"
+        paddingRight="2"
         justifyItems="flex-end"
+        fontSize="10px"
+        color="black1"
       >
         {labels.map(item => (
-          <Flex fontSize="12px" alignItems="flex-start">
-            |{item}s
-          </Flex>
+          <Flex alignItems="flex-start">|{item}s</Flex>
         ))}
       </Flex>
 

@@ -8,6 +8,7 @@ import CheckBoxComp from './CheckBoxComp';
 import DropdownComp from './DropdownComp';
 import ListComp from './ListComp';
 import { NONAME } from 'dns';
+import ChartWrapper from './ChartWrapper';
 const dataValue = [
   0, 40, 59, 5, 75, 10, 20, 8, 13, 66, 0, 0, 20, 40, 0, 0, 75, 30, 20, 19, 76,
   66, 34, 0, 0,
@@ -123,8 +124,10 @@ const options = {
         drawBorder: false,
         drawTicks: true,
 
-        tickMarkLength: 3,
-        lineWidth: 1,
+        tickMarkLength: 1,
+        tickLength: 4,
+        lineWidth: 0.7,
+
         backgroundColor: 'rgb(248,248,248)',
         color: ' #948080',
         drawOnChartArea: false,
@@ -136,18 +139,10 @@ const options = {
   },
 };
 
-function Charts() {
+function Charts({ shadow }) {
   return (
-    <Flex
-      flexWrap="nowrap"
-      border="1px solid "
-      borderColor="grey6"
-      borderRadius="3px"
-      height="218px"
-      position="relative"
-      backgroundColor="white5"
-    >
-      <Flex width="99.9% ! important" justifyItems="flex-end">
+    <ChartWrapper shadow={shadow}>
+      <Flex width="99.9% ! important" justifyItems="flex-end " height="218px">
         <Line data={data} options={options}></Line>
       </Flex>
 
@@ -157,11 +152,11 @@ function Charts() {
       <Flex
         position="absolute"
         width="100%"
-        bottom="10px"
+        bottom="9.5px"
         borderTop="1px solid "
         borderTopColor="blue7"
       ></Flex>
-    </Flex>
+    </ChartWrapper>
   );
 }
 

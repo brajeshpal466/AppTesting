@@ -12,7 +12,7 @@ import search from '../../../../styles/Assets/ic_search.svg';
 function SearchBar() {
   return (
     <>
-      <InputGroup>
+      <InputGroup width="50%">
         <InputLeftElement paddingBottom="6px" pointerEvents="none">
           <img src={search} width="13.5px"></img>
         </InputLeftElement>
@@ -21,7 +21,7 @@ function SearchBar() {
           outline="none"
           border="none"
           background="white3"
-          borderRadius="3px"
+          borderRadius="2"
           height="35px"
           paddingLeft="20px"
           variant="unstyled"

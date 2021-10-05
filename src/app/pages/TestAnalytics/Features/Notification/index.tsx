@@ -28,7 +28,7 @@ function Notification({ items }) {
         id="notification"
         background="white1"
         boxShadow="0px 3px  #00000029"
-        padding="10px"
+        padding="2px"
         height="100vh"
         flexDirection="column"
         width="400px"
@@ -46,9 +46,15 @@ function Notification({ items }) {
           height="100%"
           position="fixed"
         ></Flex>
-        <Flex justifyContent="flex-end" backgroundColor="white1" padding="2">
+        <Flex
+          justifyContent="flex-end"
+          backgroundColor="white1"
+          padding="2"
+          paddingRight="4"
+          paddingTop="4"
+        >
           <CloseButton
-            size="2px "
+            size="2px"
             float="right"
             onClick={closeHandler}
             border="none"
@@ -59,13 +65,13 @@ function Notification({ items }) {
 
         <Flex
           justifyContent="flex-start"
-          borderBottom="2px solid  "
+          borderBottom="3px solid  "
           borderBottomColor="grey3"
         >
-          <Flex as="span">
+          <Flex as="span" marginLeft="4">
             <Text
               color="grey1"
-              borderBottom="2px solid"
+              borderBottom="3px solid"
               borderBottomColor="red1"
             >
               NOTIFICATIONS
@@ -102,17 +108,20 @@ function Notification({ items }) {
             </Box>
           </Flex>
         </Flex>
-        <Flex justifyContent="space-around" marginTop="2" marginBottom="3">
-          <Container>
-            {' '}
-            <SearchBar></SearchBar>
-          </Container>
-          <Container>
-            <SelectComp placeHolder="7 days"></SelectComp>
-          </Container>
+        <Flex
+          justifyContent="space-between"
+          padding="0px"
+          padding="2px 10px"
+          paddingLeft="3"
+          marginTop="2"
+          marginBottom="3"
+        >
+          <SearchBar></SearchBar>
+
+          <SelectComp placeHolder="7 days"></SelectComp>
         </Flex>
         <Container
-          padding="10px"
+          padding="4"
           fontSize="14px"
           height="80%"
           overflow="auto"
