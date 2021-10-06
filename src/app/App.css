@@ -4,12 +4,10 @@
   
    .activeLink{
   background-color: #1B1B28;
-  border-right: 3px solid red;
+  border-right: 3px solid #F51C5E;
    }
    
-   .activeLink .flex .box{
-     color: blue;
-   }
+  
    .activeLink .flex .text{
     color:#FAFBFC;
   }

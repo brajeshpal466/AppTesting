@@ -25,11 +25,11 @@ import {
 import { useTable, usePagination } from 'react-table';
 
 import makeData from './makeData';
-import settingIcon from '../../../../../styles/Assets/file-cog-outline.svg';
+import settingIcon from '../../../../../styles/Assets/Automation.svg';
 
 const SettingIcon = () => {
   return (
-    <Box width="40px" as="span">
+    <Box width="28px" paddingRight="10px" as="span">
       {' '}
       <img src={settingIcon} alt="settings"></img>
     </Box>
@@ -123,7 +123,7 @@ function Table({ columns, data }) {
           display="inline-block"
         >
           <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            {'< '}
+            &lt; &nbsp;
           </button>{' '}
           <Text as="span" width="30px">
             <Input
@@ -154,7 +154,8 @@ function Table({ columns, data }) {
             <span>of {pageOptions.length}</span>{' '}
           </span>
           <button onClick={() => nextPage()} disabled={!canNextPage}>
-            {' >'}
+            &nbsp;
+            {'  >'}
           </button>{' '}
         </Flex>
       </Flex>
