@@ -6,7 +6,8 @@ function MainContainerWrapper({ children, sidebarToggle, handleSidebar }) {
   return (
     <>
       <Flex
-        fontFamily="Gotham-Book"
+        fontFamily="gothamBook"
+        textTransform="capitalize"
         fontSize="14px"
         marginLeft="63px"
         background="white2"

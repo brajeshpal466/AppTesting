@@ -1,11 +1,16 @@
 import React from 'react';
 import { Select } from '@chakra-ui/react';
-const optionList = ['7 Days', '30 Days', '90 Days'];
+const optionList = ['Last 7 Days', '30 Days', '90 Days'];
+const None = () => {
+  return <></>;
+};
 
 function SelectComp({ placeHolder }) {
   return (
     <>
       <Select
+        icon={<None />}
+        fontSize="14px"
         borderRadius="2"
         width="50%"
         marginLeft="7px"

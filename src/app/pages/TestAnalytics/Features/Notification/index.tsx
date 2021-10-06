@@ -27,9 +27,9 @@ function Notification({ items }) {
       <Flex
         id="notification"
         background="white1"
-        boxShadow="0px 3px  #00000029"
+        boxShadow="0px 3px 6px #00000029"
         padding="2px"
-        height="100vh"
+        height="100%"
         flexDirection="column"
         width="516px"
         position="fixed"
@@ -49,9 +49,8 @@ function Notification({ items }) {
         <Flex
           justifyContent="flex-end"
           backgroundColor="white1"
-          padding="2"
-          paddingRight="4"
-          paddingTop="4"
+          marginRight="6"
+          paddingTop="6"
         >
           <CloseButton
             _focus={{
@@ -71,14 +70,15 @@ function Notification({ items }) {
           justifyContent="flex-start"
           borderBottom="3px solid  "
           borderBottomColor="grey3"
+          paddingBottom="2"
         >
-          <Flex as="span" marginLeft="8">
+          <Flex as="span" marginLeft="7">
             <Text color="grey1" position="relative">
               NOTIFICATIONS
               <Box
                 width="100%"
                 position="absolute"
-                top="20px"
+                top="28px"
                 borderBottom="3px solid"
                 borderBottomColor="red1"
               ></Box>
@@ -119,6 +119,7 @@ function Notification({ items }) {
           justifyContent="space-between"
           padding="0px"
           padding="2px 24px"
+          color="grey7"
           marginTop="4"
           marginBottom="5"
         >
@@ -129,8 +130,8 @@ function Notification({ items }) {
         <Flex
           flexDirection="column "
           paddingLeft="24px"
-          paddingRight="2px"
-          marginRight="23px"
+          paddingRight="3px"
+          marginRight="21px"
           fontSize="14px"
           height="80%"
           overflow="auto"

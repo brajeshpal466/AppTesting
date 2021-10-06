@@ -37,7 +37,7 @@ function Navbar() {
   };
   return (
     <Flex
-      fontFamily="Gotham-Book"
+      fontFamily="gothamBook"
       background="white1"
       height="70px"
       alignItems="center"
@@ -66,19 +66,20 @@ function Navbar() {
           App Testing
         </Text>
       </Flex>
-      <Flex alignItems="center" justifyContent="space-evenlyś" marginRight="4">
-        <ButtonComp width="95px" logo={<StartIcon></StartIcon>}>
+      <Flex alignItems="center" justifyContent="space-between" marginRight="4">
+        <ButtonComp width="95px" height="35px" logo={<StartIcon></StartIcon>}>
           START
         </ButtonComp>
         <ButtonComp
+          height="35px"
           width="95px"
-          padding=".4em 0em"
+          padding=".5em 0em"
           logo={<StartIcon2></StartIcon2>}
         >
           STOP
         </ButtonComp>
 
-        <Box pos="relative">
+        <Box pos="relative" marginLeft="2">
           <Box pos="absolute" right="-3px" top="-8px">
             <Flex
               onClick={notificationHandler}

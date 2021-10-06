@@ -38,7 +38,13 @@ export const labels = [
 ];
 function ChartLayout({ children }) {
   return (
-    <Flex flexDirection="column" marginTop="5px" paddingRight="2">
+    <Flex
+      flexDirection="column"
+      marginTop="5px"
+      paddingRight="2"
+      fontFamily="gothamBook"
+      fontSize="12px"
+    >
       <Slider aria-label="slider-ex-1" defaultValue={5} colorScheme="red">
         <SliderTrack bgColor="grey11">
           <SliderFilledTrack />
@@ -51,6 +57,7 @@ function ChartLayout({ children }) {
         />
       </Slider>
       <Flex
+        fontFamily="gothamLight"
         position="sticky"
         top="0px"
         height="34px"

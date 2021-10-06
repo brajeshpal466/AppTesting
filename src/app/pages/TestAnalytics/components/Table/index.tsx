@@ -29,7 +29,7 @@ import settingIcon from '../../../../../styles/Assets/file-cog-outline.svg';
 
 const SettingIcon = () => {
   return (
-    <Box width="40px">
+    <Box width="40px" as="span">
       {' '}
       <img src={settingIcon} alt="settings"></img>
     </Box>
@@ -82,12 +82,19 @@ function Table({ columns, data }) {
         <Tbody {...getTableBodyProps()}>
           {page.map((row, i) => {
             prepareRow(row);
+
             return (
               <Tr {...row.getRowProps()}>
                 {/*  <SettingIcon/> */}
-                {row.cells.map(cell => {
+                {row.cells.map((cell, index) => {
                   return (
-                    <Td {...cell.getCellProps()}>{cell.render('Cell')}</Td>
+                    <Td {...cell.getCellProps()}>
+                      {' '}
+                      <Flex flexDirection="row">
+                        {index === 0 ? <SettingIcon></SettingIcon> : ''}
+                        {cell.render('Cell')}
+                      </Flex>{' '}
+                    </Td>
                   );
                 })}
               </Tr>

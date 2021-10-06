@@ -8,7 +8,7 @@ export const Table = {
       color: 'grey1',
       fontWeight: 500,
       backgroundColor: 'white3',
-      textTransform: 'none',
+      textTransform: 'capitalize',
       height: '35px',
     },
     td: {

@@ -15,6 +15,7 @@ import InfoComp from './SubheaderSessionId';
 function Subheader({ infoStatusData, tabroute }) {
   return (
     <Flex
+      fontFamily="Gotham-Book"
       backgroundColor="white1"
       justifyContent="space-between"
       width="100%"
@@ -44,19 +45,19 @@ function Subheader({ infoStatusData, tabroute }) {
         marginRight="7"
       >
         <Flex marginLeft="0px">
-          <Text as="b" paddingRight="5px">
+          <Text as="b" paddingRight="7px">
             5
           </Text>
           <Text color="grey13">Running </Text>
         </Flex>
         <Flex marginLeft="0px">
-          <Text as="b" paddingRight="5px">
+          <Text as="b" paddingRight="7px">
             2
           </Text>
           <Text color="grey13">Queued </Text>
         </Flex>
         <Flex marginLeft="0px">
-          <Text as="b" paddingRight="5px">
+          <Text as="b" paddingRight="7px">
             1
           </Text>
           <Text color="grey13">Sheduled</Text>

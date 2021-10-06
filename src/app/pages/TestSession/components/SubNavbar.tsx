@@ -8,16 +8,19 @@ function SubNavbar({ tabHandler, currentTabId }) {
     borderBottom: '3px solid #F51C5E',
     fontWeight: '600',
     borderRadius: '1px',
+    fontFamily: 'gothamBook',
   };
   const inActiveStyle = {
     ...activeStyle,
     fontWeight: '500',
+    fontFamily: 'gothamMedium',
     borderBottom: '3px solid transparent',
   };
 
   return (
     <Flex
       fontWeight="500"
+      fontFamily="gothamBook"
       background="white"
       alignItems="center"
       justifyContent="flex-start"
