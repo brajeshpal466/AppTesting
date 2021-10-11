@@ -4,16 +4,18 @@ export const Table = {
     backgroundColor: 'grey3',
     width: '100%',
     padding: '2',
+
     th: {
       color: 'grey1',
-      fontWeight: 500,
+      fontWeight: 400,
       backgroundColor: 'white3',
-      textTransform: 'capitalize',
+      minWidth: '62px',
       height: '35px',
     },
     td: {
       fontSize: 'sm',
       color: 'grey13',
+      minWidth: '62px',
       py: 2,
       px: 2,
       pt: 2,

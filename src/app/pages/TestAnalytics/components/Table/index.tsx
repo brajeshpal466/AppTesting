@@ -6,6 +6,7 @@ import {
   Table as CustomTable,
   Thead,
   Tr,
+  Img,
   Text,
   Box,
   Container,
@@ -25,14 +26,29 @@ import {
 import { useTable, usePagination } from 'react-table';
 
 import makeData from './makeData';
-import settingIcon from '../../../../../styles/Assets/Automation.svg';
+import automationIcon from '../../../../../styles/Assets/Automation.svg';
+import settingIcon from '../../../../../styles/Assets/Gif.png';
 
+const AutomationIcon = () => {
+  return (
+    <Flex as="span" padding="0px">
+      {' '}
+      <Img
+        width="22px"
+        marginLeft="5px"
+        height="22px"
+        src={automationIcon}
+        alt="debug"
+      ></Img>
+    </Flex>
+  );
+};
 const SettingIcon = () => {
   return (
-    <Box width="28px" paddingRight="10px" as="span">
+    <Flex as="span" padding="0px">
       {' '}
-      <img src={settingIcon} alt="settings"></img>
-    </Box>
+      <Img width="22px" height="22px" src={settingIcon} alt="settings"></Img>
+    </Flex>
   );
 };
 
@@ -73,8 +89,12 @@ function Table({ columns, data }) {
         <Thead>
           {headerGroups.map(headerGroup => (
             <Tr {...headerGroup.getHeaderGroupProps()}>
+              <Th minWidth="0px" paddingLeft="0px" paddingRight="0px"></Th>
+              <Th minWidth="0px" paddingLeft="0px" paddingRight="0px"></Th>
               {headerGroup.headers.map(column => (
-                <Th {...column.getHeaderProps()}>{column.render('Header')}</Th>
+                <Th textTransform="capitalize" {...column.getHeaderProps()}>
+                  {column.render('Header')}
+                </Th>
               ))}
             </Tr>
           ))}
@@ -84,16 +104,21 @@ function Table({ columns, data }) {
             prepareRow(row);
 
             return (
-              <Tr {...row.getRowProps()}>
+              <Tr _hover={{ background: 'grey14' }} {...row.getRowProps()}>
                 {/*  <SettingIcon/> */}
+                <Td minWidth="10px" paddingLeft="15px" paddingRight="0px">
+                  {i == 4 && <SettingIcon></SettingIcon>}
+                </Td>
+                <Td minWidth="10px" paddingLeft="0px" paddingRight="0px">
+                  <AutomationIcon></AutomationIcon>
+                </Td>
                 {row.cells.map((cell, index) => {
                   return (
                     <Td {...cell.getCellProps()}>
                       {' '}
-                      <Flex flexDirection="row">
-                        {index === 0 ? <SettingIcon></SettingIcon> : ''}
-                        {cell.render('Cell')}
-                      </Flex>{' '}
+                      {/* {index === 0 ?  : ''} */}
+                      {cell.render('Cell')}
+                      {/* </Flex>{' '} */}
                     </Td>
                   );
                 })}
@@ -113,27 +138,33 @@ function Table({ columns, data }) {
         color="grey13"
       >
         <Flex
+          fontWeight="500"
           className="pagination"
           boxShadow="0px 3px 6px #00000029"
-          borderRadius="14"
+          borderRadius="13"
           marginTop="10px"
           marginRight="5px "
-          paddingRight="10px"
-          paddingLeft="10px"
+          color="grey2"
+          padding="5px 10px"
           display="inline-block"
         >
           <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            &lt; &nbsp;
+            <Box as="b" fontWeight="bold" borderRadius="50%">
+              {' '}
+              &lt;{' '}
+            </Box>{' '}
+            &nbsp;
           </button>{' '}
-          <Text as="span" width="30px">
+          <Box as="span" color="black" paddingRight="2px" paddingBottom="3px">
             <Input
               variant="flushed"
-              size="xs"
+              size="18px"
+              width="25px"
               _focus={{ color: 'none' }}
               textAlign="right"
               fontSize="14px"
               borderBottom="1.5px solid"
-              borderBottomColor="grey13"
+              borderBottomColor="grey2"
               ref={inputRef}
               type="number"
               value={pageIndex + 1}
@@ -147,15 +178,17 @@ function Table({ columns, data }) {
                 const page = e.target.value ? Number(e.target.value) - 1 : 0;
                 gotoPage(page);
               }}
-              style={{ width: '60px' }}
             />
-          </Text>{' '}
-          <span>
+          </Box>{' '}
+          <Box textTransform="lowercase" as="span" color="black">
             <span>of {pageOptions.length}</span>{' '}
-          </span>
+          </Box>
           <button onClick={() => nextPage()} disabled={!canNextPage}>
             &nbsp;
-            {'  >'}
+            <Box as="b" fontWeight="black" borderRadius="50%">
+              {' '}
+              {'  >'}
+            </Box>
           </button>{' '}
         </Flex>
       </Flex>

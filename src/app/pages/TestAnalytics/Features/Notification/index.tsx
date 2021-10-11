@@ -125,7 +125,7 @@ function Notification({ items }) {
         >
           <SearchBar></SearchBar>
 
-          <SelectComp placeHolder="7 days"></SelectComp>
+          <SelectComp placeHolder="Last 7 days"></SelectComp>
         </Flex>
         <Flex
           flexDirection="column "

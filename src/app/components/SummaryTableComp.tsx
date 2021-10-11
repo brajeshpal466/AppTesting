@@ -24,10 +24,10 @@ function SummaryTableComp({ tableHeader, summaryTableData }) {
         fontFamily="sans-serif"
       >
         {/* <TableCaption >Test CaseSummary</TableCaption> */}
-        <Thead backgroundColor="white3">
+        <Thead backgroundColor="white3" textTransform="capitalize">
           <Tr>
             {tableHeader.map(heading => (
-              <Th>{heading}</Th>
+              <Th textTransform="capitalize">{heading}</Th>
             ))}
           </Tr>
         </Thead>

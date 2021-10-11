@@ -11,7 +11,19 @@ function ExperienceKpi() {
   return (
     <Flex>
       <MobileDisplay></MobileDisplay>
-      <Flex flexDirection="column" flexGrow={1}>
+      <Flex
+        flexDirection="column"
+        flexGrow={1}
+        padding="1px 5px 15px 5px"
+        flexGrow={1}
+        height="535px"
+        overflow="auto"
+        __css={{
+          '&::-webkit-scrollbar': {
+            width: '0px',
+          },
+        }}
+      >
         <ChartLayout>
           {/*
         

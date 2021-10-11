@@ -18,7 +18,7 @@ const newPerson = () => {
     script: namor.generate({ words: 1, numbers: 0 }),
     device: namor.generate({ words: 1, numbers: 0 }),
     user: namor.generate({ words: 1, numbers: 0 }),
-    id: Math.floor(Math.random() * 30),
+    id: Math.floor(Math.random() * 9),
 
     status:
       statusChance > 0.66

@@ -31,10 +31,11 @@ const StartIcon2 = () => {
     </>
   );
 };
-function Navbar() {
+function Navbar({ startActionHandler, stopActionHandler }) {
   const notificationHandler = () => {
     document.getElementById('notification').style.display = 'block';
   };
+
   return (
     <Flex
       fontFamily="gothamBook"
@@ -67,11 +68,17 @@ function Navbar() {
         </Text>
       </Flex>
       <Flex alignItems="center" justifyContent="space-between" marginRight="4">
-        <ButtonComp width="95px" height="35px" logo={<StartIcon></StartIcon>}>
+        <ButtonComp
+          width="95px"
+          height="35px"
+          buttonHandler={startActionHandler}
+          logo={<StartIcon></StartIcon>}
+        >
           START
         </ButtonComp>
         <ButtonComp
-          height="35px"
+          height="35px "
+          buttonHandler={stopActionHandler}
           width="95px"
           padding=".5em 0em"
           logo={<StartIcon2></StartIcon2>}

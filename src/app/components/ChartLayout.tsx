@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   Flex,
   Text,
@@ -36,11 +37,10 @@ export const labels = [
   '24',
   '25',
 ];
-function ChartLayout({ children }) {
+function ChartLayout({ children, height }) {
   return (
     <Flex
       flexDirection="column"
-      marginTop="5px"
       paddingRight="2"
       fontFamily="gothamBook"
       fontSize="12px"
@@ -50,17 +50,19 @@ function ChartLayout({ children }) {
           <SliderFilledTrack />
         </SliderTrack>
         <SliderThumb
+          height="8px"
+          width="8px"
           backgroundColor="red"
           _focus={{
             boxShadow: ' 0 0 0 red',
           }}
-        />
+        ></SliderThumb>
       </Slider>
       <Flex
         fontFamily="gothamLight"
-        position="sticky"
         top="0px"
         height="34px"
+        marginTop="8px"
         paddingBottom="5"
         alignItems="flex-start"
         backgroundColor="grey4"
@@ -78,13 +80,14 @@ function ChartLayout({ children }) {
       </Flex>
 
       <Flex
+        overflow="scroll"
         marginTop="10px"
         flexDirection="column"
         background="white5"
+        height={height}
         css={{
           '&::-webkit-scrollbar': {
             width: '0px',
-            display: 'none',
           },
         }}
       >

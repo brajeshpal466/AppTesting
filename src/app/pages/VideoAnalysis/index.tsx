@@ -10,7 +10,7 @@ function VideoAnalysis() {
     <Flex flexDirection="row">
       <MobileDisplay></MobileDisplay>
       <Flex flexGrow={1} flexDirection="column">
-        <ChartLayout>
+        <ChartLayout height="450px">
           <Charts></Charts>
           <Charts></Charts>
           <Charts></Charts>

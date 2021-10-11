@@ -10,7 +10,6 @@ function ChartWrapper({ children, shadow }) {
         border="1px solid "
         borderColor="grey6"
         borderRadius="3px"
-        // height="218px"
         position="relative"
         boxShadow={shadow ? '0px 3px 6px #00000029 inset' : ' '}
         backgroundColor="white5"

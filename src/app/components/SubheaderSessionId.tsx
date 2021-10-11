@@ -59,7 +59,7 @@ function SubheaderSessionId() {
             justifyContent="center"
             padding="5px"
           >
-            <Text as="b" paddingRight="5px">
+            <Text as="b" fontSize="20px" paddingRight="5px">
               5
             </Text>
             <Text color="green2" fontSize="13px">
@@ -73,7 +73,7 @@ function SubheaderSessionId() {
             justifyContent="center"
             padding="5px"
           >
-            <Text as="b" paddingRight="5px">
+            <Text as="b" fontSize="20px" paddingRight="5px">
               2
             </Text>
             <Text color="red2" fontSize="13px">

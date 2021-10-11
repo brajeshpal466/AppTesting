@@ -10,7 +10,7 @@ function AppProfiling() {
     <Flex flexDirection="row">
       <MobileDisplay></MobileDisplay>
       <Flex flexDirection="column" flexGrow={1}>
-        <ChartLayout>
+        <ChartLayout height="450px">
           <Charts shadow="true"></Charts>
           <Charts shadow="true"></Charts>
           <Charts shadow="true"></Charts>

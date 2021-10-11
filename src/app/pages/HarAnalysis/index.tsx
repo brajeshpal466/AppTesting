@@ -8,7 +8,7 @@ function HarAnalysis() {
     <Flex>
       <MobileDisplay></MobileDisplay>
       <Flex flexDirection="column" flexGrow={1}>
-        <ChartLayout>
+        <ChartLayout height="534px">
           {/*
       
       <TestCasesChart></TestCasesChart> */}

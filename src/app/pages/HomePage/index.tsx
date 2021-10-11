@@ -16,15 +16,24 @@ import SubContainer from 'app/components/SubContainer';
 import { TestSession } from '../TestSession';
 export function HomePage() {
   const [sidebarToggle, setsidebarToggle] = useState(false);
+  const [stateTab, setStateTab] = useState(true);
   const handleSidebar = () => {
     setsidebarToggle(!sidebarToggle);
     // const sidebarElement = document.getElementById('sidebarNav');
     // sidebarElement.classList.toggle('active');
   };
-
+  const startActionHandler = () => {
+    setStateTab(true);
+  };
+  const stopActionHandler = () => {
+    setStateTab(false);
+  };
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar
+        startActionHandler={startActionHandler}
+        stopActionHandler={stopActionHandler}
+      ></Navbar>
       <Sidebar
         handleSidebar={handleSidebar}
         sidebarToggle={sidebarToggle}
@@ -35,8 +44,8 @@ export function HomePage() {
       >
         <Switch>
           <Route to="/">
-            {/* <TestSession></TestSession> */}
-            <TestNotification></TestNotification>
+            {!stateTab && <TestSession></TestSession>}
+            {stateTab && <TestNotification></TestNotification>}
           </Route>
           <Route to="/testanalytics"></Route>
 

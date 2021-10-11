@@ -11,7 +11,7 @@ function SidebarTabComp({ link, icon, children, sidebarToggle }) {
           exact
           to={link}
           color="black2"
-          style={{ textDecoration: 'none', color: '', width: '100%' }}
+          style={{ textDecoration: 'none', width: '100%' }}
           activeClassName="activeLink"
         >
           <Flex height="100%" alignItems="center" className="flex">

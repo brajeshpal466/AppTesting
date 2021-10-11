@@ -14,7 +14,19 @@ function TestCases() {
   return (
     <Flex flexDirection="row" color="grey13">
       <MobileDisplay></MobileDisplay>
-      <Flex flexDirection="column" flexGrow={1}>
+      <Flex
+        flexDirection="column"
+        padding="1px 5px 15px 5px"
+        marginTop="4"
+        flexGrow={1}
+        height="535px"
+        overflow="auto"
+        __css={{
+          '&::-webkit-scrollbar': {
+            width: '0px',
+          },
+        }}
+      >
         <ChartLayout>
           <ChartWrapper shadow="true">
             <TestCasesChart></TestCasesChart>
