@@ -7,6 +7,10 @@ import { TestCasesChart } from '../TestCases/Features/TestCase';
 import SummaryTableComp from 'app/components/SummaryTableComp';
 import TestCasesSummaryTable from '../TestCases/components/TestCasesSummaryTable';
 import ChartWrapper from 'app/components/ChartWrapper';
+import ExpChart from './Features';
+import DropdownComp from 'app/components/DropdownComp';
+import ListComp from 'app/components/ListComp';
+
 function ExperienceKpi() {
   return (
     <Flex>
@@ -25,12 +29,11 @@ function ExperienceKpi() {
         }}
       >
         <ChartLayout>
-          {/*
-        
-        <TestCasesChart></TestCasesChart> */}
           <ChartWrapper shadow="true">
-            <Flex height="221px" alignItems="center" justifyContent="center">
-              Experience Kpi chart is not ready
+            <Flex height="222px" position="relative" width="100%">
+              <ExpChart></ExpChart>
+              <DropdownComp></DropdownComp>
+              <ListComp></ListComp>
             </Flex>
           </ChartWrapper>
         </ChartLayout>

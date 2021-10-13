@@ -2,6 +2,7 @@
 import {
   Flex,
   Text,
+  Box,
   Slider,
   SliderTrack,
   SliderFilledTrack,
@@ -69,13 +70,18 @@ function ChartLayout({ children, height }) {
         justifyContent="space-between"
         zIndex="2"
         width="99.9%"
-        paddingRight="2"
+        paddingRight="2%"
         justifyItems="flex-end"
         fontSize="10px"
         color="black1"
       >
         {labels.map(item => (
-          <Flex alignItems="flex-start">|{item}s</Flex>
+          <Flex alignItems="flex-start">
+            |{' '}
+            <Box as="span" width="14px">
+              {item}s
+            </Box>
+          </Flex>
         ))}
       </Flex>
 
