@@ -1,216 +1,176 @@
 // @ts-nocheck
-import React, { useCallback, useEffect, useRef } from 'react';
 
-import { Helmet } from 'react-helmet-async';
-import useCanvas from './useCanvas';
-import useEventListener from './useEventLisner';
+import React, { useRef, useEffect } from 'react';
 
 const constants = {
-  CANVAS_WIDTH: 700,
-  CANVAS_HEIGHT: 221,
+  CANVAS_WIDTH: 100,
+  CANVAS_HEIGHT: 100,
 };
-//   red: [5, 8, 50, 60, 65, 70, 120, 180],
-//   green: [15, 18, 30, 70, 90],
-const chartData = [
+const data = [
+  // [4, 8],
+  // [10.6, 10.8],
+  // [11, 13],
+  // [22, 24],
   {
-    value: 5,
-    type: 'red',
+    value: 4,
+    type: 'green',
   },
   {
-    value: 5,
-    type: 'red',
-  },
-  {
-    value: 5,
-    type: 'red',
-  },
-  {
-    value: 5,
+    value: 6,
     type: 'red',
   },
   {
     value: 10,
+    type: 'green',
+  },
+  {
+    value: 14,
     type: 'red',
   },
   {
-    value: 30,
-    type: 'green',
-  },
-  {
-    value: 67,
-    type: 'green',
-  },
-  {
-    value: 50,
-    type: 'red',
-  },
-  {
-    value: 89,
-    type: 'green',
-  },
-  {
-    value: 89,
-    type: 'red',
-  },
-  {
-    value: 200,
-    type: 'green',
-  },
-  {
-    value: 195,
-    type: 'red',
-  },
-  {
-    value: 204,
-    type: 'green',
-  },
-  {
-    value: 289,
-    type: 'green',
-  },
-  {
-    value: 300,
-    type: 'red',
-  },
-  {
-    value: 155,
-    type: 'green',
-  },
-  {
-    value: 90,
-    type: 'red',
-  },
-  {
-    value: 256,
+    value: 19,
     type: 'green',
   },
 
   {
-    value: 400,
-    type: 'green',
-  },
-  {
-    value: 500,
+    value: 22,
     type: 'red',
-  },
-  {
-    value: 700,
-    type: 'green',
   },
 ];
 
-export const onMouseHover = (
-  canvasRef,
-  clientY,
-  tipRef,
-  clientX,
-  linePositions,
-) => {
-  // return undefined;
-  let canvas = canvasRef.current;
-  let tipCanvas = tipRef.current;
-  if (canvasRef.current) {
-    let ctx = canvasRef.current.getContext('2d');
-    let tipCtx = tipCanvas.getContext('2d');
+let arr = [];
+let columnPos = [];
 
-    let relativePosition = canvas.getBoundingClientRect();
-    let mouseX = clientX - relativePosition.left;
-    console.log('mouseX', mouseX);
-    let hit = false;
-    let hoveredRow = linePositions.current.filter(item => {
-      return mouseX === item.startX;
-    })[0];
-    console.log('hoveredRow', hoveredRow);
-    if (hoveredRow) {
-      tipCanvas.style.position = 'absolute';
-      tipCanvas.style.left = 600 + 'px';
-      tipCanvas.style.left =
-        hoveredRow.startX + canvas.getBoundingClientRect().left + 'px';
-      tipCtx.fillStyle = 'rgb(255, 255, 255, 0.8)';
-      tipCtx.fillRect(0, 0, tipCanvas.width, tipCanvas.height);
-      tipCtx.fillStyle = '#a11f1f';
-      ctx.font = '20px Georgia';
-      tipCtx.fillText('Server Details', 5, 15);
-    }
-  }
-};
+let relativepos;
+
+// draw for particular ploting area
+function drawArea(testcase, width, height, item) {
+  let slide = width / 26;
+
+  testcase.beginPath();
+  testcase.moveTo(slide * item.value, 0); // starting point (left ,top)
+  testcase.lineTo(slide * item.value, height); // bottom point (left ,top)
+  //testcase.lineTo(slide * item[1], height); // bottom starting point  (left,top)
+  // testcase.lineTo(slide * item[1], 0); //    last point (left , top)
+  testcase.strokeStyle = item.type === 'red' ? 'red' : 'green';
+  testcase.fill();
+  testcase.stroke();
+  let left = relativepos.left;
+  //console.log( relativepos.width/26);
+  //console.log(width/26);
+
+  arr.push({
+    left: left,
+    start: (relativepos.width / 26) * item.value + left,
+    val: item.value,
+    tippos: (relativepos.width / 26) * item.value,
+  });
+}
+
+// draw method of canvas
+
+function draw(testcase, tipRef, w, h) {
+  const canvas = testcase.canvas;
+  testcase.fillStyle = 'transparent';
+  let tipElement = tipRef.current;
+
+  ////console.log(tipElement);
+
+  testcase.fillRect(0, 0, w, h);
+
+  arr = [];
+  columnPos = [];
+  testcase.fillStyle = '#CEF2FE';
+
+  data.map(item => {
+    drawArea(testcase, w, h, item);
+  });
+}
+function hoverColumn(x) {
+  let hoveredCol = arr.filter(
+    item => item.start - 1 <= x && x <= item.start,
+  )[0];
+  console.log(hoveredCol);
+  return hoveredCol;
+}
 
 export function TestCasesChart() {
-  const linePositions = useRef([]);
-  const currentXPosition = useRef(10);
-  const [canvasRef, tipRef] = useCanvas(context =>
-    chartData.map(
-      (record, index) => mapChartData(record, index, context), // 10% padding from edge
-    ),
-  );
+  const testcaseRef = useRef();
+  const tipRef = useRef();
 
-  const mapChartData = (record, index, ctx) => {
-    // [5, 8, 50, 60, 65, 70, 120, 180],
-    // let  x= currentXPosition.current;
-    ctx.beginPath();
-    ctx.moveTo(record.value, 0);
-    ctx.lineTo(record.value, constants.CANVAS_HEIGHT);
-    ctx.strokeStyle = record.type == 'red' ? '#FF0C03' : '#18D27A';
-    ctx.stroke();
-    // currentXPosition.current = x + constants.CANVAS_HEIGHT;
-    linePositions.current.push({
-      startX: record.value,
-    });
-    console.log(linePositions);
-  };
+  useEffect(() => {
+    let testcase = testcaseRef.current.getContext('2d');
+    if (testcaseRef.current) {
+      relativepos = testcaseRef.current.getBoundingClientRect();
+      draw(testcase, tipRef, window.innerWidth, window.innerHeight);
+      const handleResize = () => {
+        relativepos = testcaseRef.current.getBoundingClientRect();
+        //  //console.log(testcase);
+        testcase.canvas.height = window.innerHeight;
+        testcase.canvas.width = window.innerWidth;
+        draw(testcase, tipRef, window.innerWidth, window.innerHeight);
+      };
 
-  const handler =
-    // useCallback(
-    e => {
-      console.log(e);
-      const { clientX, clientY } = e;
-      onMouseHover(canvasRef, clientY, tipRef, clientX, linePositions);
-    };
-  // ,
-  // [canvasRef, tipRef],
-  // );
+      handleResize();
 
-  useEventListener('mousemove', handler);
-  // $("#graph").mousemove(function(e){handleMouseMove(e);});
+      const mouseHandler = e => {
+        if (testcaseRef.current) {
+          const tooltip = tipRef.current.getContext('2d');
+          tooltip.fillStyle = '#ffffff';
+          tooltip.font = '12px Verdana';
+          tipRef.current.position = 'absolute';
 
-  // show tooltip when mouse hovers over dot
-  function handleMouseMove(e) {
-    mouseX = parseInt(e.clientX - offsetX);
-    mouseY = parseInt(e.clientY - offsetY);
+          const val = hoverColumn(e.clientX);
 
-    // Put your mousemove stuff here
-    var hit = false;
-    for (var i = 0; i < dots.length; i++) {
-      var dot = dots[i];
-      var dx = mouseX - dot.x;
-      var dy = mouseY - dot.y;
-      if (dx * dx + dy * dy < dot.rXr) {
-        tipCanvas.style.left = dot.x + 'px';
-        tipCanvas.style.top = dot.y - 40 + 'px';
-        tipCtx.clearRect(0, 0, tipCanvas.width, tipCanvas.height);
-        tipCtx.fillText($(dot.tip).val(), 5, 15);
-        hit = true;
-      }
+          if (val && e.clientX < 1300) {
+            console.log('match');
+
+            tipRef.current.style.display = 'block';
+            tipRef.current.style.left = val.tippos - 50 + 'px';
+            tooltip.save();
+            ////console.log(tooltip);
+            tooltip.clearRect(0, 0, 100, 50);
+            tooltip.fillRect(0, 0, 100, 50);
+            tooltip.fillStyle = '#000000';
+            tooltip.fillText(val.val, 10, 15);
+            tooltip.restore();
+          } else {
+            tipRef.current.style.display = 'none';
+            console.log('not match');
+          }
+        }
+      };
+      testcaseRef.current.addEventListener('mousemove', mouseHandler);
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('mousemove', mouseHandler);
+        window.removeEventListener('resize', handleResize);
+      };
     }
-    if (!hit) {
-      tipCanvas.style.left = '-200px';
-    }
-  }
+
+    //
+  }, []);
+
   return (
     <>
-      <Helmet>
-        <title>Home Page</title>
-        <meta name="description" content="A Boilerplate application homepage" />
-      </Helmet>
-
       <canvas
-        data-testid="canvas"
-        id="canvas"
-        ref={canvasRef}
-        width={constants.CANVAS_WIDTH}
-        height={constants.CANVAS_HEIGHT}
-      />
-      <canvas id="tip" ref={tipRef} width={110} height={42} />
+        id="testcase"
+        style={{ width: '100%', height: '100%' }}
+        ref={testcaseRef}
+      ></canvas>
+      <canvas
+        ref={tipRef}
+        height={50}
+        width={100}
+        style={{
+          position: 'absolute',
+          background: 'transparent',
+          display: 'none',
+          zIndex: '2',
+        }}
+      ></canvas>
     </>
   );
 }

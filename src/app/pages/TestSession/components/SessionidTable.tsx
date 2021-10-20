@@ -11,8 +11,6 @@ function SessionidTable({ testSessionData }) {
           // boxShadow=".5px .5px 2px grey "
           padding="4"
           alignContent="flex-start"
-          borderBottom="1px solid"
-          borderBottomColor="grey3"
           templateColumns="repeat(6, 1fr)"
           gridRowGap="1"
           gap={3}

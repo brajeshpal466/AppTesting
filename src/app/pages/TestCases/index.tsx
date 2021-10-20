@@ -29,7 +29,9 @@ function TestCases() {
       >
         <ChartLayout>
           <ChartWrapper shadow="true">
-            <TestCasesChart></TestCasesChart>
+            <Flex height="221px" position="relative" width="100%">
+              <TestCasesChart></TestCasesChart>
+            </Flex>
           </ChartWrapper>
         </ChartLayout>
         <TestCaseEvents></TestCaseEvents>
