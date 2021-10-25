@@ -2,6 +2,7 @@ import { Flex } from '@chakra-ui/layout';
 import ChartLayout from 'app/components/ChartLayout';
 import React from 'react';
 import MobileDisplay from '../TestCases/components/MobileDisplay';
+import HarChart from './Features/HarChart';
 
 function HarAnalysis() {
   return (
@@ -13,7 +14,7 @@ function HarAnalysis() {
       
       <TestCasesChart></TestCasesChart> */}
           <Flex height="221px" alignItems="center" justifyContent="center">
-            Har Analysis chart is not ready
+            <HarChart></HarChart>
           </Flex>
         </ChartLayout>
       </Flex>
