@@ -90,7 +90,7 @@ function ChartLayout({ children, height }) {
         marginTop="10px"
         flexDirection="column"
         background="white5"
-        height={height}
+        height={height || 'inherite'}
         css={{
           '&::-webkit-scrollbar': {
             width: '0px',

@@ -88,7 +88,7 @@ function draw(testcase, tipRef, w, h) {
 }
 function hoverColumn(x) {
   let hoveredCol = arr.filter(
-    item => item.start - 1 <= x && x <= item.start,
+    item => item.start - 2 <= x && x <= item.start + 2,
   )[0];
   console.log(hoveredCol);
   return hoveredCol;

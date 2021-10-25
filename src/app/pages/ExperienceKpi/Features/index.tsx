@@ -63,7 +63,9 @@ function draw(exp, tipRef, w, h) {
   });
 }
 function hoverColumn(x) {
-  let hoveredCol = arr.filter(item => item.start < x && x < item.end)[0];
+  let hoveredCol = arr.filter(
+    item => item.start - 1 < x && x < item.end + 1,
+  )[0];
 
   return hoveredCol;
 }
