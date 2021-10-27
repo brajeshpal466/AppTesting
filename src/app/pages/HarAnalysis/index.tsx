@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Flex } from '@chakra-ui/layout';
 import ChartLayout from 'app/components/ChartLayout';
 import React from 'react';
@@ -6,16 +7,17 @@ import HarChart from './Features/HarChart';
 
 function HarAnalysis() {
   return (
-    <Flex>
+    <Flex position="relative">
       <MobileDisplay></MobileDisplay>
       <Flex flexDirection="column" flexGrow={1}>
-        <ChartLayout height="534px">
+        <ChartLayout height="480px" widht="78%">
           {/*
       
       <TestCasesChart></TestCasesChart> */}
-          <Flex height="221px" alignItems="center" justifyContent="center">
-            <HarChart></HarChart>
-          </Flex>
+          {/* <Flex  alignItems="center" flexDirection="column" justifyContent="center" height="445px" > */}
+          <HarChart></HarChart>
+          {/* 
+          </Flex> */}
         </ChartLayout>
       </Flex>
     </Flex>

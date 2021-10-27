@@ -38,7 +38,7 @@ export const labels = [
   '24',
   '25',
 ];
-function ChartLayout({ children, height }) {
+function ChartLayout({ children, height, width }) {
   return (
     <Flex
       flexDirection="column"
@@ -69,7 +69,7 @@ function ChartLayout({ children, height }) {
         backgroundColor="grey4"
         justifyContent="space-between"
         zIndex="2"
-        width="99.9%"
+        width={width || '99.9%'}
         paddingRight="2%"
         justifyItems="flex-end"
         fontSize="10px"
