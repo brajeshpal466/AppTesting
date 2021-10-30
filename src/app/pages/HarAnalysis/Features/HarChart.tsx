@@ -10,13 +10,30 @@ import Summary from '../../../../styles/Assets/Summary.svg';
 import Issuesummary from '../../../../styles/Assets/Issue Summary.svg';
 import { Img } from '@chakra-ui/image';
 import PopupComp from 'app/components/PopupComp';
-import HarChartStatus from '../components/HarChartStatus';
-import SummaryCard from '../components/SummaryCard';
+import HarChartStatus from '../Components/HarChartStatus';
+import SummaryCard from '../Components/SummaryCard';
+import DataExchangeCard from '../Components/DataExchangeCard';
+import SummaryPieBox from '../Components/SummaryPieBox';
+import TopAssets from '../Components/TopAssets';
+import RadioCheckbox from '../Components/RadioCheckbox';
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
 am4core.useTheme(am4themes_animated);
 // Themes end
+
+const dataHttps = [
+  'https://interim.api/script1',
+  'https://interim.api/script1',
+  'https://interim.api/script1',
+];
+const dataServerTime = [
+  'https://interim.api/script1',
+  'https://interim.api/script1',
+  'https://interim.api/script1',
+];
+const loadTime = ['https://interim.api/script1'];
+const notOptmise = ['https://interim.api/script1'];
 
 const data = [
   {
@@ -134,7 +151,7 @@ function HarChart() {
   const [togglePopup, setTogglePopup] = useState(false);
   useEffect(() => {
     var chart = am4core.create('chartdiv', am4charts.XYChart);
-
+    console.log(document.getElementById('chartdiv'));
     // Add data
     chart.data = data;
     am4core.color('#ff0000');
@@ -145,10 +162,11 @@ function HarChart() {
     categoryAxis.renderer.labels.template.rotation = true;
     categoryAxis.renderer.labels.template.font = '14px';
     categoryAxis.renderer.grid.template.location = 0;
-
-    categoryAxis.renderer.minGridDistance = 20;
+    categoryAxis.renderer.minGridDistance = 22;
     categoryAxis.renderer.ticks.template.disabled = false;
     categoryAxis.renderer.ticks.template.strokeOpacity = 0;
+    categoryAxis.renderer.labels.template.width = 150;
+    categoryAxis.renderer.grid.template.strokeWidth = 1;
 
     //categoryAxis.renderer.inversed = true ;
     //categoryAxis.renderer.labels.template.rotation = -25;
@@ -157,6 +175,8 @@ function HarChart() {
     valueAxis.calculateTotals = true;
     valueAxis.renderer.grid.template.strokeWidth = 0;
     valueAxis.renderer.opposite = true;
+    valueAxis.renderer.labels.template.disabled = true;
+
     //categoryAxis.renderer.inversed = true ;
     // Create series
     function createSeries(open, close, names, showSum, color) {
@@ -204,13 +224,6 @@ function HarChart() {
     createSeries('open2', 'close2', 'Medium', true, ' #2F7CCB');
   }, []);
 
-  // const data = [
-  //   "https://interim.api/script",
-  //   "https://interim.api/script",
-  //   "https://interim.api/script",
-  //   "https://interim.api/script",
-  // ]
-
   const popupHandler = () => {
     setTogglePopup(true);
   };
@@ -223,10 +236,19 @@ function HarChart() {
 
   return (
     <>
+      {/* har chart element  */}
       <div
+        style={{
+          background: 'white',
+          width: '100%',
+          height: '100%',
+          position: 'relative',
+          boxShadow: '0px 0px 6px #00000029 inset',
+        }}
         id="chartdiv"
-        style={{ width: '100%', height: '100%', top: '200px' }}
       ></div>
+
+      {/* <RadioCheckbox ></RadioCheckbox>   */}
       {/* <HarChartStatus></HarChartStatus> */}
       <Flex
         position="absolute"
@@ -275,6 +297,7 @@ function HarChart() {
           ></Img>
         </Flex>
       </Flex>
+      {/* summay popup */}
       {!activePopup && (
         <PopupComp
           setTogglePopup={setTogglePopup}
@@ -282,9 +305,19 @@ function HarChart() {
           setActivePopup={setActivePopup}
           title="Summary"
         >
-          summary subcontaine
+          <DataExchangeCard></DataExchangeCard>
+          <Flex margin="10px 0px" justifyContent="center">
+            <SummaryPieBox
+              title="Timing KPI"
+              subtitle="All URL"
+            ></SummaryPieBox>
+            <SummaryPieBox title="Assets" subtitle=""></SummaryPieBox>
+          </Flex>
+          <TopAssets></TopAssets>
         </PopupComp>
       )}
+
+      {/* isuue summary */}
       {activePopup && (
         <PopupComp
           setTogglePopup={setTogglePopup}
@@ -292,8 +325,14 @@ function HarChart() {
           setActivePopup={setActivePopup}
           title="Isssu Summary"
         >
-          {/* <SummaryCard title="HTTPS Errors"  ></SummaryCard>  */}
-          summary issue
+          <SummaryCard title="HTTPS Errors" data={dataHttps}></SummaryCard>
+          <SummaryCard title="Server Time" data={dataServerTime}></SummaryCard>
+          <SummaryCard title=" " data={dataServerTime}></SummaryCard>
+          <SummaryCard title="Load Time" data={loadTime}></SummaryCard>
+          <SummaryCard
+            title="Non Optimise Assest Format"
+            data={notOptmise}
+          ></SummaryCard>
         </PopupComp>
       )}
     </>

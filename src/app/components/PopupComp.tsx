@@ -11,6 +11,8 @@ function PopupComp({
 }) {
   return (
     <Flex
+      fontSize="14px"
+      overflow="hidden"
       height="546px"
       zIndex="5"
       display={togglePopup ? 'block' : 'none'}
@@ -29,7 +31,7 @@ function PopupComp({
         alignItems="center"
         justifyContent="space-between"
       >
-        <Text as="b" fontSize="14px">
+        <Text as="b" color="black1">
           {' '}
           {title}
           <Img
@@ -42,7 +44,7 @@ function PopupComp({
         </Text>
         <CloseButton onClick={() => setTogglePopup(false)}></CloseButton>
       </Flex>
-      <Flex>{children}</Flex>
+      <div>{children}</div>
     </Flex>
   );
 }

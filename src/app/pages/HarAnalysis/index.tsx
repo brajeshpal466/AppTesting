@@ -3,6 +3,8 @@ import { Flex } from '@chakra-ui/layout';
 import ChartLayout from 'app/components/ChartLayout';
 import React from 'react';
 import MobileDisplay from '../TestCases/components/MobileDisplay';
+import HarChartStatus from './Components/HarChartStatus';
+import RadioCheckbox from './Components/RadioCheckbox';
 import HarChart from './Features/HarChart';
 
 function HarAnalysis() {
@@ -10,14 +12,19 @@ function HarAnalysis() {
     <Flex position="relative">
       <MobileDisplay></MobileDisplay>
       <Flex flexDirection="column" flexGrow={1}>
-        <ChartLayout height="480px" widht="78%">
+        <ChartLayout height="445px" leftalign="170">
           {/*
       
       <TestCasesChart></TestCasesChart> */}
-          {/* <Flex  alignItems="center" flexDirection="column" justifyContent="center" height="445px" > */}
-          <HarChart></HarChart>
-          {/* 
-          </Flex> */}
+          <RadioCheckbox></RadioCheckbox>
+          <Flex
+            height="100%"
+            boxShadow="0px 3px 6px #00000029 inset"
+            backgroundColor="white"
+          >
+            <HarChart></HarChart>
+          </Flex>
+          <HarChartStatus></HarChartStatus>
         </ChartLayout>
       </Flex>
     </Flex>

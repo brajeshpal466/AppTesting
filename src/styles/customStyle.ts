@@ -34,6 +34,8 @@ const colors = {
   green2: '#30A74C', //
   grey14: '#3F425429', //
   green3: '#6FC984',
+  white8: '#F2F2F2',
+  white9: '#707070BF',
 };
 
 export const theme = extendTheme({
