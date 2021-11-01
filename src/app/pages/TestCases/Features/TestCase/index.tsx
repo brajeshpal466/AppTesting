@@ -6,37 +6,35 @@ const constants = {
   CANVAS_WIDTH: 100,
   CANVAS_HEIGHT: 100,
 };
-const data = [
-  // [4, 8],
-  // [10.6, 10.8],
-  // [11, 13],
-  // [22, 24],
-  {
-    value: 4,
-    type: 'green',
-  },
-  {
-    value: 6,
-    type: 'red',
-  },
-  {
-    value: 10,
-    type: 'green',
-  },
-  {
-    value: 14,
-    type: 'red',
-  },
-  {
-    value: 19,
-    type: 'green',
-  },
+// const data =
+// [
+//   {
 
-  {
-    value: 22,
-    type: 'red',
-  },
-];
+//     value: 4,
+//     type: 'green',
+//   },
+//   {
+//     value: 6,
+//     type: 'red',
+//   },
+//   {
+//     value: 10,
+//     type: 'green',
+//   },
+//   {
+//     value: 14,
+//     type: 'red',
+//   },
+//   {
+//     value: 19,
+//     type: 'green',
+//   },
+
+//   {
+//     value: 22,
+//     type: 'red',
+//   },
+// ];
 
 let arr = [];
 let columnPos = [];
@@ -69,12 +67,12 @@ function drawArea(testcase, width, height, item) {
 
 // draw method of canvas
 
-function draw(testcase, tipRef, w, h) {
+function draw(testcase, tipRef, w, h, data) {
   const canvas = testcase.canvas;
   testcase.fillStyle = 'transparent';
   let tipElement = tipRef.current;
 
-  ////console.log(tipElement);
+  console.log(data);
 
   testcase.fillRect(0, 0, w, h);
 
@@ -90,25 +88,26 @@ function hoverColumn(x) {
   let hoveredCol = arr.filter(
     item => item.start - 2 <= x && x <= item.start + 2,
   )[0];
-  console.log(hoveredCol);
+  //console.log(hoveredCol);
   return hoveredCol;
 }
 
-export function TestCasesChart() {
+export function TestCasesChart({ data }) {
   const testcaseRef = useRef();
   const tipRef = useRef();
 
   useEffect(() => {
+    // console.log(data);
     let testcase = testcaseRef.current.getContext('2d');
     if (testcaseRef.current) {
       relativepos = testcaseRef.current.getBoundingClientRect();
-      draw(testcase, tipRef, window.innerWidth, window.innerHeight);
+      draw(testcase, tipRef, window.innerWidth, window.innerHeight, data);
       const handleResize = () => {
         relativepos = testcaseRef.current.getBoundingClientRect();
         //  //console.log(testcase);
         testcase.canvas.height = window.innerHeight;
         testcase.canvas.width = window.innerWidth;
-        draw(testcase, tipRef, window.innerWidth, window.innerHeight);
+        draw(testcase, tipRef, window.innerWidth, window.innerHeight, data);
       };
 
       handleResize();
@@ -123,7 +122,7 @@ export function TestCasesChart() {
           const val = hoverColumn(e.clientX);
 
           if (val && e.clientX < 1300) {
-            console.log('match');
+            //   console.log('match');
 
             tipRef.current.style.display = 'block';
             tipRef.current.style.left = val.tippos - 50 + 'px';
@@ -136,7 +135,7 @@ export function TestCasesChart() {
             tooltip.restore();
           } else {
             tipRef.current.style.display = 'none';
-            console.log('not match');
+            // console.log('not match');
           }
         }
       };

@@ -3,14 +3,49 @@ import { Flex } from '@chakra-ui/layout';
 import ChartLayout from 'app/components/ChartLayout';
 import ChartWrapper from 'app/components/ChartWrapper';
 import TabsLayout from 'app/components/TabsLayout';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MobileDisplay from './components/MobileDisplay';
 import TestCaseEvents from './components/TestCaseEvents';
 
 import TestCasesSummaryTable from './components/TestCasesSummaryTable';
 import { TestCasesChart } from './Features/TestCase';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  selectTestCasesData,
+  selectLoading,
+  selectError,
+} from './slice/selectors';
+import { TestCasesErrorType } from './slice/types';
+import { useTestCasesSlice } from './slice';
 
-function TestCases() {
+export function TestCases() {
+  const { actions } = useTestCasesSlice();
+
+  const testCasesData = useSelector(selectTestCasesData);
+  const isLoading = useSelector(selectLoading);
+  const error = useSelector(selectError);
+
+  const dispatch = useDispatch();
+
+  const useEffectOnMount = (effect: React.EffectCallback) => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(effect, []);
+  };
+
+  useEffectOnMount(() => {
+    // When initial state username is not null, submit the form to load repos
+    dispatch(actions.loadtestCasesData());
+  });
+
+  const onSubmitForm = (evt?: React.FormEvent<HTMLFormElement>) => {
+    /* istanbul ignore next  */
+    if (evt !== undefined && evt.preventDefault) {
+      evt.preventDefault();
+    }
+  };
+
+  console.log(testCasesData);
+
   return (
     <Flex flexDirection="row" color="grey13">
       <MobileDisplay></MobileDisplay>
@@ -30,7 +65,7 @@ function TestCases() {
         <ChartLayout>
           <ChartWrapper shadow="true">
             <Flex height="221px" position="relative" width="100%">
-              <TestCasesChart></TestCasesChart>
+              <TestCasesChart data={testCasesData}></TestCasesChart>
             </Flex>
           </ChartWrapper>
         </ChartLayout>
@@ -42,3 +77,12 @@ function TestCases() {
 }
 
 export default TestCases;
+
+export const repoErrorText = (error: TestCasesErrorType) => {
+  switch (error) {
+    case TestCasesErrorType.RESPONSE_ERROR:
+      return 'There is no such user 😞';
+    default:
+      return 'An error has occurred!';
+  }
+};

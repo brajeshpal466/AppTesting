@@ -115,7 +115,7 @@ export function SummaryTable() {
   let sheduled: number = 0;
   let queued: number = 0;
 
-  console.log(summaryTableData);
+  //console.log(summaryTableData);
 
   summaryTableData.map(item => {
     if (item.status === 'Running') {
