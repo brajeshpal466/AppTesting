@@ -7,7 +7,9 @@ import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import am4themes_dataviz from '@amcharts/amcharts4/themes/dataviz';
 import { Box, Flex } from '@chakra-ui/layout';
 import Summary from '../../../../styles/Assets/Summary.svg';
+import SummaryActive from '../../../../styles/Assets/SummaryActive.svg';
 import Issuesummary from '../../../../styles/Assets/Issue Summary.svg';
+import IssuesummaryActive from '../../../../styles/Assets/Issue SummaryActive.svg';
 import { Img } from '@chakra-ui/image';
 import PopupComp from 'app/components/PopupComp';
 import HarChartStatus from '../Components/HarChartStatus';
@@ -162,7 +164,7 @@ function HarChart() {
     categoryAxis.renderer.labels.template.rotation = true;
     categoryAxis.renderer.labels.template.font = '14px';
     categoryAxis.renderer.grid.template.location = 0;
-    categoryAxis.renderer.minGridDistance = 22;
+    categoryAxis.renderer.minGridDistance = 20;
     categoryAxis.renderer.ticks.template.disabled = false;
     categoryAxis.renderer.ticks.template.strokeOpacity = 0;
     categoryAxis.renderer.labels.template.width = 150;
@@ -270,15 +272,23 @@ function HarChart() {
           alignItems="center"
           height="35px"
           width="35px"
-          _hover={{ background: 'blue1' }}
-          _active={{ background: 'blue1' }}
         >
-          <Img
-            src={Issuesummary}
-            onClick={issuSummary}
-            backgroundColor="transparent"
-            alt="issue"
-          ></Img>
+          {!activePopup && (
+            <Img
+              src={Issuesummary}
+              onClick={issuSummary}
+              backgroundColor="transparent"
+              alt="issue"
+            ></Img>
+          )}
+          {activePopup && (
+            <Img
+              src={IssuesummaryActive}
+              onClick={issuSummary}
+              backgroundColor="transparent"
+              alt="issue"
+            ></Img>
+          )}
         </Flex>
         <Flex
           onClick={popupHandler}
@@ -286,15 +296,23 @@ function HarChart() {
           alignItems="center"
           height="35px"
           width="35px"
-          _hover={{ background: 'blue1' }}
-          _active={{ background: 'blue1' }}
         >
-          <Img
-            onClick={activeSummary}
-            src={Summary}
-            backgroundColor="transparent"
-            alt="summary"
-          ></Img>
+          {activePopup && (
+            <Img
+              onClick={activeSummary}
+              src={Summary}
+              backgroundColor="transparent"
+              alt="summary"
+            ></Img>
+          )}
+          {!activePopup && (
+            <Img
+              onClick={activeSummary}
+              src={SummaryActive}
+              backgroundColor="transparent"
+              alt="summary"
+            ></Img>
+          )}
         </Flex>
       </Flex>
       {/* summay popup */}

@@ -36,6 +36,12 @@ const colors = {
   green3: '#6FC984',
   white8: '#F2F2F2',
   white9: '#707070BF',
+  blue8: '#2F7CCB',
+  green4: '#5FA730',
+  red4: '#C44129',
+  white10: '#F9D1E2',
+  red5: '#B14D93',
+  orange: '#EC9332',
 };
 
 export const theme = extendTheme({

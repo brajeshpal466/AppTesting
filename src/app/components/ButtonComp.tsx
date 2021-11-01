@@ -9,12 +9,14 @@ function ButtonComp({
   padding,
   width,
   height,
+  backgroundColor,
+  marginLeft,
 }) {
   return (
     <>
       <Button
         fontFamily="gothamMedium"
-        backgroundColor="white3"
+        backgroundColor={backgroundColor || 'white3'}
         leftIcon={logo}
         border="1px solid"
         borderColor="white3"
@@ -29,7 +31,8 @@ function ButtonComp({
         fontWeight="medium"
         borderRadius="5"
         margin="1.5"
-        padding={0 || '.6em 0em'}
+        marginLeft={marginLeft}
+        padding={padding || '.6em 0em'}
       >
         {children}
       </Button>
