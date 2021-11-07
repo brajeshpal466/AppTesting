@@ -18,6 +18,7 @@ import DataExchangeCard from '../Components/DataExchangeCard';
 import SummaryPieBox from '../Components/SummaryPieBox';
 import TopAssets from '../Components/TopAssets';
 import RadioCheckbox from '../Components/RadioCheckbox';
+import PieChart from '../Components/PieChart';
 
 // Themes begin
 am4core.useTheme(am4themes_dataviz);
@@ -325,11 +326,12 @@ function HarChart() {
         >
           <DataExchangeCard></DataExchangeCard>
           <Flex margin="10px 0px" justifyContent="center">
-            <SummaryPieBox
-              title="Timing KPI"
-              subtitle="All URL"
-            ></SummaryPieBox>
-            <SummaryPieBox title="Assets" subtitle=""></SummaryPieBox>
+            <SummaryPieBox title="Timing KPI" subtitle="All URL">
+              1{/* <PieChart> </PieChart> */}
+            </SummaryPieBox>
+            <SummaryPieBox title="Assets" subtitle="">
+              2
+            </SummaryPieBox>
           </Flex>
           <TopAssets></TopAssets>
         </PopupComp>

@@ -1,7 +1,8 @@
 import { Flex, Text } from '@chakra-ui/react';
 import React from 'react';
+import PieChart from './PieChart';
 
-function SummaryPieBox({ title, subtitle, data }) {
+function SummaryPieBox({ title, subtitle, data, children }) {
   return (
     <Flex
       flexDirection="column"
@@ -27,7 +28,9 @@ function SummaryPieBox({ title, subtitle, data }) {
       >
         {subtitle}
       </Text>
-      lkdslkosd
+      <Flex width="200px" height="100px" position="static">
+        {children}
+      </Flex>
     </Flex>
   );
 }

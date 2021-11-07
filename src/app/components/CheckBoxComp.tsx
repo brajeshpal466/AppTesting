@@ -3,7 +3,7 @@ import { Input } from '@chakra-ui/input';
 import { Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 const title = 'CPU';
-function CheckBoxComp() {
+function CheckBoxComp(inputHandler) {
   return (
     <Flex
       position="absolute"
@@ -23,6 +23,7 @@ function CheckBoxComp() {
         </Text>
       </Flex>
       <Input
+        onMouseUp={inputHandler}
         variant="flushed"
         _focus={{ color: 'none' }}
         borderBottom="1px solid"

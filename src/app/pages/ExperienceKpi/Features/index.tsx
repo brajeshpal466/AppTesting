@@ -6,12 +6,16 @@ const constants = {
   CANVAS_WIDTH: 100,
   CANVAS_HEIGHT: 100,
 };
-const data = [
-  [4, 8],
-  [10.6, 10.8],
-  [11, 13],
-  [22, 24],
-];
+// const data = [
+//   { start : 4,
+//    end :  8 },
+//   { start : 10.6,
+//    end :  10.8 },
+//   { start :  11 ,
+//    end :  13 },
+//   {  start : 22,
+//     end : 24},
+// ];
 
 let arr = [];
 let columnPos = [];
@@ -23,10 +27,10 @@ function drawArea(exp, width, height, item) {
   let slide = width / 26;
 
   exp.beginPath();
-  exp.moveTo(slide * item[0], 0); // starting point (left ,top)
-  exp.lineTo(slide * item[0], height); // bottom point (left ,top)
-  exp.lineTo(slide * item[1], height); // bottom starting point  (left,top)
-  exp.lineTo(slide * item[1], 0); //    last point (left , top)
+  exp.moveTo(slide * item.start, 0); // starting point (left ,top)
+  exp.lineTo(slide * item.start, height); // bottom point (left ,top)
+  exp.lineTo(slide * item.end, height); // bottom starting point  (left,top)
+  exp.lineTo(slide * item.end, 0); //    last point (left , top)
   exp.strokeStyle = '#CEF2FE';
   exp.fill();
   exp.stroke();
@@ -36,16 +40,16 @@ function drawArea(exp, width, height, item) {
 
   arr.push({
     left: left,
-    start: (relativepos.width / 26) * item[0] + left,
-    end: (relativepos.width / 26) * item[1] + left,
+    start: (relativepos.width / 26) * item.start + left,
+    end: (relativepos.width / 26) * item.end + left,
     val: item,
-    tippos: (relativepos.width / 26) * item[0],
+    tippos: (relativepos.width / 26) * item.start,
   });
 }
 
 // draw method of canvas
 
-function draw(exp, tipRef, w, h) {
+function draw(exp, tipRef, w, h, data) {
   const canvas = exp.canvas;
   exp.fillStyle = 'transparent';
   let tipElement = tipRef.current;
@@ -70,7 +74,7 @@ function hoverColumn(x) {
   return hoveredCol;
 }
 
-function ExpChart() {
+function ExpChart({ data }) {
   const expRef = useRef();
   const tipRef = useRef();
 
@@ -78,13 +82,13 @@ function ExpChart() {
     let exp = expRef.current.getContext('2d');
     if (expRef.current) {
       relativepos = expRef.current.getBoundingClientRect();
-      draw(exp, tipRef, window.innerWidth, window.innerHeight);
+      draw(exp, tipRef, window.innerWidth, window.innerHeight, data);
       const handleResize = () => {
         relativepos = expRef.current.getBoundingClientRect();
         //  //console.log(exp);
         exp.canvas.height = window.innerHeight;
         exp.canvas.width = window.innerWidth;
-        draw(exp, tipRef, window.innerWidth, window.innerHeight);
+        draw(exp, tipRef, window.innerWidth, window.innerHeight, data);
       };
 
       handleResize();
@@ -108,7 +112,7 @@ function ExpChart() {
             tooltip.clearRect(0, 0, 100, 50);
             tooltip.fillRect(0, 0, 100, 50);
             tooltip.fillStyle = '#000000';
-            tooltip.fillText(val.val, 10, 15);
+            tooltip.fillText(val.val.start, val.val.end, 10, 15);
             tooltip.restore();
           } else {
             tipRef.current.style.display = 'none';

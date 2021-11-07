@@ -4,6 +4,7 @@ import ChartLayout from 'app/components/ChartLayout';
 import React from 'react';
 import MobileDisplay from '../TestCases/components/MobileDisplay';
 import HarChartStatus from './Components/HarChartStatus';
+import PieChart from './Components/PieChart';
 import RadioCheckbox from './Components/RadioCheckbox';
 import HarChart from './Features/HarChart';
 
