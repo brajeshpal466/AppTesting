@@ -1,15 +1,17 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+
   html,
   body {
     height: 100%;
     width: 100%;
+    font-family : 'Montserrat';
   }
 
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
 
   #root {
     min-height: 100%;
@@ -18,12 +20,12 @@ export const GlobalStyle = createGlobalStyle`
 
   p,
   label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
+ 
     line-height: 1.5em;
   }
 
   input, select {
     font-family: inherit;
-    font-size: inherit;
+    
   }
 `;

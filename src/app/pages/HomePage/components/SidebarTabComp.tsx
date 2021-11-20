@@ -20,7 +20,7 @@ function SidebarTabComp({ link, icon, children, sidebarToggle }) {
               {icon}
             </Box>
             {sidebarToggle && (
-              <Text color="grey5" className="text">
+              <Text color="grey5" className="text" fontWeight="500">
                 {children}
               </Text>
             )}

@@ -15,7 +15,7 @@ function ButtonComp({
   return (
     <>
       <Button
-        fontFamily="gothamMedium"
+        fontFamily="Montserrat"
         backgroundColor={backgroundColor || 'white3'}
         leftIcon={logo}
         border="1px solid"
@@ -28,7 +28,7 @@ function ButtonComp({
         fontSize="14"
         width={width}
         border="none"
-        fontWeight="medium"
+        fontWeight="600"
         borderRadius="5"
         margin="1.5"
         marginLeft={marginLeft}

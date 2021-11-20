@@ -46,6 +46,7 @@ export function CardComponent(props) {
         marginBottom="10px"
         padding="10px"
         width="454px"
+        fontWeight="500"
         border="1px solid "
         borderColor="white3"
         borderLeft="3px solid "

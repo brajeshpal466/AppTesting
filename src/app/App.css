@@ -5,29 +5,12 @@
    .activeLink{
   background-color: #1B1B28;
   border-right: 3px solid #F51C5E;
+
    }
    
   
    .activeLink .flex .text{
     color:#FAFBFC;
-  }
-
-
-
-  /* @font-face {
-    font-family: 'Gotham-Book';
-    font-style: normal;
     font-weight: 600;
-    font-display: swap;
-    src: url('../styles/Gotham-Font/GothamBook.ttf') format('ttf');
-  
   }
 
-  @font-face {
-    font-family: 'Gotham-Medium';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('../styles/Gotham-Font/GothamMedium.ttf') format('ttf');
-   
-  } */

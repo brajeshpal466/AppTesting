@@ -27,14 +27,18 @@ function Sidebar({ handleSidebar, sidebarToggle }) {
     width: '63px',
     border: '1px solid #EDEDED',
     transition: '.1s ease-in-out',
+    fontWeight: '300',
   };
   const sideShowActive = {
     ...sideShow,
+
     width: '240px',
+    fontWeight: '500',
   };
 
   return (
     <Flex
+      fontFamily="Montserrat"
       height="140vh"
       fontSize="14px"
       background="grey13"

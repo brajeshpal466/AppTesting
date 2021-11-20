@@ -85,21 +85,30 @@ function Table({ columns, data }) {
   // Render the UI for your table
   return (
     <Flex flexDirection="column" width="100%" backgroundColor="white">
-      <CustomTable variant="simple" {...getTableProps()}>
-        <Thead>
+      <CustomTable
+        fontFamily="Montserrat"
+        fontWeight="500"
+        variant="simple"
+        {...getTableProps()}
+      >
+        <Thead fontWeight="500" color="grey1">
           {headerGroups.map(headerGroup => (
             <Tr {...headerGroup.getHeaderGroupProps()}>
               <Th minWidth="0px" paddingLeft="0px" paddingRight="0px"></Th>
               <Th minWidth="0px" paddingLeft="0px" paddingRight="0px"></Th>
               {headerGroup.headers.map(column => (
-                <Th textTransform="capitalize" {...column.getHeaderProps()}>
+                <Th
+                  textTransform="capitalize"
+                  color="grey1"
+                  {...column.getHeaderProps()}
+                >
                   {column.render('Header')}
                 </Th>
               ))}
             </Tr>
           ))}
         </Thead>
-        <Tbody {...getTableBodyProps()}>
+        <Tbody fontWeight="500" color="grey13" {...getTableBodyProps()}>
           {page.map((row, i) => {
             prepareRow(row);
 
@@ -138,6 +147,7 @@ function Table({ columns, data }) {
         color="grey13"
       >
         <Flex
+          fontFamily="Montserrat"
           fontWeight="500"
           className="pagination"
           boxShadow="0px 3px 6px #00000029"
@@ -149,7 +159,7 @@ function Table({ columns, data }) {
           display="inline-block"
         >
           <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            <Box as="b" fontWeight="bold" borderRadius="50%">
+            <Box as="b" fontWeight="500" borderRadius="50%">
               {' '}
               &lt;{' '}
             </Box>{' '}
@@ -185,7 +195,7 @@ function Table({ columns, data }) {
           </Box>
           <button onClick={() => nextPage()} disabled={!canNextPage}>
             &nbsp;
-            <Box as="b" fontWeight="black" borderRadius="50%">
+            <Box as="b" fontWeight="500" borderRadius="50%">
               {' '}
               {'  >'}
             </Box>

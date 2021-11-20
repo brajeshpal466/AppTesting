@@ -38,7 +38,7 @@ function Navbar({ startActionHandler, stopActionHandler }) {
 
   return (
     <Flex
-      fontFamily="gothamBook"
+      fontFamily="Montserrat"
       background="white1"
       height="70px"
       alignItems="center"
@@ -58,12 +58,12 @@ function Navbar({ startActionHandler, stopActionHandler }) {
               alt="Brand"
             />
           </Box>
-          <Text as="h2" fontSize="1.8rem " paddingLeft="15px">
+          <Text as="h2" fontSize="1.8rem " paddingLeft="15px" fontWeight="500">
             MOZARK
           </Text>
         </Flex>
 
-        <Text marginLeft="8" fontSize="16px" color="black1">
+        <Text marginLeft="8" fontSize="16px" color="black1" fontWeight="500">
           App Testing
         </Text>
       </Flex>
@@ -89,6 +89,7 @@ function Navbar({ startActionHandler, stopActionHandler }) {
         <Box pos="relative" marginLeft="2">
           <Box pos="absolute" right="-3px" top="-8px">
             <Flex
+              fontWeight="600"
               onClick={notificationHandler}
               cursor="pointer"
               backgroundColor="red1"
