@@ -77,11 +77,17 @@ const options = {
       text: 'CPU',
       display: true,
       align: 'start',
-      color: '#cababa',
+      color: 'black',
+
       fullSize: true,
       padding: {
         top: 15,
         bottom: 65,
+      },
+      font: {
+        size: 12,
+        family: 'Montserrat',
+        weight: 500,
       },
     },
 
@@ -119,6 +125,12 @@ const options = {
           return value;
         },
         backgroundColor: 'grey',
+        color: 'black',
+        font: {
+          size: 10,
+          family: 'Montserrat',
+          weight: 400,
+        },
       },
       grid: {
         drawBorder: false,
@@ -129,7 +141,7 @@ const options = {
         lineWidth: 0.7,
 
         backgroundColor: 'rgb(248,248,248)',
-        color: ' #948080',
+        color: 'black',
         drawOnChartArea: false,
       },
 
@@ -151,6 +163,7 @@ function Charts({ shadow }) {
       <ListComp></ListComp>
       <Flex
         position="absolute"
+        color="black"
         width="100%"
         bottom="9.5px"
         borderTop="1px solid "

@@ -5,6 +5,7 @@ function SelectComp({ placeHolder, optionList, padding }) {
   return (
     <>
       <Select
+        fontWeight="300"
         placeholder={placeHolder}
         variant=""
         size="md"

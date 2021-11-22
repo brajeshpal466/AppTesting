@@ -24,6 +24,7 @@ function SearchBar() {
           ></Img>
         </InputLeftElement>
         <Input
+          fontWeight="300"
           style={{ color: '#797A84' }}
           fontSize="14px"
           size="xs"

@@ -47,7 +47,7 @@ export function TestCases() {
   console.log(testCasesData);
 
   return (
-    <Flex flexDirection="row" color="grey13">
+    <Flex fontFamily="Montserrat" flexDirection="row" color="grey13">
       <MobileDisplay></MobileDisplay>
       <Flex
         flexDirection="column"

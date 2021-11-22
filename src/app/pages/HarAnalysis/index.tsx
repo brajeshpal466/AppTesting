@@ -10,7 +10,7 @@ import HarChart from './Features/HarChart';
 
 function HarAnalysis() {
   return (
-    <Flex position="relative">
+    <Flex position="relative" fontFamily="Monserrat" fontWeight="500">
       <MobileDisplay></MobileDisplay>
       <Flex flexDirection="column" flexGrow={1}>
         <ChartLayout height="445px" leftalign="170">

@@ -4,6 +4,8 @@ const KpiList = ['KPI1', 'KPI2', 'KPI3', 'KPI4', 'KPI5'];
 function DropdownComp() {
   return (
     <Flex
+      fontFamily="Montserrat"
+      fontWeight="500"
       position="absolute"
       alignItems="center"
       justifyContent="center"
@@ -15,10 +17,13 @@ function DropdownComp() {
       right="1.5"
       backgroundColor="white1"
       boxShadow="0px 3px 6px #00000029 "
+      color="black"
     >
       <Select
         boxSizing="border-box"
         fontSize="12px"
+        fontFamily="Montserrat"
+        fontWeight="500"
         width="100%"
         height="100%"
         variant="unstyled"

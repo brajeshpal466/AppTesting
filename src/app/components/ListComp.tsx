@@ -33,6 +33,9 @@ function ListComp() {
       width="198px"
       top="46px"
       boxSizing="border-box"
+      color="black"
+      fontFamily="Montserrat"
+      fontWeight="500"
     >
       <Flex
         justifyContent="space-between"
@@ -40,7 +43,13 @@ function ListComp() {
         alignItems="center"
         borderRadius="2"
       >
-        <Accordion allowMultiple backgroundColor="white" width="100%">
+        <Accordion
+          allowMultiple
+          backgroundColor="white"
+          color="black"
+          fontWeight="500"
+          width="100%"
+        >
           <AccordionItem boxSizing="border-box">
             <Flex
               width="100%"
@@ -66,6 +75,8 @@ function ListComp() {
                   textAlign="left"
                   fontSize="12px"
                   display="flex"
+                  color="black"
+                  fontWeight="500"
                 >
                   CPU usage
                   <Box paddingLeft="7px">

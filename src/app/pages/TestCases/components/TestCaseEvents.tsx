@@ -14,10 +14,12 @@ import React from 'react';
 function TestCaseEvents() {
   return (
     <Flex
+      fontFamily="MontSerrat"
+      fontWeight="500"
+      fontSize="12px"
       justifyContent="space-between"
       padding="5px"
       color="grey13"
-      fontSize="12px"
     >
       <Text>Test Cases</Text>
       <Flex>

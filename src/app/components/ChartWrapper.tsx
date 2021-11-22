@@ -6,6 +6,7 @@ function ChartWrapper({ children, shadow }) {
   return (
     <>
       <Flex
+        fontFamily="Montserrat"
         flexWrap="nowrap"
         border="1px solid "
         borderColor="grey6"

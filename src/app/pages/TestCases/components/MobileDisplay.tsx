@@ -7,6 +7,7 @@ import stop from '../../../../styles/Assets/Stop.svg';
 function MobileDisplay() {
   return (
     <Flex
+      fontFamily="Montserrat"
       marginTop="4"
       width="260px"
       justifyContent="flex-start"

@@ -17,6 +17,8 @@ function SubheaderSessionId() {
   return (
     <>
       <Flex
+        fontFamily="Montserrat"
+        fontWeight="500"
         backgroundColor="white1"
         justifyContent="space-between"
         width="100%"
@@ -25,7 +27,7 @@ function SubheaderSessionId() {
         color="grey13"
         height="60px"
       >
-        <Flex fontSize="16px">
+        <Flex fontSize="16px" fontWeight="500" fontFamily="Montserrat">
           <Breadcrumb textDecoration="none" color="black2">
             {tabroute &&
               tabroute.map(route => (
@@ -53,13 +55,14 @@ function SubheaderSessionId() {
             RAISE BUG
           </ButtonComp>
           <Flex
+            fontWeight="500"
             marginLeft="10px"
             alignItems="center"
             flexDirection="column"
             justifyContent="center"
             padding="5px"
           >
-            <Text as="b" fontSize="20px" paddingRight="5px">
+            <Text as="span" fontWeight="600" fontSize="20px" paddingRight="5px">
               5
             </Text>
             <Text color="green2" fontSize="13px">
@@ -73,7 +76,7 @@ function SubheaderSessionId() {
             justifyContent="center"
             padding="5px"
           >
-            <Text as="b" fontSize="20px" paddingRight="5px">
+            <Text as="span" fontSize="20px" fontWeight="600" paddingRight="5px">
               2
             </Text>
             <Text color="red2" fontSize="13px">
@@ -88,7 +91,7 @@ function SubheaderSessionId() {
             padding="5px"
           >
             <Text as="b" paddingRight="5px"></Text>
-            <Text fontSize="16px" color="green2">
+            <Text fontSize="16px" color="green2" fontWeight="600">
               COMPLETED
             </Text>
           </Flex>

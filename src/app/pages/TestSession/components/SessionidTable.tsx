@@ -5,6 +5,8 @@ function SessionidTable({ testSessionData }) {
     <>
       {testSessionData && (
         <Grid
+          fontFamily="Montserrat"
+          fontWeight="500"
           backgroundColor="white"
           // borderBottom="1px solid"
           // borderBottomColor="grey1"

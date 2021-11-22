@@ -6,11 +6,13 @@ function RadioCheckbox() {
   return (
     <Flex
       zIndex="3"
+      fontFamily="Montserrat"
       justifySelf="self-start"
       height="50px"
       backgroundColor="transparent"
-      fontWeight="400"
+      fontWeight="500"
       fontSize="14px"
+      color="black"
       boxShadow="0px  3px 6px #00000029 inset"
     >
       <RadioButton></RadioButton>

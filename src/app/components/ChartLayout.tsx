@@ -66,7 +66,7 @@ function ChartLayout({ children, height, leftalign }) {
     <Flex
       flexDirection="column"
       paddingRight="2"
-      fontFamily="gothamBook"
+      fontFamily="Montserrat"
       fontSize="12px"
     >
       <Flex>
@@ -95,7 +95,8 @@ function ChartLayout({ children, height, leftalign }) {
         {leftalign ? (
           <Flex
             alignSelf={leftalign ? 'self-end' : ''}
-            fontFamily="gothamLight"
+            fontFamily="Montserrat"
+            fontWeight="300"
             top="0px"
             marginLeft={leftalign}
             height="34px"
@@ -108,7 +109,7 @@ function ChartLayout({ children, height, leftalign }) {
             width="99.9%"
             paddingRight="2%"
             justifyItems="flex-end"
-            fontSize="10px"
+            fontSize="8px"
             color="black1"
           >
             {labelsHar.map(item => (
@@ -123,7 +124,8 @@ function ChartLayout({ children, height, leftalign }) {
         ) : (
           <Flex
             alignSelf={leftalign ? 'self-end' : ''}
-            fontFamily="gothamLight"
+            fontFamily="Montserrat"
+            fontWeight="300"
             top="0px"
             marginLeft={leftalign}
             height="34px"
@@ -136,7 +138,7 @@ function ChartLayout({ children, height, leftalign }) {
             width="99.9%"
             paddingRight="2%"
             justifyItems="flex-end"
-            fontSize="10px"
+            fontSize="8px"
             color="black1"
           >
             {labels.map(item => (

@@ -22,6 +22,7 @@ function SelectComp({ placeHolder }) {
         border="1px solid grey"
         outline="none"
         height="35px"
+        fontWeight="300"
       >
         {optionList &&
           optionList.map((option, index) => {

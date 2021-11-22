@@ -151,11 +151,11 @@ function Notification({ items }) {
           {items &&
             items.map(item => (
               <Card>
-                <Text as="span" color="grey5">
+                <Text fontWeight="500" as="span" color="grey5">
                   {' '}
                   {item.date}
                 </Text>
-                <Text color="black1">
+                <Text color="black1" fontWeight="500">
                   High memory uses for test run
                   <Text as="span" color="blue3">
                     #{item.id}

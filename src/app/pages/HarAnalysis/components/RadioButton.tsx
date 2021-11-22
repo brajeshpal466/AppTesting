@@ -13,7 +13,13 @@ import React from 'react';
 
 function RadioButton() {
   return (
-    <Flex alignItems="center" marginLeft="auto" marginRight="auto">
+    <Flex
+      alignItems="center"
+      marginLeft="auto"
+      fontWeight="500"
+      fontFamily="Montserrat"
+      marginRight="auto"
+    >
       <RadioGroup fontSize="14px" size="sm">
         <Stack direction="row">
           <Radio value="1">HTTP Error</Radio>

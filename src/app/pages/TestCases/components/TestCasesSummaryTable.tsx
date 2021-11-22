@@ -7,6 +7,9 @@ function TestCasesSummaryTable() {
   return (
     <Flex
       marginTop="10px "
+      fontFamily="Montserrat"
+      fontWeight="500"
+      fontSize="14px"
       flexDirection="column"
       background="white1"
       padding="10px"

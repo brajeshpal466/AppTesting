@@ -13,11 +13,13 @@ function CheckBoxComp(inputHandler) {
       justifyContent="center"
       alignItems="center"
       backgroundColor="#fffff"
+      fontFamily="Montserrat"
+      fontWeight="500"
       boxShadow=".5px .5px 1px #fffff"
     >
       <Flex flexDirection="row" alignItems="center">
         <Checkbox size="sm"></Checkbox> &nbsp;
-        <Text as="span" fontSize="13px">
+        <Text as="span" fontSize="12px">
           {' '}
           Include {title} usage % &gt;{' '}
         </Text>

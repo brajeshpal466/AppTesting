@@ -163,7 +163,8 @@ function HarChart() {
     var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
     categoryAxis.dataFields.category = 'category';
     categoryAxis.renderer.labels.template.rotation = true;
-    categoryAxis.renderer.labels.template.font = '14px';
+    categoryAxis.renderer.labels.template.fontSize = 14;
+    categoryAxis.renderer.labels.template.fill = am4core.color('#707070');
     categoryAxis.renderer.grid.template.location = 0;
     categoryAxis.renderer.minGridDistance = 20;
     categoryAxis.renderer.ticks.template.disabled = false;

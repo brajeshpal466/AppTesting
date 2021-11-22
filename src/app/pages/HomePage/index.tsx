@@ -29,7 +29,7 @@ export function HomePage() {
     setStateTab(false);
   };
   return (
-    <div style={{ fontFamily: 'Montserrat', fontWeight: '400' }}>
+    <div style={{ fontFamily: 'Montserrat', fontWeight: '500' }}>
       <Navbar
         startActionHandler={startActionHandler}
         stopActionHandler={stopActionHandler}
