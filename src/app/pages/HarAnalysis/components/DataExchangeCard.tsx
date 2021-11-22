@@ -6,6 +6,8 @@ import UploadDownloadCard from './UploadDownloadCard';
 function DataExchangeCard() {
   return (
     <Flex
+      fontFamily="Montserrat"
+      fontWeight="500"
       padding="15px"
       color="black1"
       flexDirection="column"

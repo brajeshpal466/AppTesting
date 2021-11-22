@@ -11,6 +11,8 @@ function PopupComp({
 }) {
   return (
     <Flex
+      fontFamily="Montserrat"
+      fontWeight="500"
       fontSize="14px"
       overflow="hidden"
       height="546px"
@@ -31,7 +33,7 @@ function PopupComp({
         alignItems="center"
         justifyContent="space-between"
       >
-        <Text as="b" color="black1">
+        <Text fontFamily="Montserrat" fontWeight="600" as="b" color="black1">
           {' '}
           {title}
           <Img

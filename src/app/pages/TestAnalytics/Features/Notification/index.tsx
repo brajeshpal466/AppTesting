@@ -72,7 +72,7 @@ function Notification({ items }) {
           borderBottomColor="grey3"
           paddingBottom="2"
         >
-          <Flex as="span" marginLeft="7">
+          <Flex as="span" marginLeft="7" fontWeight="600">
             <Text color="grey1" position="relative">
               NOTIFICATIONS
               <Box
@@ -151,11 +151,16 @@ function Notification({ items }) {
           {items &&
             items.map(item => (
               <Card>
-                <Text fontWeight="500" as="span" color="grey5">
+                <Text
+                  fontFamily="Montserrat"
+                  fontWeight="500"
+                  as="span"
+                  color="grey5"
+                >
                   {' '}
                   {item.date}
                 </Text>
-                <Text color="black1" fontWeight="500">
+                <Text color="black1" fontFamily="Montserrat" fontWeight="500">
                   High memory uses for test run
                   <Text as="span" color="blue3">
                     #{item.id}

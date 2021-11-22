@@ -5,16 +5,20 @@ import React from 'react';
 function TopAssets() {
   return (
     <Flex
+      fontFamily="Montserrat"
       padding="15px 10px"
       width="441px"
       flexDirection="column"
       backgroundColor="white1"
+      fontWeight="500"
       boxShadow="0px 3px 6px #00000029"
       margin="0px auto"
       marginTop="10px"
     >
-      <Text as="b">Top 3 Assets</Text>
-      <Flex flexDirection="column">
+      <Text as="span" fontWeight="600">
+        Top 3 Assets
+      </Text>
+      <Flex flexDirection="column" fontWeight="500">
         {/* table heading */}
         <Flex
           borderBottom="1px solid "

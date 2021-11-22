@@ -6,6 +6,8 @@ import StatusBox from './StatusBox';
 function HarChartStatus() {
   return (
     <Flex
+      fontFamily="Montserrat"
+      fontWeight="500"
       justifyContent="space-between"
       alignItems="center"
       padding="0px 10px"

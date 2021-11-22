@@ -16,8 +16,12 @@ function SummaryPieBox({ title, subtitle, data, children }) {
       border="0.2px solid"
       borderColor="white9"
       borderRadius="4px"
+      fontFamily="Montserrat"
+      fontWeight="500"
     >
-      <Text as="b">{title}</Text>
+      <Text fontWeight="600" as="span">
+        {title}
+      </Text>
       <Text
         fontSize="12px"
         boxShadow={subtitle ? '0px 3px 6px #00000029' : ' '}

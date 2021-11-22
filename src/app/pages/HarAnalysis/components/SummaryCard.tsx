@@ -9,14 +9,16 @@ function SummaryCard({ title, data }) {
       width="100%"
       paddingBottom="15px"
       overflow="hidden"
+      fontFamily="Montserrat"
     >
       <Text
-        fontWeight="500"
+        fontWeight="600"
         color="grey13"
         backgroundColor="#EDEDED"
         height={title ? '25px' : '16px'}
         lineHeight="20px"
         padding="2px 20px"
+        fontFamily="Montserrat"
       >
         {title}
       </Text>
@@ -27,6 +29,7 @@ function SummaryCard({ title, data }) {
           borderBottomColor="white8"
           padding="2px 25px"
           paddingTop="3px"
+          fontWeight="500"
         >
           {' '}
           {item}

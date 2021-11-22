@@ -12,6 +12,8 @@ function SelectComp({ placeHolder }) {
         icon={<None />}
         fontSize="14px"
         borderRadius="2"
+        fontFamily="Montserrat"
+        fontWeight="400"
         width="50%"
         marginLeft="7px"
         placeholder={placeHolder}
@@ -22,7 +24,6 @@ function SelectComp({ placeHolder }) {
         border="1px solid grey"
         outline="none"
         height="35px"
-        fontWeight="300"
       >
         {optionList &&
           optionList.map((option, index) => {
